@@ -16,7 +16,7 @@ public class Main extends Application {
 
         String css = this.getClass().getResource("/com/example/oop_library/LoginView.css").toExternalForm();
         scene.getStylesheets().add(css);
-        stage.setTitle("UET Library");
+        stage.setTitle("UET Library Project");
         stage.setScene(scene);
         stage.show();
     }
