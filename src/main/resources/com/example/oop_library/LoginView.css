@@ -1,0 +1,45 @@
+#loginBox {
+    -fx-background-color: #f1f8f1;
+    -fx-background-radius: 25;
+    -fx-border-radius: 20;
+    -fx-border-width: 5;
+    -fx-border-color: #055e05;
+}
+
+#loginButton {
+    -fx-background-color: #52dd52;
+    -fx-text-fill: white;
+
+    -fx-border-width: 2;
+    -fx-border-color: #059a05;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#loginButton:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+#loginButton:pressed {
+    -fx-opacity: 0.9;
+}
+
+#loginPhoneNumberLabel, #loginPasswordLabel {
+    -fx-font-weight: 700;
+    -fx-text-fill: #063301;
+}
+
+#loginCheckingAccountLabel {
+    -fx-wrap-text: true;
+}
+
+#loginSignUpLabel, #loginForgetYourPasswordLabel {
+    -fx-text-fill: #00b2ff;
+    -fx-underline: true;
+}
+
+#loginSignUpLabel:hover, #loginForgetYourPasswordLabel:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}

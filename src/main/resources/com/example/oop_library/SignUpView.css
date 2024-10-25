@@ -1,0 +1,36 @@
+#signUpBox {
+    -fx-background-color: #f1f8f1;
+    -fx-background-radius: 25;
+    -fx-border-radius: 20;
+    -fx-border-width: 5;
+    -fx-border-color: #055e05;
+}
+
+#signUpButton {
+    -fx-background-color: #52dd52;
+    -fx-text-fill: white;
+
+    -fx-border-width: 2;
+    -fx-border-color: #059a05;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#signUpButton:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+#signUpButton:pressed {
+    -fx-opacity: 0.9;
+}
+
+
+#signUpNameLabel, #signUpPhoneNumberLabel, #signUpPasswordLabel, #signUpConfirmPasswordLabel {
+    -fx-font-weight: 700;
+    -fx-text-fill: #063301;
+}
+
+#signUpCheckingAccountLabel {
+    -fx-wrap-text: true;
+}
