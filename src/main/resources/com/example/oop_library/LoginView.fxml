@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
    <children>
       <ImageView fitHeight="362.0" fitWidth="605.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane fx:id="loginBox" layoutX="84.0" layoutY="14.0" prefHeight="335.0" prefWidth="431.0" stylesheets="@LoginView.css">
