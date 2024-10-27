@@ -57,6 +57,7 @@ public class SignUpController {
                     signUpCheckingAccountLabel.setStyle("-fx-text-fill: green;");
 
                     // open main view
+
                 }
             }
 

@@ -44,6 +44,18 @@ public class LoginController {
                 loginCheckingAccountLabel.setText("Logged in Successfully!");
                 loginCheckingAccountLabel.setStyle("-fx-text-fill: green;");
                 // login to user's account
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/MainView.fxml"));
+                    Parent root = fxmlLoader.load();
+
+                    // get the current stage from the event
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
