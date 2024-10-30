@@ -1,0 +1,47 @@
+.white-background{
+    -fx-background-color: '#fff';
+}
+
+.right-side-border{
+    -fx-border-color: #6f6f6f;
+    -fx-border-width: 0 1 0 0;
+}
+
+.bottom-side-border{
+    -fx-border-color: #6f6f6f;
+    -fx-border-width: 0 0 1 0;
+}
+
+.borrow-button{
+    -fx-border-color: #000000;
+    -fx-border-radius:30;
+    -fx-background-color: #1f8387;
+    -fx-background-radius: 30;
+}
+
+.search-container{
+    -fx-border-color: #000000;
+    -fx-border-radius:30;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30;
+}
+
+.transparent{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.primary-color{
+    -fx-background-color: #d5ffd7;
+    -fx-border-radius: 30;
+}
+
+.card1 {
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+}
+
+.menu {
+    -fx-background-color: #ecfbff;
+    -fx-background-radius: 30;
+}
+
