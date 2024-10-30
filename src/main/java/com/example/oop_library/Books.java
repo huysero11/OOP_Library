@@ -123,6 +123,12 @@ public class Books {
         "images/81RfW9mFkEL._AC_UF1000,1000_QL80_.jpg", null, null);
         listB.add(b4);
         listB.add(b5);
+        listB.add(b1);
+        listB.add(b2);
+        listB.add(b3);
+        listB.add(b4);
+        listB.add(b5);
+        listB.add(b1);
         b1.setBookPublicationYear("1941");
         b1.setCatagory("Truyện ngắn");
         b1.setDescription("Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Chí Phèo cũng là tên nhân vật chính của truyện.");
