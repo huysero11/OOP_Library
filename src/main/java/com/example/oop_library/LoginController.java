@@ -29,7 +29,6 @@ public class LoginController {
     private Label loginCheckingAccountLabel;
 
 
-
     public void login(ActionEvent event) {
         String phoneNumber = loginPhoneNumberTextField.getText();
         String password = loginPasswordField.getText();
@@ -58,9 +57,11 @@ public class LoginController {
                     // get the current stage from the event
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
+                    scene.getStylesheets().add(getClass().getResource("ContextMenu.css").toExternalForm());;
                     stage.setScene(scene);
                     stage.show();
                 } catch (IOException e) {
+                    System.out.println("Login Error");
                     e.printStackTrace();
                 }
             }
