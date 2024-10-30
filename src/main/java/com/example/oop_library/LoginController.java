@@ -37,12 +37,19 @@ public class LoginController {
         User user = UserDAO.getInstance().getByPhoneNumber(phoneNumber);
         if (user == null) {
             loginCheckingAccountLabel.setText("Your phone number is not correct or your account does not exist!");
+            loginPhoneNumberTextField.clear();
+            loginPasswordField.clear();
         } else {
             if (!user.getPassword().equals(password)) {
-                loginPasswordField.setText("Your password is incorrect!");
+                loginCheckingAccountLabel.setText("Your password is incorrect!");
+                loginPasswordField.clear();
             } else {
                 loginCheckingAccountLabel.setText("Logged in Successfully!");
                 loginCheckingAccountLabel.setStyle("-fx-text-fill: green;");
+
+                loginPhoneNumberTextField.clear();
+                loginPasswordField.clear();
+
                 // login to user's account
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/MainView.fxml"));

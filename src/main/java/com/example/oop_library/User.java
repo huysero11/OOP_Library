@@ -5,6 +5,7 @@ public class User {
     private String name;
     private String phoneNumber;
     private String password;
+    private boolean admin = false;
 
     public User(int id, String name, String phoneNumber, String password) {
         this.id = id;
@@ -49,6 +50,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     public String toString() {

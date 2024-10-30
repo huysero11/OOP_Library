@@ -14,8 +14,6 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/oop_library/LoginView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        String css = this.getClass().getResource("/com/example/oop_library/LoginView.css").toExternalForm();
-        scene.getStylesheets().add(css);
         stage.setTitle("UET");
         stage.setScene(scene);
         stage.show();
