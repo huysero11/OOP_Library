@@ -52,7 +52,7 @@ public class bookDetailController {
         this.dashboardController = dashboardController;
     }
 
-    public void handleBackButtonAction(MouseEvent event) {
+    public void handleBackButtonAction() {
         if (dashboardController != null)
             dashboardController.switchToDashBoard();
     }

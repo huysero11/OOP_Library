@@ -6,13 +6,14 @@ import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.HBox;
+import javafx.geometry.Insets;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 public class DashboardController implements Initializable{
 
     @FXML
-    private HBox featuredBooks;
+    private GridPane featuredBooks;
 
     @FXML
     private VBox centerArea;
@@ -21,7 +22,8 @@ public class DashboardController implements Initializable{
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        // TODO Auto-generated method stub
+        int column = 0;
+        int row = 1;
         try {
             for (int i = 0; i < Books.featuredBooksList.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -29,7 +31,13 @@ public class DashboardController implements Initializable{
                 VBox card = fxmlLoader.load();
                 bookCardController cardController = fxmlLoader.getController();
                 cardController.setData(Books.featuredBooksList.get(i), this);
-                featuredBooks.getChildren().add(card);
+                featuredBooks.add(card, column, row);
+                GridPane.setMargin(card, new Insets(5));
+                column++;
+                if (column == 5) {
+                    column = 0;
+                    ++row;
+                }
             }
         } catch (Exception e) {
             // TODO: handle exception
