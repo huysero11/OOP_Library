@@ -54,6 +54,9 @@ public class LoginController {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/MainView.fxml"));
                     Parent root = fxmlLoader.load();
 
+                    MainMenuController mainMenuController = fxmlLoader.getController();
+                    mainMenuController.setLoggedInUser(user);
+
                     // get the current stage from the event
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
