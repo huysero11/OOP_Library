@@ -1,41 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
+<StackPane fx:id="rootPane" alignment="CENTER" prefHeight="500" prefWidth="1067" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
    <children>
-      <ImageView fitHeight="362.0" fitWidth="605.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="loginBox" layoutX="84.0" layoutY="14.0" prefHeight="335.0" prefWidth="431.0" stylesheets="@LoginView.css">
+      <!-- Background Image -->
+      <ImageView fitHeight="${rootPane.height}" fitWidth="${rootPane.width}" pickOnBounds="true" preserveRatio="false" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@loginViewBackground.jpg" />
+         </image>
+      </ImageView>
+      <!-- Main VBox containing HBox -->
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="358.0" prefWidth="821.0" styleClass="loginRootVBox" stylesheets="@LoginView.css">
          <children>
-            <Label fx:id="loginPhoneNumberLabel" layoutX="31.0" layoutY="84.0" text="Phone number">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label fx:id="loginPasswordLabel" layoutX="31.0" layoutY="137.0" text="Password">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <TextField fx:id="loginPhoneNumberTextField" layoutX="30.0" layoutY="102.0" prefHeight="25.0" prefWidth="369.0" />
-            <Button fx:id="loginButton" layoutX="29.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" prefHeight="48.0" prefWidth="369.0" text="Log in" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font></Button>
-            <Label fx:id="loginCheckingAccountLabel" layoutX="31.0" layoutY="185.0" prefHeight="48.0" prefWidth="219.0" text="   " textFill="RED" />
-            <PasswordField fx:id="loginPasswordField" layoutX="31.0" layoutY="155.0" prefHeight="25.0" prefWidth="369.0" />
-            <Label fx:id="loginSignUpLabel" layoutX="357.0" layoutY="200.0" onMouseClicked="#openSignUpView" text="Sign up" textFill="#16a7ef" />
-            <Label fx:id="loginForgetYourPasswordLabel" layoutX="277.0" layoutY="224.0" onMouseClicked="#openResetPasswordView" text="Forget your password?" />
-            <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="63.0" prefWidth="405.0" text="Log in to your account" textFill="#027b39">
-               <font>
-                  <Font name="System Bold" size="26.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="385.0" prefWidth="765.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 10;" styleClass="loginRootHBox">
+               <children>
+                  <!-- Placeholder for the animated image on the left side of login form -->
+                  <ImageView fitHeight="358.0" fitWidth="512.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@loginViewBackgroundLeft.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <!-- Login Form Section -->
+                  <VBox fx:id="loginVBoxRight" prefHeight="358.0" prefWidth="283.0" styleClass="loginVBox" stylesheets="@LoginView.css" HBox.hgrow="NEVER">
+                     <children>
+                        <Label fx:id="loginLabel1" alignment="CENTER" prefHeight="35.0" prefWidth="283.0" text="Welcome!">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="loginLabel2" alignment="CENTER" prefHeight="17.0" prefWidth="634.0" text="Sign in to your account">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginPhoneNumberTextField" prefHeight="31.0" prefWidth="243.0" promptText="Phone number..." styleClass="loginItems">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="loginPasswordField" prefHeight="31.0" prefWidth="243.0" promptText="Password..." styleClass="loginItems">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <HBox prefHeight="78.0" prefWidth="283.0">
+                           <children>
+                              <Label fx:id="loginCheckingAccountLabel" alignment="TOP_LEFT" prefHeight="56.0" prefWidth="131.0" styleClass="loginItems" textFill="#f40000" wrapText="true" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <VBox alignment="TOP_RIGHT" prefHeight="78.0" prefWidth="111.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="loginSignUpLabel" alignment="CENTER_RIGHT" onMouseClicked="#openSignUpView" prefHeight="18.0" prefWidth="105.0" styleClass="loginItems" text="Sign up" />
+                                    <Label fx:id="loginForgotPasswordLabel" alignment="CENTER_RIGHT" onMouseClicked="#openResetPasswordView" prefHeight="26.0" prefWidth="135.0" styleClass="loginItems" text="Forgot password?" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="51.0" prefWidth="312.0">
+                           <children>
+                              <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="195.0" styleClass="loginItems" text="Sign in" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+            </HBox>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
-</AnchorPane>
+</StackPane>

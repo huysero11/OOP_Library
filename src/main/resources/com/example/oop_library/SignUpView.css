@@ -1,50 +1,63 @@
-#signUpBox {
-    -fx-background-color: #eef8ee;
-    -fx-background-radius: 25;
-    -fx-border-radius: 20;
-    -fx-border-width: 5;
-    -fx-border-color: #055e05;
+#rootHBox {
+    -fx-background-radius: 20;
+    -fx-background-color: white;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 20, 0.5, 5, 5);
 }
 
-#signUpButton {
-    -fx-background-color: #02e102;
-    -fx-text-fill: white;
+#signUpHBoxImageView {
+
+}
+
+#HBoxVBox {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+}
+
+#signUpLabel1 {
+    -fx-text-fill: #00d374;
+    -fx-font-weight: 700;
+}
+
+#signUpNameTextField, #signUpPhoneNumberTextField, #signUpPasswordField, #signUpConfirmPasswordPasswordField {
+    -fx-background-radius: 10;
+    -fx-background-color: white;
 
     -fx-border-width: 2;
-    -fx-border-color: #055e05;
+    -fx-border-color: #00a653;
     -fx-border-radius: 10;
-    -fx-background-radius: 10;
-}
-
-#signUpButton:hover {
-    -fx-opacity: 0.7;
-    -fx-cursor: hand;
-}
-
-#signUpButton:pressed {
-    -fx-opacity: 0.9;
-}
-
-
-#signUpNameLabel, #signUpPhoneNumberLabel, #signUpPasswordLabel, #signUpConfirmPasswordLabel {
-    -fx-font-weight: 700;
-    -fx-text-fill: #055e05;
 }
 
 #signUpCheckingAccountLabel {
     -fx-wrap-text: true;
 }
 
-#signUpBackToLoginButton {
+#signUpButton {
+    -fx-text-fill: white;
     -fx-font-weight: 700;
-    -fx-text-fill: #055e05;
 
-
-    -fx-effect: dropshadow(gaussian, rgba(0, 128, 0, 0.5), 10, 0.3, 5, 5);
-
-    -fx-background-color: #eef8ee;
-    -fx-background-radius: 25;
-    -fx-border-radius: 20;
-    -fx-border-width: 3;
-    -fx-border-color: #055e05;
+    -fx-background-color: #06dc7c;
+    -fx-background-radius: 10;
+    -fx-border-color: #009552;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
 }
+
+#signUpButton:hover, #signUpSignInLabel:hover {
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+}
+
+#signUpButton:pressed, signUpSignInLabel:pressed {
+    -fx-opacity: 0.9;
+}
+
+#signUpLabel2 {
+    -fx-text-fill: #00d374;
+}
+
+#signUpSignInLabel {
+    -fx-text-fill: #00d374;
+    -fx-font-weight: 700;
+}
+
