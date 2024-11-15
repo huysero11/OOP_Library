@@ -7,7 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class DashboardController implements Initializable{
@@ -19,9 +21,23 @@ public class DashboardController implements Initializable{
     private VBox centerArea;
 
     private VBox oldCenterArea = new VBox();
+
+    @FXML
+    private ScrollPane scrollPane;
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        scrollPane.widthProperty().addListener((obs, oldVal, newVal) -> {
+            showFeaturedBooks();
+        });
+
+        showFeaturedBooks();
+    }
+
+    public void showFeaturedBooks() {
+        double scrollPaneWidth = scrollPane.getWidth();
+        featuredBooks.getChildren().clear();
+
         int column = 0;
         int row = 1;
         try {
@@ -32,9 +48,10 @@ public class DashboardController implements Initializable{
                 bookCardController cardController = fxmlLoader.getController();
                 cardController.setData(Books.featuredBooksList.get(i), this);
                 featuredBooks.add(card, column, row);
-                GridPane.setMargin(card, new Insets(5));
+                GridPane.setMargin(card, new Insets(2));
                 column++;
-                if (column == 5) {
+                System.out.println((scrollPaneWidth/card.getPrefWidth()));
+                if (column == (int) (scrollPaneWidth/(card.getPrefWidth() + 2))) {
                     column = 0;
                     ++row;
                 }

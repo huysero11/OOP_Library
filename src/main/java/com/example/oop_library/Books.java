@@ -1,29 +1,70 @@
 package com.example.oop_library;
 
+import java.time.LocalDate;
+
 import java.util.*;
+
+import com.google.gson.annotations.SerializedName;
 
 public class Books {
 
+    @SerializedName("imageLinks")
+    private Image image;
+    static class Image {
+
+        @SerializedName("thumbnail")
+        private String thumbnail;
+
+        public String getThumbnail() {
+            return thumbnail;
+        }
+
+        public void setThumbnail(String thumbnail) {
+            this.thumbnail = thumbnail;
+        }
+    }
+
     private String bookID;
+    @SerializedName("title")
     private String bookName;
-    private String bookAuthor;
+    @SerializedName("authors")
+    private List<String> authors = new ArrayList<>();   
+    @SerializedName("publishedDate")
     private String bookPublicationYear;
     private String thumbNail;
-    private String catagory;
+    @SerializedName("categories")
+    private List<String> categories;
+    @SerializedName("description")
     private String description;
-    private Date borrowedDate;
-    private Date returnDate;
+    transient private LocalDate borrowedDate;
+    transient private LocalDate returnDate;
+    private boolean borrowed = false;
+    private User borrowerInfo;
     public static List<Books> featuredBooksList = new ArrayList<>(featuredBooks());
+
+    public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail,
+            String catagory, String description, LocalDate borrowedDate, LocalDate returnDate, boolean borrowed,
+            User borrowerInfo) {
+        this.bookID = bookID;
+        this.bookName = bookName;
+        this.bookPublicationYear = bookPublicationYear;
+        this.thumbNail = thumbNail;
+        this.description = description;
+        this.borrowedDate = borrowedDate;
+        this.returnDate = returnDate;
+        this.borrowed = borrowed;
+        this.borrowerInfo = borrowerInfo;
+    }
+
 
     public Books() {
 
     }
 
-    public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail, Date borrowedDate,
-            Date returnDate) {
+    public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail, LocalDate borrowedDate,
+            LocalDate returnDate) {
         this.bookID = bookID;
         this.bookName = bookName;
-        this.bookAuthor = bookAuthor;
         this.bookPublicationYear = bookPublicationYear;
         this.borrowedDate = borrowedDate;
         this.returnDate = returnDate;
@@ -47,11 +88,14 @@ public class Books {
     }
 
     public String getBookAuthor() {
-        return bookAuthor;
+        if (authors != null && !authors.isEmpty()) {
+            return authors.get(0); 
+        }
+        return "Unknown Author"; 
     }
 
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
+    public void setBookAuthor(List<String> bookAuthor) {
+        this.authors = bookAuthor;
     }
 
     public String getBookPublicationYear() {
@@ -62,19 +106,19 @@ public class Books {
         this.bookPublicationYear = bookPublicationYear;
     }
 
-    public Date getBorrowedDate() {
+    public LocalDate getBorrowedDate() {
         return borrowedDate;
     }
 
-    public void setBorrowedDate(Date borrowedDate) {
+    public void setBorrowedDate(LocalDate borrowedDate) {
         this.borrowedDate = borrowedDate;
     }
 
-    public Date getReturnDate() {
+    public LocalDate getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
 
@@ -87,11 +131,14 @@ public class Books {
     }
 
     public String getCatagory() {
-        return catagory;
+        if (categories != null && !categories.isEmpty()) {
+            return categories.get(0); 
+        }
+        return "Unknown category"; 
     }
 
-    public void setCatagory(String catagory) {
-        this.catagory = catagory;
+    public void setCatagory(List<String> catagory) {
+        this.categories = catagory;
     }
 
     public String getDescription() {
@@ -100,6 +147,22 @@ public class Books {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isBorrowed() {
+        return borrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        this.borrowed = borrowed;
+    }
+
+    public User getBorrowerInfo() {
+        return borrowerInfo;
+    }
+
+    public void setBorrowerInfo(User borrowerInfo) {
+        this.borrowerInfo = borrowerInfo;
     }
 
     private static List<Books> featuredBooks() {
@@ -130,11 +193,10 @@ public class Books {
         listB.add(b5);
         listB.add(b1);
         b1.setBookPublicationYear("1941");
-        b1.setCatagory("Truyện ngắn");
+        b1.setCatagory(Arrays.asList("Truyện ngắn"));
         b1.setDescription("Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Chí Phèo cũng là tên nhân vật chính của truyện.");
         return listB;
     }
-    
 
 }
 

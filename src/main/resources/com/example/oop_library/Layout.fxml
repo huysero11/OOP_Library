@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AddBookGoogleApiModalController">
+    <children>
+        <TextField fx:id="titleField" promptText="Enter book title" />
+        <Button fx:id="searchButton" text="Search" layoutY="30" />
+        <Label fx:id="errorLabel" textFill="red" layoutY="60" />
+        <VBox fx:id="foundBooksContainer" layoutY="90" spacing="5" />
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" layoutY="120" />
+    </children>
+</AnchorPane>

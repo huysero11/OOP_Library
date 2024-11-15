@@ -47,8 +47,12 @@ public class LoginController {
                 loginCheckingAccountLabel.setText("Logged in Successfully!");
                 loginCheckingAccountLabel.setStyle("-fx-text-fill: green;");
 
+
                 loginPhoneNumberTextField.clear();
                 loginPasswordField.clear();
+
+                // Save user's info.
+                SessionManager.getInstance().startSession(user);
 
                 // login to user's account
                 try {

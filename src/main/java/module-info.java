@@ -13,7 +13,9 @@ module com.example.oop_library {
     requires java.desktop;
     requires java.sql;
     requires javafx.graphics;
+    requires com.google.gson;
 
-    opens com.example.oop_library to javafx.fxml;
+
+    opens com.example.oop_library to javafx.fxml,  com.google.gson;
     exports com.example.oop_library;
 }
