@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.ContextMenu?>
-<?import javafx.scene.control.MenuItem?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.MainMenuController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.MainMenuController">
     <children>
-        <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="500.0" layoutY="32.0" onMouseClicked="#avatarMenu" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="avatarImageView" fitHeight="141.0" fitWidth="81.0" layoutX="737.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@LoginBackground.png" />
+                <Image url="@images/Logo_HUET.svg.png" />
             </image>
         </ImageView>
     </children>

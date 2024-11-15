@@ -23,11 +23,12 @@ public class UserDAO implements DAOInterface<User> {
         try {
             Connection connection = MySQLConnection.getConnection();
 
-            String addQuery = "INSERT INTO users (user_name, user_phone, user_password) VALUES (?, ?, ?)";
+            String addQuery = "INSERT INTO users (user_name, user_phone, user_password, user_admin) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(addQuery, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getPhoneNumber());
             preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setBoolean(4, user.isAdmin());
 
             res = preparedStatement.executeUpdate();
             System.out.println("Affected rows: " + res);
@@ -57,13 +58,14 @@ public class UserDAO implements DAOInterface<User> {
         try {
             Connection connection = MySQLConnection.getConnection();
 
-            String updateQuery = "update users set user_name = ?, user_phone = ?, user_password = ? where user_id = ?";
+            String updateQuery = "update users set user_name = ?, user_phone = ?, user_password = ?, user_admin = ? where user_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
 
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getPhoneNumber());
             preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setInt(4, user.getId());
+            preparedStatement.setBoolean(4, user.isAdmin());
+            preparedStatement.setInt(5, user.getId());
 
             res = preparedStatement.executeUpdate();
             System.out.println("Affected rows: " + res);
@@ -114,8 +116,9 @@ public class UserDAO implements DAOInterface<User> {
                 String name = resultSet.getString("user_name");
                 String phoneNumber = resultSet.getString("user_phone");
                 String password = resultSet.getString("user_password");
+                boolean admin = resultSet.getBoolean("user_admin");
 
-                User user = new User(id, name, phoneNumber, password);
+                User user = new User(id, name, phoneNumber, password, admin);
                 list.add(user);
             }
         } catch (SQLException e) {
@@ -141,8 +144,9 @@ public class UserDAO implements DAOInterface<User> {
                 String userName = resultSet.getString("user_name");
                 String phoneNumber = resultSet.getString("user_phone");
                 String password = resultSet.getString("user_password");
+                boolean admin = resultSet.getBoolean("user_admin");
 
-                user = new User(userId, userName, phoneNumber, password);
+                user = new User(userId, userName, phoneNumber, password, admin);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -166,8 +170,9 @@ public class UserDAO implements DAOInterface<User> {
                 String userName = resultSet.getString("user_name");
                 String userPhoneNumber = resultSet.getString("user_phone");
                 String password = resultSet.getString("user_password");
+                boolean admin = resultSet.getBoolean("user_admin");
 
-                user = new User(userId, userName, phoneNumber, password);
+                user = new User(userId, userName, phoneNumber, password, admin);
             }
         } catch (SQLException e) {
             e.printStackTrace();

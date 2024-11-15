@@ -1,52 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.SignUpController">
+<VBox alignment="CENTER" prefHeight="479.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.SignUpController">
    <children>
-      <ImageView fitHeight="362.0" fitWidth="605.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="signUpBox" layoutX="85.0" layoutY="14.0" prefHeight="335.0" prefWidth="406.0" stylesheets="@SignUpView.css">
+      <HBox fx:id="rootHBox" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="790.0" stylesheets="@SignUpView.css">
          <children>
-            <Label fx:id="signUpPhoneNumberLabel" layoutX="226.0" layoutY="94.0" text="Phone number">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <Label fx:id="signUpPasswordLabel" layoutX="29.0" layoutY="159.0" text="Password">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <TextField fx:id="signUpNameTextField" layoutX="29.0" layoutY="109.0" prefHeight="25.0" prefWidth="171.0" />
-            <Button fx:id="signUpButton" layoutX="29.0" layoutY="265.0" mnemonicParsing="false" onAction="#signUp" prefHeight="48.0" prefWidth="369.0" stylesheets="@SignUpView.css" text="Sign up" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font></Button>
-            <PasswordField fx:id="signUpPasswordField" layoutX="29.0" layoutY="176.0" prefHeight="25.0" prefWidth="171.0" />
-            <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="69.0" prefWidth="414.0" text="Sign up " textFill="#027b39">
-               <font>
-                  <Font name="System Bold" size="26.0" />
-               </font>
-            </Label>
-            <TextField fx:id="signUpPhoneNumberTextField" layoutX="226.0" layoutY="109.0" prefHeight="25.0" prefWidth="171.0" />
-            <Label fx:id="signUpNameLabel" layoutX="29.0" layoutY="94.0" text="Name">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="signUpCheckingAccountLabel" layoutX="32.0" layoutY="211.0" prefHeight="38.0" prefWidth="230.0" textFill="RED" />
-            <Label fx:id="signUpConfirmPasswordLabel" layoutX="226.0" layoutY="159.0" text="Confirm your password">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="signUpConfirmPasswordField" layoutX="226.0" layoutY="176.0" prefHeight="25.0" prefWidth="171.0" />
+            <!-- ImageView to occupy half of the HBox width -->
+            <ImageView fx:id="signUpHBoxImageView" fitHeight="400.0" fitWidth="475.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@young-man-reading-sitting-books_961875-478165.jpg" />
+               </image>
+            </ImageView>
+
+            <!-- VBox to occupy the other half of the HBox width -->
+            <VBox fx:id="HBoxVBox" prefHeight="400.0" prefWidth="293.0" spacing="5.0" styleClass="HBoxVBox" stylesheets="@SignUpView.css">
+               <children>
+                  <Label fx:id="signUpLabel1" alignment="CENTER" prefHeight="49.0" prefWidth="345.0" text="Create your account">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="signUpNameTextField" prefHeight="30.0" prefWidth="305.0" promptText="Name...">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="signUpPhoneNumberTextField" prefHeight="30.0" prefWidth="305.0" promptText="Phone number...">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <PasswordField fx:id="signUpPasswordField" prefHeight="30.0" prefWidth="345.0" promptText="Password...">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" top="10.0" />
+                     </VBox.margin>
+                  </PasswordField>
+                  <PasswordField fx:id="signUpConfirmPasswordPasswordField" prefHeight="30.0" prefWidth="345.0" promptText="Confirm your password...">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" top="10.0" />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Label fx:id="signUpCheckingAccountLabel" alignment="TOP_LEFT" prefHeight="47.0" prefWidth="321.0" textFill="RED">
+                     <VBox.margin>
+                        <Insets left="42.0" right="42.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" prefHeight="35.0" prefWidth="159.0" text="Sign up">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="29.0" prefWidth="345.0">
+                     <children>
+                        <Label fx:id="signUpLabel2" text="Already had an account? " />
+                        <Label fx:id="signUpSignInLabel" onMouseClicked="#openLoginView" text="Sign in" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
-      </AnchorPane>
-      <Button fx:id="signUpBackToLoginButton" layoutX="14.0" layoutY="282.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="48.0" prefWidth="54.0" stylesheets="@SignUpView.css" text="Back" />
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>

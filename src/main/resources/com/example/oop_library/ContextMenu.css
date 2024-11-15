@@ -1,0 +1,32 @@
+.context-menu {
+    -fx-background-color: #eef8ee;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 5;
+    -fx-border-color: #055e05;
+    -fx-padding: 5;
+}
+
+.context-menu .menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #055e05;
+    -fx-font-weight: 700;
+    -fx-padding: 10 15;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: #02e102;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-cursor: hand;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+.context-menu .menu-item:pressed {
+    -fx-opacity: 0.7;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}

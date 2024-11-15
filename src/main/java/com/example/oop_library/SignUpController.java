@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class SignUpController {
     private PasswordField signUpPasswordField;
 
     @FXML
-    private PasswordField signUpConfirmPasswordField;
+    private PasswordField signUpConfirmPasswordPasswordField;
 
     @FXML
     private Label signUpCheckingAccountLabel;
@@ -35,7 +36,7 @@ public class SignUpController {
         String name = signUpNameTextField.getText();
         String phoneNumber = signUpPhoneNumberTextField.getText();
         String password = signUpPasswordField.getText();
-        String confirmPassword = signUpConfirmPasswordField.getText();
+        String confirmPassword = signUpConfirmPasswordPasswordField.getText();
 
         String phoneNumberRegex = "^\\d+$";
         String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
@@ -77,7 +78,7 @@ public class SignUpController {
     }
 
 
-    public void backToLogin(ActionEvent event) {
+    public void openLoginView(MouseEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
             Parent root = fxmlLoader.load();
@@ -86,6 +87,7 @@ public class SignUpController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setMaximized(true);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

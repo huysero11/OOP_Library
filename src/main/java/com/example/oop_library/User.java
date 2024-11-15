@@ -10,6 +10,14 @@ public class User {
     private boolean admin = false;
     private ArrayList<Books> borrowedBooks = new ArrayList<>();
 
+    public User(int id, String name, String phoneNumber, String password, boolean admin) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.admin = admin;
+    }
+
     public User(int id, String name, String phoneNumber, String password) {
         this.id = id;
         this.name = name;
@@ -73,6 +81,10 @@ public class User {
 
 
     public String toString() {
-        return ("id = " + this.id + ", name = " + this.name + ", phoneNumber = " + this.phoneNumber + ", password = " + this.password);
+        return ("id = " + this.id + ", name = " + this.name
+                + ", phoneNumber = " + this.phoneNumber
+                + ", password = " + this.password
+                + ", admin = " + this.admin
+                );
     }
 }
