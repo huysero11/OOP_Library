@@ -45,3 +45,54 @@
     -fx-background-radius: 30;
 }
 
+/* .books-button */
+.books-button {
+    -fx-border-width: 2px;
+    -fx-border-color: #24b4fb;
+    -fx-background-color: #24b4fb;
+    -fx-background-radius: 15;
+    -fx-border-radius: 0.9em;
+    -fx-cursor: hand;
+    -fx-padding: 0.8em 1.2em 0.8em 1em;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-transition: all 0.5s ease-in-out;
+}
+
+/* .button-span */
+.button-span {
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* .button-hover */
+.books-button:hover {
+    -fx-background-color: #007af5;
+}
+
+.circle {
+    -fx-stroke: #3498db;
+    -fx-stroke-width: 5px;
+    -fx-fill: transparent;
+}
+
+.progress-indicator {
+    /*visibility: visible; */ 
+    opacity: 1;      
+}
+
+.APISearchView {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+}
+
+.bookShortInfo {
+    -fx-border-color: #6f6f6f;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 2;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 2;
+}
+

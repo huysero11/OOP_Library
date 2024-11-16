@@ -12,11 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
-=======
 <StackPane fx:id="rootPane" alignment="CENTER" prefHeight="500" prefWidth="1067" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
->>>>>>> 6550defac4752690bbf0992b69b8d5cc6c71169c
    <children>
       <!-- Background Image -->
       <ImageView fitHeight="${rootPane.height}" fitWidth="${rootPane.width}" pickOnBounds="true" preserveRatio="false" StackPane.alignment="CENTER">
@@ -27,33 +23,6 @@
       <!-- Main VBox containing HBox -->
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="358.0" prefWidth="821.0" styleClass="loginRootVBox" stylesheets="@LoginView.css">
          <children>
-<<<<<<< HEAD
-            <Label fx:id="loginPhoneNumberLabel" layoutX="31.0" layoutY="84.0" text="Phone number">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="loginPasswordLabel" layoutX="31.0" layoutY="137.0" text="Password">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="loginPhoneNumberTextField" layoutX="30.0" layoutY="102.0" prefHeight="25.0" prefWidth="369.0" />
-            <Button fx:id="loginButton" layoutX="29.0" layoutY="265.0" mnemonicParsing="false" onAction="#login" prefHeight="48.0" prefWidth="369.0" text="Log in" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="19.0" />
-               </font>
-            </Button>
-            <Label fx:id="loginCheckingAccountLabel" layoutX="31.0" layoutY="185.0" prefHeight="48.0" prefWidth="219.0" text="   " textFill="RED" />
-            <PasswordField fx:id="loginPasswordField" layoutX="31.0" layoutY="155.0" prefHeight="25.0" prefWidth="369.0" />
-            <Label fx:id="loginSignUpLabel" layoutX="357.0" layoutY="200.0" onMouseClicked="#openSignUpView" text="Sign up" textFill="#16a7ef" />
-            <Label fx:id="loginForgetYourPasswordLabel" layoutX="277.0" layoutY="224.0" onMouseClicked="#openResetPasswordView" text="Forget your password?" />
-            <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="63.0" prefWidth="405.0" text="Log in to your account" textFill="#027b39">
-               <font>
-                  <Font name="System Bold" size="26.0" />
-               </font>
-            </Label>
-=======
             <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="385.0" prefWidth="765.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 10;" styleClass="loginRootHBox">
                <children>
                   <!-- Placeholder for the animated image on the left side of login form -->
@@ -130,7 +99,6 @@
                   <Insets left="30.0" right="30.0" />
                </VBox.margin>
             </HBox>
->>>>>>> 6550defac4752690bbf0992b69b8d5cc6c71169c
          </children>
       </VBox>
    </children>

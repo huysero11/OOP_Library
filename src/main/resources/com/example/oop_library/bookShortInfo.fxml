@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="175.0" prefWidth="670.0" spacing="25.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="bookImage" fitHeight="156.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+         <image>
+            <Image url="@../../../../../../../OneDrive/Desktop/oop_libarary2/demo/src/main/resources/com/example/images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="146.0" prefWidth="490.0" stylesheets="@../../../../../../../OneDrive/Desktop/oop_libarary2/OOP_Library/src/main/resources/com/example/oop_library/Style.css">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../OneDrive/Desktop/oop_libarary2/demo/src/main/resources/com/example/images/book.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="catagory" prefHeight="39.0" prefWidth="178.0" text="Truyện ngắn">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="bookName" prefHeight="44.0" prefWidth="182.0" text="CHÍ PHÈO">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="bookAuthor" text="Nam Cao" textFill="#7b7878">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="bookID" text="ISBN: 12345678">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="publicationYear" text="Publication Year: 1941 ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="28.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets left="20.0" right="20.0" top="5.0" />
+   </padding>
+</HBox>

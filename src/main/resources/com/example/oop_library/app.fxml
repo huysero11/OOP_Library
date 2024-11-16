@@ -31,7 +31,7 @@
                         <Insets bottom="150.0" />
                      </VBox.margin>
                   </ImageView>
-                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0" styleClass="menu" stylesheets="@Style.css">
+                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0" styleClass="menu" stylesheets="@Style.css" onMouseClicked = "#switchToDashBoard">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -82,7 +82,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="461.0" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="461.0" prefHeight="45.0" prefWidth="200.0" spacing="20.0" onMouseClicked = "#switchToAdmin">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
