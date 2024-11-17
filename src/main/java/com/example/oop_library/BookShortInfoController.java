@@ -1,10 +1,13 @@
 package com.example.oop_library;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import javafx.stage.Stage;
 
 public class BookShortInfoController {
 
@@ -26,13 +29,23 @@ public class BookShortInfoController {
     @FXML
     private Label publicationYear;
 
-    public void setData(Books b, DashboardController dashboardController) {
+    private Books b;
+
+    public void setData(Books b) {
+        this.b = b;
         bookName.setText(b.getBookName());
         bookAuthor.setText(b.getBookAuthor());
         this.catagory.setText(b.getCatagory());
-        bookID.setText("ISBN:" + b.getBookID());
         this.publicationYear.setText("Publication Year: " + b.getBookPublicationYear());
-        bookImage.setImage(new Image(getClass().getResourceAsStream(b.getThumbNail())));
+        bookImage.setImage(new Image(b.getThumbNail()));
     }
 
+    public void addBooks() {
+        if( BooksDao.getInstance().add(b) == 1) {
+            Platform.runLater(() -> {
+                APISearchController.getSearchAPI().close();
+            });
+        }
+
+    }
 }

@@ -86,6 +86,8 @@
 .APISearchView {
     -fx-background-color: #ffffff;
     -fx-background-radius: 8;
+    -fx-border-color: #000000;
+    -fx-border-width: 1 1 1 1;
 }
 
 .bookShortInfo {

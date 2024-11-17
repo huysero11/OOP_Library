@@ -24,16 +24,32 @@ public class Books {
         }
     }
 
-    private String bookID;
+    @SerializedName("industryIdentifiers")
+    private List<ISBN> isbn = new ArrayList<>();
+    static class ISBN {
+        @SerializedName("type")
+        private String type;
+
+        @SerializedName("identifier")
+        private String identifier;
+
+        public String getIdentifier() {
+            return identifier;
+        }
+
+        public void setIdentifier(String identifier) {
+            this.identifier = identifier;
+        }
+    }
+
     @SerializedName("title")
     private String bookName;
     @SerializedName("authors")
     private List<String> authors = new ArrayList<>();   
     @SerializedName("publishedDate")
     private String bookPublicationYear;
-    private String thumbNail;
     @SerializedName("categories")
-    private List<String> categories;
+    private List<String> categories = new ArrayList<>();
     @SerializedName("description")
     private String description;
     transient private LocalDate borrowedDate;
@@ -44,16 +60,21 @@ public class Books {
 
     public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail,
             String catagory, String description, LocalDate borrowedDate, LocalDate returnDate, boolean borrowed,
-            User borrowerInfo) {
-        this.bookID = bookID;
+            User borrowerInfo) { 
+        ISBN isbn = new ISBN();
+        isbn.setIdentifier(bookID);
+        this.isbn.add(isbn);
         this.bookName = bookName;
+        authors.add(bookAuthor);
         this.bookPublicationYear = bookPublicationYear;
-        this.thumbNail = thumbNail;
+        categories.add(catagory);
         this.description = description;
         this.borrowedDate = borrowedDate;
         this.returnDate = returnDate;
         this.borrowed = borrowed;
         this.borrowerInfo = borrowerInfo;
+        image = new Image();
+        image.setThumbnail(thumbNail);
     }
 
 
@@ -63,20 +84,29 @@ public class Books {
 
     public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail, LocalDate borrowedDate,
             LocalDate returnDate) {
-        this.bookID = bookID;
         this.bookName = bookName;
+        authors.add(bookAuthor);
         this.bookPublicationYear = bookPublicationYear;
         this.borrowedDate = borrowedDate;
         this.returnDate = returnDate;
-        this.thumbNail = thumbNail;
+        image = new Image();
+        ISBN isbn = new ISBN();
+        isbn.setIdentifier(bookID);
+        this.isbn.add(isbn);
+        image.setThumbnail(thumbNail);
     }
 
     public String getBookID() {
-        return bookID;
+        if (isbn != null && !isbn.isEmpty()) {
+            return isbn.get(0).getIdentifier();
+        }
+        return "Unidentified";
     }
 
     public void setBookID(String bookID) {
-        this.bookID = bookID;
+        ISBN isbn = new ISBN();
+        isbn.setIdentifier(bookID);
+        this.isbn.add(isbn);
     }
 
     public String getBookName() {
@@ -123,11 +153,11 @@ public class Books {
     }
 
     public String getThumbNail() {
-        return thumbNail;
+        return image.getThumbnail();
     }
 
     public void setThumbNail(String thumbNail) {
-        this.thumbNail = thumbNail;
+        //this.thumbNail = thumbNail;
     }
 
     public String getCatagory() {
@@ -167,34 +197,7 @@ public class Books {
 
     private static List<Books> featuredBooks() {
         List<Books> listB = new ArrayList<>();
-        Books b1 = new Books("123", "Chí Phèo", 
-                    "Nam Cao", null, 
-                    "images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg", null, null);
-        Books b2 = new Books(null, "Hai đứa trẻ",   
-                    "Thạch Lam", null, "images/2024_06_10_11_08_25_1-390x510.png", null, null);
-        Books b3 = new Books(null,      
-                    "Men&Women", "Someone", null, 
-                    "images/81RfW9mFkEL._AC_UF1000,1000_QL80_.jpg", null, null);
-        listB.add(b1);
-        listB.add(b2);
-        listB.add(b3);
-        Books b4 = new Books(null,      
-        "Men&Women", "Someone", null, 
-        "images/81RfW9mFkEL._AC_UF1000,1000_QL80_.jpg", null, null);
-        Books b5 = new Books(null,      
-        "Men&Women", "Someone", null, 
-        "images/81RfW9mFkEL._AC_UF1000,1000_QL80_.jpg", null, null);
-        listB.add(b4);
-        listB.add(b5);
-        listB.add(b1);
-        listB.add(b2);
-        listB.add(b3);
-        listB.add(b4);
-        listB.add(b5);
-        listB.add(b1);
-        b1.setBookPublicationYear("1941");
-        b1.setCatagory(Arrays.asList("Truyện ngắn"));
-        b1.setDescription("Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Chí Phèo cũng là tên nhân vật chính của truyện.");
+        listB = BooksDao.getInstance().getAll();
         return listB;
     }
 

@@ -29,7 +29,7 @@ public class bookCardController {
     private DashboardController dashboardController;
 
     public void setData(Books b, DashboardController dashboardController) {
-        Image image = new Image(getClass().getResourceAsStream(b.getThumbNail()));
+        Image image = new Image(b.getThumbNail());
         System.out.println(image.getUrl());
         bookImage.setImage(image);
         bookName.setText(b.getBookName());

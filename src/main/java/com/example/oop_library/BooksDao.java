@@ -45,7 +45,11 @@ public class BooksDao implements DAOInterface<Books> {
             preparedStatement.setString(8, obj.getDescription());
             preparedStatement.setString(9, obj.getThumbNail());
             preparedStatement.setString(10, obj.getCatagory());
-            preparedStatement.setInt(11, obj.getBorrowerInfo() != null ? obj.getBorrowerInfo().getId() : 0);
+            if (obj.getBorrowerInfo() != null) {
+                preparedStatement.setInt(11, obj.getBorrowerInfo().getId());
+            } else {
+                preparedStatement.setNull(11, java.sql.Types.INTEGER); // Set NULL for the foreign key
+            }
 
             res = preparedStatement.executeUpdate();
             System.out.println("Affected rows: " + res);

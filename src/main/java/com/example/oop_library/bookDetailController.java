@@ -47,7 +47,7 @@ public class bookDetailController {
         bookID.setText("ISBN:" + b.getBookID());
         this.description.setText(b.getDescription());
         this.publicationYear.setText("Publication Year: " + b.getBookPublicationYear());
-        bookImage.setImage(new Image(getClass().getResourceAsStream(b.getThumbNail())));
+        bookImage.setImage(new Image(b.getThumbNail()));
         this.dashboardController = dashboardController;
     }
 

@@ -76,9 +76,11 @@ public class AddBookGoogleApiModalController {
         // You can display book details in a modal or another layout.
         Books volumeInfo = book.getVolumeInfo();
         System.out.println("Selected book: " + volumeInfo.getBookName());
+        System.out.println("ID: " + volumeInfo.getBookID());
         System.out.println("Author: " + volumeInfo.getBookAuthor());
-        System.out.println("Description: " + volumeInfo.getDescription());
         System.out.println("Thumbnail: " + volumeInfo.getThumbNail());
         System.out.println("Category: " + volumeInfo.getCatagory());
+        System.out.println("ISBN: " + volumeInfo.getBookID());
+        System.out.println("Description: " + volumeInfo.getDescription());
     }
 }
