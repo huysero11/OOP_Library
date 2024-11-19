@@ -110,8 +110,6 @@ public class DashboardController implements Initializable {
     }
 
     public void switchToAdmin() {
-        oldCenterArea.getChildren().clear();
-        oldCenterArea.getChildren().addAll(centerArea.getChildren());
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("AdminView.fxml"));

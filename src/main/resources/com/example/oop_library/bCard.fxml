@@ -7,9 +7,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="bookCard" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="193.0" spacing="8.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.bookCardController" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" onMouseClicked = "#handleMouseClick">
+
+<VBox fx:id="bookCard" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseClick" onMouseEntered="#handleMouseEnter" onMouseExited="#handleMouseExit" prefHeight="327.0" prefWidth="193.0" spacing="8.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.bookCardController">
    <children>
-      <ImageView fx:id="bookImage" fitHeight="279.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bookImage" fitHeight="261.0" fitWidth="166.0" pickOnBounds="true" smooth="false" VBox.vgrow="ALWAYS">
          <image>
             <Image url="@images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
          </image>
