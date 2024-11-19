@@ -12,10 +12,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" alignment="CENTER" prefHeight="500" prefWidth="1067" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
+<StackPane fx:id="rootPane" alignment="CENTER" prefHeight="678.0" prefWidth="1432.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.LoginController">
    <children>
       <!-- Background Image -->
-      <ImageView fitHeight="${rootPane.height}" fitWidth="${rootPane.width}" pickOnBounds="true" preserveRatio="false" StackPane.alignment="CENTER">
+      <ImageView fitHeight="680.0" fitWidth="1432.0" pickOnBounds="true" preserveRatio="false" StackPane.alignment="CENTER">
          <image>
             <Image url="@loginViewBackground.jpg" />
          </image>

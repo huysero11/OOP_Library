@@ -52,7 +52,7 @@ public class APISearchController {
 
     public void CreateSearchAPIBooksStage() {
 
-        searchAPI.initStyle(StageStyle.TRANSPARENT);
+//        searchAPI.initStyle(StageStyle.TRANSPARENT);
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("APISearchView.fxml"));
