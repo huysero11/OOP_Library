@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class DashboardController implements Initializable{
@@ -85,8 +84,6 @@ public class DashboardController implements Initializable{
     }
 
     public void switchToAdmin() {
-        oldCenterArea.getChildren().clear();
-        oldCenterArea.getChildren().addAll(centerArea.getChildren());
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("AdminView.fxml"));
