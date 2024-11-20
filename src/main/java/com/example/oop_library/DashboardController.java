@@ -1,8 +1,7 @@
 package com.example.oop_library;
 
-import java.util.*;
-
 import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.beans.binding.NumberExpression;
@@ -14,7 +13,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-public class DashboardController implements Initializable{
+public class DashboardController implements Initializable {
 
     @FXML
     private VBox centerArea;

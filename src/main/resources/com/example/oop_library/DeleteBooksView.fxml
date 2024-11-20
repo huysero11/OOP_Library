@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -23,20 +25,30 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="titleField" prefHeight="50.0" prefWidth="670.0" styleClass="search-container" stylesheets="@Style.css" VBox.vgrow="ALWAYS" />
-      <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearch" prefHeight="43.0" prefWidth="890.0" stylesheets="@Style.css" text="Search" VBox.vgrow="ALWAYS">
-         <styleClass>
-            <String fx:value="books-button" />
-            <String fx:value="button-span" />
-         </styleClass>
-      </Button>
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="44.0" prefWidth="612.0" spacing="15.0" styleClass="search-container" stylesheets="@Style.css">
+         <children>
+            <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@Style.css" text="Search By">
+               <items>
+                  <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
+                  <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
+                  <MenuItem fx:id="searchByCategory" mnemonicParsing="false" text="Category" />
+               </items>
+            </MenuButton>
+            <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/loupe.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="674.0" promptText="Search" styleClass="transparent" stylesheets="@Style.css" />
+         </children>
+      </HBox>
       <Label fx:id="errorLabel" prefHeight="0.0" prefWidth="1.0" textFill="RED" />
       <HBox alignment="CENTER">
          <children>
             <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" visible="false" />
          </children>
       </HBox>
-      <ScrollPane fx:id="scrollPane" prefHeight="368.0" prefWidth="862.0" styleClass="transparent" stylesheets="@Style.css" visible="true">
+      <ScrollPane fx:id="scrollPane" prefHeight="428.0" prefWidth="862.0" styleClass="transparent" stylesheets="@Style.css" visible="true">
          <content>
             <VBox fx:id="foundBooks" prefHeight="0.0" prefWidth="845.0" />
          </content>

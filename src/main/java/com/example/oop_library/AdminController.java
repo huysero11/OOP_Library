@@ -8,7 +8,8 @@ public class AdminController {
     }
 
     public void OpenDeleteStage() {
-        
+        DeleteBooksController deleteBooksController = new DeleteBooksController();
+        deleteBooksController.CreateSearchBooksStage();
     }
 }
 

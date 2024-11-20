@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="1063.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" stylesheets="@Style.css" text="Delete book">
+            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" stylesheets="@Style.css" text="Delete book" onMouseClicked="#OpenDeleteStage">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
