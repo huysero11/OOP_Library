@@ -41,6 +41,7 @@ public class bookDetailController {
     private DashboardController dashboardController;
 
     public void setData(Books b, DashboardController dashboardController) {
+        this.dashboardController = dashboardController;
         bookName.setText(b.getBookName());
         bookAuthor.setText(b.getBookAuthor());
         this.catagory.setText(b.getCatagory());
@@ -48,12 +49,9 @@ public class bookDetailController {
         this.description.setText(b.getDescription());
         this.publicationYear.setText("Publication Year: " + b.getBookPublicationYear());
         bookImage.setImage(new Image(b.getThumbNail()));
-        this.dashboardController = dashboardController;
     }
 
     public void handleBackButtonAction() {
-        if (dashboardController != null)
-            dashboardController.switchToDashBoard();
-            dashboardController.showFeaturedBooks();
+        dashboardController.switchToDashBoard();
     }
 }

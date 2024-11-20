@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="centerArea" prefHeight="810.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="1046.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="44.0" prefWidth="612.0" spacing="15.0" styleClass="search-container" stylesheets="@Style.css">
+               <children>
+                  <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@Style.css" text="Search By">
+                    <items>
+                      <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
+                      <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
+                      <MenuItem fx:id="searchByCategory" mnemonicParsing="false" text="Category" />
+                    </items>
+                  </MenuButton>
+                  <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/loupe.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchQuery" prefHeight="26.0" prefWidth="415.0" promptText="Search" styleClass="transparent" stylesheets="@Style.css" onKeyPressed="#searchBooks" />
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Label text="Support">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="55.0" prefWidth="26.0" />
+            <Label text="Sign out">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="48.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/account.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Pane prefHeight="19.0" prefWidth="1034.0" />
+      <Label fx:id="showText" text="    Featured Books   ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPane" prefHeight="694.0" prefWidth="1034.0" styleClass="transparent" stylesheets="@Style.css" VBox.vgrow="ALWAYS">
+         <content>
+            <GridPane fx:id="featuredBooks" prefHeight="0.0" prefWidth="0.0">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets left="15.0" right="15.0" />
+   </padding>
+</VBox>

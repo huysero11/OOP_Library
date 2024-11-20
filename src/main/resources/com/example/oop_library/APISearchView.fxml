@@ -28,7 +28,7 @@
             <String fx:value="books-button" />
             <String fx:value="button-span" />
          </styleClass></Button>
-      <Label fx:id="errorLabel" prefHeight="0.0" prefWidth="1.0" textFill="RED" />
+      <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="324.0" textFill="RED" />
       <HBox alignment="CENTER">
          <children>
             <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" visible="false" />

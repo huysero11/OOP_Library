@@ -21,22 +21,22 @@ import javafx.stage.StageStyle;
 
 public class APISearchController {
     @FXML
-    private Label errorLabel;
+    protected Label errorLabel;
 
     @FXML
-    private VBox foundBooks;
+    protected VBox foundBooks;
 
     @FXML
-    private ProgressIndicator loadingIndicator;
+    protected ProgressIndicator loadingIndicator;
 
     @FXML
     private Button searchButton;
 
     @FXML
-    private TextField titleField;
+    protected TextField titleField;
 
     @FXML
-    private ScrollPane scrollPane;
+    protected ScrollPane scrollPane;
 
     private GoogleBooksService gsbService = new GoogleBooksService();
 
@@ -50,9 +50,9 @@ public class APISearchController {
         APISearchController.searchAPI = searchAPI;
     }
 
-    public void CreateSearchAPIBooksStage() {
+    public void CreateSearchBooksStage() {
 
-//        searchAPI.initStyle(StageStyle.TRANSPARENT);
+        //searchAPI.initStyle(StageStyle.TRANSPARENT);
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("APISearchView.fxml"));

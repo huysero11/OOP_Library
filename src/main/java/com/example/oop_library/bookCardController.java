@@ -34,8 +34,8 @@ public class bookCardController {
         bookImage.setImage(image);
         bookName.setText(b.getBookName());
         bookAuthor.setText(b.getBookAuthor());
-        this.dashboardController = dashboardController;
         this.b = b;
+        this.dashboardController = dashboardController;
     }
 
     @FXML 
@@ -56,7 +56,6 @@ public class bookCardController {
 
     @FXML
     private void handleMouseClick(MouseEvent e) {
-
         dashboardController.switchToBookDetail(b);
     }
 }
