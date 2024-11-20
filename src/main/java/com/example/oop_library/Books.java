@@ -56,7 +56,6 @@ public class Books {
     transient private LocalDate returnDate;
     private boolean borrowed = false;
     private User borrowerInfo;
-    public static List<Books> featuredBooksList = new ArrayList<>(featuredBooks());
 
     public Books(String bookID, String bookName, String bookAuthor, String bookPublicationYear, String thumbNail,
             String catagory, String description, LocalDate borrowedDate, LocalDate returnDate, boolean borrowed,
@@ -195,7 +194,7 @@ public class Books {
         this.borrowerInfo = borrowerInfo;
     }
 
-    private static List<Books> featuredBooks() {
+    public static List<Books> featuredBooks() {
         List<Books> listB = new ArrayList<>();
         listB = BooksDao.getInstance().getAll();
         return listB;

@@ -4,7 +4,11 @@ public class AdminController {
 
     public void OpenSearchAPIBooksStage() {
         APISearchController apiSearchController = new APISearchController();
-        apiSearchController.CreateSearchAPIBooksStage();
+        apiSearchController.CreateSearchBooksStage();
+    }
+
+    public void OpenDeleteStage() {
+        
     }
 }
 
