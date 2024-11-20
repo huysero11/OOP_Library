@@ -21,22 +21,22 @@ import javafx.stage.StageStyle;
 
 public class APISearchController {
     @FXML
-    protected Label errorLabel;
+    private Label errorLabel;
 
     @FXML
-    protected VBox foundBooks;
+    private VBox foundBooks;
 
     @FXML
-    protected ProgressIndicator loadingIndicator;
+    private ProgressIndicator loadingIndicator;
 
     @FXML
     private Button searchButton;
 
     @FXML
-    protected TextField titleField;
+    private TextField titleField;
 
     @FXML
-    protected ScrollPane scrollPane;
+    private ScrollPane scrollPane;
 
     private GoogleBooksService gsbService = new GoogleBooksService();
 

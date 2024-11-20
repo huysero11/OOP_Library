@@ -55,7 +55,7 @@
             </Label>
          </children>
       </VBox>
-      <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" stylesheets="@Style.css" text="Add to catalog" onAction="#addBooks">
+      <Button fx:id="selectBooks" mnemonicParsing="false" onAction="#addBooks" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" stylesheets="@Style.css" text="Select book">
          <font>
             <Font size="25.0" />
          </font>

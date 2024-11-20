@@ -2,11 +2,12 @@ package com.example.oop_library;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -33,6 +34,9 @@ public class BookShortInfoController {
 
     private Books b;
 
+    @FXML
+    private Button selectBooks;
+
     public void setData(Books b) {
         this.b = b;
         bookName.setText(b.getBookName());
@@ -49,5 +53,16 @@ public class BookShortInfoController {
             });
         }
 
+    }
+
+    public void setSelectBooks(String operation) {
+        if (operation.equals("Delete")) {
+            selectBooks.setOnMouseClicked((MouseEvent event) -> {
+                if (BooksDao.getInstance().delete(b) == 1) {
+                    DeleteBooksController.getSearchAPI().close();
+                    System.out.println("Deleted!");
+                }
+            });
+        }
     }
 }
