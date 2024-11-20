@@ -5,6 +5,7 @@ import java.lang.classfile.Label;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -42,6 +43,7 @@ public class HomeController {
 
     DashboardController dashboardController;
 
+    // Chưa dùng Thread
     public void showFeaturedBooks(DashboardController dashboardController) {
         setSearchCriteria();
         scrollPane.widthProperty().addListener((obs, oldVal, newVal) -> {
@@ -75,6 +77,60 @@ public class HomeController {
         });
         this.dashboardController = dashboardController;
     }
+
+    // public void showFeaturedBooks() {
+    //     double scrollPaneWidth = scrollPane.getWidth();
+    //     featuredBooks.getChildren().clear();
+
+    //     // Create a task to load books in a background thread
+    //     Task<Void> loadBooksTask = new Task<>() {
+    //         @Override
+    //         protected Void call() throws Exception {
+    //             int column = 0;
+    //             int row = 1;
+
+    //             for (int i = 0; i < Books.featuredBooksList.size(); i++) {
+    //                 try {
+    //                     FXMLLoader fxmlLoader = new FXMLLoader();
+    //                     fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
+    //                     VBox card = fxmlLoader.load();
+    //                     bookCardController cardController = fxmlLoader.getController();
+    //                     cardController.setData(Books.featuredBooksList.get(i), DashboardController.this);
+
+    //                     // Add the card to the UI using Platform.runLater
+    //                     int finalColumn = column;
+    //                     int finalRow = row;
+    //                     Platform.runLater(() -> {
+    //                         featuredBooks.add(card, finalColumn, finalRow);
+    //                         GridPane.setMargin(card, new Insets(2));
+    //                     });
+
+    //                     column++;
+    //                     if (column == (int) (scrollPaneWidth / (card.getPrefWidth() + 2))) {
+    //                         column = 0;
+    //                         ++row;
+    //                     }
+    //                 } catch (Exception e) {
+    //                     e.printStackTrace();
+    //                 }
+    //             }
+    //             return null;
+    //         }
+    //     };
+
+    //     // Handle task success or failure
+    //     loadBooksTask.setOnFailed(event -> {
+    //         Throwable exception = loadBooksTask.getException();
+    //         if (exception != null) {
+    //             exception.printStackTrace();
+    //         }
+    //     });
+
+    //     // Run the task in a separate thread
+    //     Thread loadThread = new Thread(loadBooksTask);
+    //     loadThread.setDaemon(true); // Mark as a daemon thread to close when the app exits
+    //     loadThread.start();
+    // }
 
     public void searchBooks() {
         searchQuery.setOnKeyPressed(event -> {
