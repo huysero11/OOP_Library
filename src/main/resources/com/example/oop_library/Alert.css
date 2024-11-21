@@ -1,0 +1,61 @@
+/* Alert.css */
+
+/* Dialog Pane Background */
+.dialog-pane {
+    -fx-background-color: #eef8ee;
+    -fx-border-color: #055e05;
+    -fx-border-width: 5;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 10;
+}
+
+/* Title Styling (Sử dụng header như title) */
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #024502; /* Màu chữ cho title */
+    -fx-font-size: 20px; /* Kích thước chữ */
+    -fx-font-weight: bold; /* In đậm */
+    -fx-effect: dropshadow(gaussian, rgba(2, 69, 2, 0.5), 5, 0.3, 1, 1); /* Đổ bóng */
+    -fx-padding: 0 0 10 0; /* Khoảng cách dưới */
+    -fx-underline: true; /* Gạch chân title */
+    -fx-opacity: 0.9;
+}
+
+/* Header Text Styling */
+.dialog-pane .header-panel .header-label {
+    -fx-text-fill: #055e05; /* Màu chữ cho header text */
+    -fx-font-weight: bold; /* In đậm */
+    -fx-font-size: 18px; /* Kích thước chữ */
+    -fx-underline: true; /* Gạch chân */
+    -fx-effect: dropshadow(gaussian, rgba(5, 94, 5, 0.3), 5, 0.3, 2, 2); /* Đổ bóng */
+    -fx-padding: 0 0 10 0; /* Khoảng cách dưới */
+    -fx-opacity: 0.95;
+}
+
+/* Content Text Styling */
+.dialog-pane .content.label {
+    -fx-text-fill: #055e05;
+    -fx-font-weight: 700;
+    -fx-font-size: 14px;
+}
+
+/* Button Styling */
+.button-bar .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #055e05;
+    -fx-font-weight: 700;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-padding: 5 15;
+}
+
+.button-bar .button:hover {
+    -fx-background-color: #02e102;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-cursor: hand;
+}
+
+.button-bar .button:pressed {
+    -fx-opacity: 0.7;
+}
