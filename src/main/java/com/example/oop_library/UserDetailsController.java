@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.sql.*;
@@ -36,7 +37,7 @@ public class UserDetailsController {
     private TableColumn<BorrowedBook, Integer> idColumn;
 
     @FXML
-    private TableColumn<BorrowedBook, Image> book;
+    private TableColumn<BorrowedBook, ImageView> book;
 
     @FXML
     private TableColumn<BorrowedBook, String> name;
@@ -54,25 +55,18 @@ public class UserDetailsController {
     @FXML
     public void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        book.setCellFactory(column -> new TableCell<BorrowedBook, Image>() {
-            private final javafx.scene.image.ImageView imageView = new javafx.scene.image.ImageView();
-
+        book.setCellValueFactory(new PropertyValueFactory<>("book"));
+        book.setCellFactory(column -> new TableCell<BorrowedBook, ImageView>() {
             @Override
-            protected void updateItem(Image item, boolean empty) {
+            protected void updateItem(ImageView item, boolean empty) {
                 super.updateItem(item, empty);
-
                 if (empty || item == null) {
                     setGraphic(null);
                 } else {
-                    imageView.setImage(item);
-                    imageView.setFitWidth(50); // Chiều rộng ảnh
-                    imageView.setFitHeight(75); // Chiều cao ảnh
-                    imageView.setPreserveRatio(true);
-                    setGraphic(imageView);
+                    setGraphic(item);
                 }
             }
         });
-
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         borrowDate.setCellValueFactory(new PropertyValueFactory<>("borrowDate"));
         returnDate.setCellValueFactory(new PropertyValueFactory<>("returnDate"));
@@ -87,10 +81,13 @@ public class UserDetailsController {
 
     public void loadBookData(User user) {
         String link = "http://books.google.com/books/content?id=1YwtPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api";
-        Books.Image image = new Books.Image();
-        String name = "Harry Potter and Half-Blood Prince";
-        image.setThumbnail(link);
-        bookList.add(new BorrowedBook(1, image, name, LocalDate.now(), LocalDate.now()));
+        Image image = new Image(link);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(70);
+
+        String name = "Harry Potter and the Half-Blood Prince";
+        bookList.add(new BorrowedBook(1, imageView, name, LocalDate.now(), LocalDate.now().plusDays(7)));
         tableView.setItems(bookList);
     }
 
