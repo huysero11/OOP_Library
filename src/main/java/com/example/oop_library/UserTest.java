@@ -8,14 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 
-public class App extends Application {
-    
+public class UserTest extends Application {
+
     @Override
     public void start(@SuppressWarnings("exports") Stage arg0) throws Exception {
         // TODO Auto-generated method stub
-        Parent root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("User.fxml"));
         arg0.setTitle("Dashboard");
-        arg0.setScene(new Scene(root));
+        arg0.setScene(new Scene(root, 1063,810));
         arg0.show();
     }
 
@@ -23,55 +23,3 @@ public class App extends Application {
         launch(args);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

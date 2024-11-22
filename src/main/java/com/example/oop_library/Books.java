@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 public class Books {
 
     @SerializedName("imageLinks")
-    private Image image;
+    protected Image image;
     static class Image {
 
         @SerializedName("thumbnail")
@@ -52,8 +52,8 @@ public class Books {
     private List<String> categories = new ArrayList<>();
     @SerializedName("description")
     private String description;
-    transient private LocalDate borrowedDate;
-    transient private LocalDate returnDate;
+    transient protected LocalDate borrowedDate;
+    transient protected LocalDate returnDate;
     private boolean borrowed = false;
     private User borrowerInfo;
 

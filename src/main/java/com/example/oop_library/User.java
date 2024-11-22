@@ -31,6 +31,12 @@ public class User {
         this.password = password;
     }
 
+    public User(int id, String name, String phoneNumber) {
+        this.name = name;
+        this.id = id;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int getId() {
         return id;
     }
@@ -85,6 +91,6 @@ public class User {
                 + ", phoneNumber = " + this.phoneNumber
                 + ", password = " + this.password
                 + ", admin = " + this.admin
-                );
+        );
     }
 }
