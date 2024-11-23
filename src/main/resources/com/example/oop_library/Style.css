@@ -130,14 +130,12 @@
     -fx-border-color: rgb(129, 218, 248);    /* Màu border khi focus */
     -fx-border-width: 2 2 2 2;
     -fx-background-color: #fff;                    /* Nền sáng khi focus */
-    -fx-box-shadow: 0 0 15px 15px rgba(129, 140, 248, 0.5); /* Box shadow khi focus */
 }
 
 /* Hiệu ứng khi hover */
 .form:hover {
     -fx-border-color: rgb(129, 195, 248);    /* Màu border khi hover */
     -fx-background-color: #fff;                    /* Nền sáng khi hover */
-    -fx-box-shadow: 0 0 15px 15px rgba(113, 171, 248, 0.5); /* Box shadow khi hover */
 }
 
 .Borrowed-Books-Info {

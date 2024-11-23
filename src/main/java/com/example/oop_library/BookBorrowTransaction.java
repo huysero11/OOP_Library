@@ -7,7 +7,7 @@ public class BookBorrowTransaction {
 
     private ImageView bookImage;
 
-    public String borrowBooks(Books books, User user) {
+    public String borrowBooks(Books b, User user) {
         // if (this.getStatus() == AccountStatus.Banned) {
         //     System.out.println("You are banned.");
         //     System.out.println("Please settle the fine to continue using the service!");
