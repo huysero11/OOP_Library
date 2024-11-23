@@ -52,11 +52,11 @@
       </Pane>
       <TableView fx:id="tableView" prefHeight="667.0" prefWidth="1063.0">
         <columns>
-          <TableColumn fx:id="idColumn" prefWidth="56.53332823514938" text="No." />
-          <TableColumn fx:id="book" minWidth="0.0" prefWidth="142.13334274291992" text="Book" />
-            <TableColumn fx:id="name" minWidth="0.0" prefWidth="338.6666717529297" text="Name" />
-            <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="262.0" text="Borrow Date" />
-            <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="262.0" text="Return Date" />
+          <TableColumn fx:id="idColumn" prefWidth="56.53332823514938" resizable="false" text="No." />
+          <TableColumn fx:id="book" minWidth="0.0" prefWidth="142.13334274291992" resizable="false" text="Book" />
+            <TableColumn fx:id="name" minWidth="0.0" prefWidth="338.6666717529297" resizable="false" text="Name" />
+            <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="262.0" resizable="false" text="Borrow Date" />
+            <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="262.0" resizable="false" text="Return Date" />
         </columns>
       </TableView>
    </children>
