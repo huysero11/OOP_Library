@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -40,6 +41,9 @@ public class HomeController {
 
     @FXML
     private TextField searchQuery;
+
+    @FXML
+    private Pane centerArea;
 
     private String searchCriteria = "book_name like ";
 
@@ -173,6 +177,21 @@ public class HomeController {
                     }
                 });
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void switchToSupport() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/Support.fxml"));
+            VBox supportView = fxmlLoader.load();
+
+            SupportController supportController = fxmlLoader.getController();
+            supportController.setHomeController(this);
+
+            centerArea.getChildren().clear();
+            centerArea.getChildren().add(supportView);
         } catch (Exception e) {
             e.printStackTrace();
         }

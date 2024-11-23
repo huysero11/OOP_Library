@@ -7,9 +7,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
 public class App extends Application {
-    
+
     @Override
     public void start(@SuppressWarnings("exports") Stage arg0) throws Exception {
         // TODO Auto-generated method stub
@@ -23,55 +22,3 @@ public class App extends Application {
         launch(args);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
