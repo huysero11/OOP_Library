@@ -1,9 +1,5 @@
 package com.example.oop_library;
 
-import java.lang.classfile.Label;
-
-import java.util.ArrayList;
-import java.util.List;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -15,7 +11,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class HomeController {
     @FXML
@@ -43,94 +45,77 @@ public class HomeController {
 
     DashboardController dashboardController;
 
-    // Chưa dùng Thread
     public void showFeaturedBooks(DashboardController dashboardController) {
+        this.dashboardController = dashboardController;
         setSearchCriteria();
-        scrollPane.widthProperty().addListener((obs, oldVal, newVal) -> {
-            double scrollPaneWidth = scrollPane.getWidth();
-            featuredBooks.getChildren().clear();
 
-            int column = 0;
-            int row = 1;
-            try {
+        // Ensure dynamic resizing of GridPane
+        featuredBooks.setMinHeight(Region.USE_COMPUTED_SIZE);
+        featuredBooks.setPrefHeight(Region.USE_COMPUTED_SIZE);
+        featuredBooks.setMaxHeight(Region.USE_PREF_SIZE);
+
+        // Set ScrollPane properties
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPannable(true); // Enables dragging to scroll
+
+        // Use a thread pool for parallel loading
+        ExecutorService executor = Executors.newFixedThreadPool(4); // Adjust thread pool size as needed
+
+        Task<Void> loadBooksTask = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
                 List<Books> featuredBooksList = Books.featuredBooks();
-                int s = featuredBooksList.size();
-                for (int i = 0; i < s; i++) {
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
-                    VBox card = fxmlLoader.load();
-                    bookCardController cardController = fxmlLoader.getController();
-                    cardController.setData(featuredBooksList.get(i), dashboardController);
-                    featuredBooks.add(card, column, row);
-                    GridPane.setMargin(card, new Insets(1));
-                    column++;
-                    System.out.println(scrollPaneWidth + " " + scrollPaneWidth/(card.getPrefWidth() + 2));
-                    if (column == (int) (scrollPaneWidth/(card.getPrefWidth() + 2))) {
-                        column = 0;
-                        ++row;
-                    }
+                double scrollPaneWidth = scrollPane.getWidth();
+
+                AtomicInteger column = new AtomicInteger(0);
+                AtomicInteger row = new AtomicInteger(1);
+
+                for (Books book : featuredBooksList) {
+                    if (isCancelled()) break;
+
+                    executor.submit(() -> {
+                        try {
+                            FXMLLoader fxmlLoader = new FXMLLoader();
+                            fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
+                            VBox card = fxmlLoader.load();
+                            bookCardController cardController = fxmlLoader.getController();
+                            cardController.setData(book, dashboardController);
+
+                            Platform.runLater(() -> {
+                                featuredBooks.add(card, column.get(), row.get());
+                                GridPane.setMargin(card, new Insets(1));
+
+                                column.incrementAndGet();
+                                if (column.get() == (int) (scrollPaneWidth / (card.getPrefWidth() + 2))) {
+                                    column.set(0);
+                                    row.incrementAndGet();
+
+                                    // Ensure dynamic height adjustment
+                                    featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
                 }
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
+
+                executor.shutdown();
+                return null;
+            }
+        };
+
+        loadBooksTask.setOnFailed(event -> {
+            Throwable exception = loadBooksTask.getException();
+            if (exception != null) {
+                exception.printStackTrace();
             }
         });
-        this.dashboardController = dashboardController;
+
+        Thread loadThread = new Thread(loadBooksTask);
+        loadThread.setDaemon(true); // Ensures the thread stops when the application exits
+        loadThread.start();
     }
-
-    // public void showFeaturedBooks() {
-    //     double scrollPaneWidth = scrollPane.getWidth();
-    //     featuredBooks.getChildren().clear();
-
-    //     // Create a task to load books in a background thread
-    //     Task<Void> loadBooksTask = new Task<>() {
-    //         @Override
-    //         protected Void call() throws Exception {
-    //             int column = 0;
-    //             int row = 1;
-
-    //             for (int i = 0; i < Books.featuredBooksList.size(); i++) {
-    //                 try {
-    //                     FXMLLoader fxmlLoader = new FXMLLoader();
-    //                     fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
-    //                     VBox card = fxmlLoader.load();
-    //                     bookCardController cardController = fxmlLoader.getController();
-    //                     cardController.setData(Books.featuredBooksList.get(i), DashboardController.this);
-
-    //                     // Add the card to the UI using Platform.runLater
-    //                     int finalColumn = column;
-    //                     int finalRow = row;
-    //                     Platform.runLater(() -> {
-    //                         featuredBooks.add(card, finalColumn, finalRow);
-    //                         GridPane.setMargin(card, new Insets(2));
-    //                     });
-
-    //                     column++;
-    //                     if (column == (int) (scrollPaneWidth / (card.getPrefWidth() + 2))) {
-    //                         column = 0;
-    //                         ++row;
-    //                     }
-    //                 } catch (Exception e) {
-    //                     e.printStackTrace();
-    //                 }
-    //             }
-    //             return null;
-    //         }
-    //     };
-
-    //     // Handle task success or failure
-    //     loadBooksTask.setOnFailed(event -> {
-    //         Throwable exception = loadBooksTask.getException();
-    //         if (exception != null) {
-    //             exception.printStackTrace();
-    //         }
-    //     });
-
-    //     // Run the task in a separate thread
-    //     Thread loadThread = new Thread(loadBooksTask);
-    //     loadThread.setDaemon(true); // Mark as a daemon thread to close when the app exits
-    //     loadThread.start();
-    // }
 
     public void searchBooks() {
         searchQuery.setOnKeyPressed(event -> {
@@ -152,46 +137,43 @@ public class HomeController {
         });
         searchByCategory.setOnAction(event -> {
             searchBy.setText("By Category");
-            searchCriteria = "catagory like ";
+            searchCriteria = "category like ";
         });
     }
 
     public void performSearch(String searchCriteria, String searchQuery) {
         System.out.println(searchCriteria + " " + String.format("'%%%s%%'", searchQuery.trim()));
-        ArrayList<Books> list = BooksDao.getInstance().getByCondition(searchCriteria + String.format("'%%%s%%'", searchQuery.trim()));
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i).getBookName());
-        }
-
+        List<Books> list = BooksDao.getInstance().getByCondition(searchCriteria + String.format("'%%%s%%'", searchQuery.trim()));
         featuredBooks.getChildren().clear();
-            double scrollPaneWidth = scrollPane.getWidth();
-            featuredBooks.getChildren().clear();
+        double scrollPaneWidth = scrollPane.getWidth();
 
-            int column = 0;
-            int row = 1;
-            try {
-                ArrayList<Books> featuredBooksList = list;
-                int s = featuredBooksList.size();
-                for (int i = 0; i < s; i++) {
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
-                    VBox card = fxmlLoader.load();
-                    bookCardController cardController = fxmlLoader.getController();
-                    cardController.setData(featuredBooksList.get(i), dashboardController);
-                    featuredBooks.add(card, column, row);
+        AtomicInteger column = new AtomicInteger(0);
+        AtomicInteger row = new AtomicInteger(1);
+
+        try {
+            for (Books book : list) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
+                VBox card = fxmlLoader.load();
+                bookCardController cardController = fxmlLoader.getController();
+                cardController.setData(book, dashboardController);
+
+                Platform.runLater(() -> {
+                    featuredBooks.add(card, column.get(), row.get());
                     GridPane.setMargin(card, new Insets(1));
-                    column++;
-                    System.out.println(scrollPaneWidth + " " + scrollPaneWidth/(card.getPrefWidth() + 2));
-                    if (column == (int) (scrollPaneWidth/(card.getPrefWidth() + 2))) {
-                        column = 0;
-                        ++row;
+
+                    column.incrementAndGet();
+                    if (column.get() == (int) (scrollPaneWidth / (card.getPrefWidth() + 2))) {
+                        column.set(0);
+                        row.incrementAndGet();
+
+                        // Ensure dynamic height adjustment
+                        featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
                     }
-                }
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
+                });
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
-
-

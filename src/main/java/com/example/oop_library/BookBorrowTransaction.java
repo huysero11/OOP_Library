@@ -1,10 +1,13 @@
 package com.example.oop_library;
 
+import javax.swing.text.html.ImageView;
 import java.time.LocalDate;
 
 public class BookBorrowTransaction {
-    
-    public String borrowBooks(Books b, User user) {
+
+    private ImageView bookImage;
+
+    public String borrowBooks(Books books, User user) {
         // if (this.getStatus() == AccountStatus.Banned) {
         //     System.out.println("You are banned.");
         //     System.out.println("Please settle the fine to continue using the service!");
@@ -30,5 +33,13 @@ public class BookBorrowTransaction {
             System.out.println("Completed!");
         } 
         return String.format("Success! Please remember to return this book by %s", b.getReturnDate());
+    }
+
+    public ImageView getBookImage() {
+        return bookImage;
+    }
+
+    public void setBookImage(ImageView bookImage) {
+        this.bookImage = bookImage;
     }
 }
