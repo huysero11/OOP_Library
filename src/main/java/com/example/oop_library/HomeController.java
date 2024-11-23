@@ -65,7 +65,7 @@ public class HomeController {
             @Override
             protected Void call() throws Exception {
                 List<Books> featuredBooksList = Books.featuredBooks();
-                double scrollPaneWidth = scrollPane.getWidth();
+                double scrollPaneWidth = scrollPane.getPrefWidth();
 
                 AtomicInteger column = new AtomicInteger(0);
                 AtomicInteger row = new AtomicInteger(1);
@@ -86,6 +86,7 @@ public class HomeController {
                                 GridPane.setMargin(card, new Insets(1));
 
                                 column.incrementAndGet();
+                                System.out.println(scrollPaneWidth + " " + (scrollPaneWidth / card.getPrefWidth() + 2));
                                 if (column.get() == (int) (scrollPaneWidth / (card.getPrefWidth() + 2))) {
                                     column.set(0);
                                     row.incrementAndGet();
