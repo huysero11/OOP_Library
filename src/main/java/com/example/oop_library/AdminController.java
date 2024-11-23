@@ -1,5 +1,7 @@
 package com.example.oop_library;
 
+import javafx.application.Platform;
+
 public class AdminController {
 
     public void OpenSearchAPIBooksStage() {
@@ -9,7 +11,12 @@ public class AdminController {
 
     public void OpenDeleteStage() {
         DeleteBooksController deleteBooksController = new DeleteBooksController();
-        deleteBooksController.CreateSearchBooksStage();
+        deleteBooksController.CreateSearchBooksStage("Delete");
+    }
+
+    public void OpenUpdateStage() {
+        DeleteBooksController deleteBooksController = new DeleteBooksController();
+        deleteBooksController.CreateSearchBooksStage("Update");
     }
 }
 

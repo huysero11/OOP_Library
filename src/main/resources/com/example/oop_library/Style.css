@@ -1,5 +1,5 @@
 .white-background{
-    -fx-background-color: '#fff';
+    -fx-background-color: #ffffff;
 }
 
 .right-side-border{
@@ -16,6 +16,13 @@
     -fx-border-color: #000000;
     -fx-border-radius:30;
     -fx-background-color: #1f8387;
+    -fx-background-radius: 30;
+}
+
+.borrowed-button{
+    -fx-border-color: #000000;
+    -fx-border-radius:30;
+    -fx-background-color: #bebebe;
     -fx-background-radius: 30;
 }
 
@@ -41,6 +48,10 @@
 }
 
 .menu {
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.menu:hover {
     -fx-background-color: #ecfbff;
     -fx-background-radius: 30;
 }
@@ -91,7 +102,7 @@
 }
 
 .bookShortInfo {
-    -fx-border-color: #6f6f6f;
+    -fx-border-color: #eae9e9;
     -fx-border-width: 1 1 1 1;
     -fx-border-radius: 2;
     -fx-background-color: #ffffff;
@@ -103,4 +114,39 @@
     -fx-border-width: 0 1 0 0;
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-background-radius: 30;
+}
+
+/* Lớp CSS cho TextField */
+.form {
+    -fx-border-color: #838383;
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-border-radius: 5;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+}
+
+/* Hiệu ứng khi TextField được focus */
+.form:focused {
+    -fx-border-color: rgb(129, 218, 248);    /* Màu border khi focus */
+    -fx-border-width: 2 2 2 2;
+    -fx-background-color: #fff;                    /* Nền sáng khi focus */
+    -fx-box-shadow: 0 0 15px 15px rgba(129, 140, 248, 0.5); /* Box shadow khi focus */
+}
+
+/* Hiệu ứng khi hover */
+.form:hover {
+    -fx-border-color: rgb(129, 195, 248);    /* Màu border khi hover */
+    -fx-background-color: #fff;                    /* Nền sáng khi hover */
+    -fx-box-shadow: 0 0 15px 15px rgba(113, 171, 248, 0.5); /* Box shadow khi hover */
+}
+
+.Borrowed-Books-Info {
+
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-width: 0 0 0 0;
+}
+
+.return-books-button {
+    -fx-background-color: #bd5355;
 }

@@ -65,7 +65,9 @@ public class BooksDao implements DAOInterface<Books> {
     public int update(Books obj) {
         int res = 0;
 
-        String updateQuery = "UPDATE books SET status = ?, user_id = ?, borrowed_date = ?, return_date = ? WHERE book_id = ?";
+        String updateQuery = "UPDATE books SET status = ?, user_id = ?, borrowed_date = ?, return_date = ?, book_id = ?, book_name = ?, "
+                            + "book_author = ?, book_publication_year = ?, book_description = ?, thumbnail = ?, catagory = ?"
+                            + " WHERE book_id = ?";
 
         try (Connection connection = MySQLConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
@@ -83,6 +85,13 @@ public class BooksDao implements DAOInterface<Books> {
             preparedStatement.setDate(3, obj.getBorrowedDate() != null ? java.sql.Date.valueOf(obj.getBorrowedDate()) : null);
             preparedStatement.setDate(4, obj.getReturnDate() != null ? java.sql.Date.valueOf(obj.getReturnDate()) : null);
             preparedStatement.setString(5, obj.getBookID());
+            preparedStatement.setString(6, obj.getBookName());
+            preparedStatement.setString(7, obj.getBookAuthor());
+            preparedStatement.setString(8, obj.getBookPublicationYear());
+            preparedStatement.setString(9, obj.getDescription());
+            preparedStatement.setString(10, obj.getThumbNail());
+            preparedStatement.setString(11, obj.getCatagory());
+            preparedStatement.setString(12, obj.getBookID());
 
             res = preparedStatement.executeUpdate();
             System.out.println("Affected rows: " + res);

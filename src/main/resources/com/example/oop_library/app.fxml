@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,74 +27,90 @@
                         <Insets bottom="150.0" />
                      </VBox.margin>
                   </ImageView>
-                  <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToDashBoard" prefHeight="45.0" prefWidth="200.0" spacing="20.0" styleClass="menu" stylesheets="@Style.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/home.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="39.0" prefWidth="178.0" text="Dashboard">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets top="3.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="392.0" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/category.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="39.0" prefWidth="178.0" text="Catagory">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets top="3.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="416.0" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/discipline.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="39.0" prefWidth="178.0" text="Books borrowed">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets top="3.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="461.0" onMouseClicked="#switchToAdmin" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/administrator.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="39.0" prefWidth="178.0" text="Admin">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets top="3.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
+                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToDashBoard" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/home.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="39.0" prefWidth="178.0" text="Dashboard">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/category.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="39.0" prefWidth="178.0" text="Catagory">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton layoutX="91.0" layoutY="425.0" mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/discipline.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="39.0" prefWidth="178.0" text="Books borrowed" onMouseClicked="#switchToBorrowedBooks">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton layoutX="91.0" layoutY="775.0" mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToAdmin" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/administrator.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="39.0" prefWidth="178.0" text="Admin">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
                   <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
                <padding>

@@ -23,7 +23,7 @@ public class SessionManager {
             try {
                 // Get info about user's borrowed books list. 
                 String condition = new String("user_id = " + currentUser.getId());
-                currentUser.setBorrowedBooks(BooksDao.getInstance().getByCondition(condition));
+                //currentUser.setBorrowedBooks(BooksDao.getInstance().getByCondition(condition));
             } catch (Exception e) {
                 // TODO: handle exception
                 e.printStackTrace();

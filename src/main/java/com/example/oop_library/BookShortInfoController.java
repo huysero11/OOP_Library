@@ -2,6 +2,7 @@ package com.example.oop_library;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -56,6 +57,7 @@ public class BookShortInfoController {
     }
 
     public void setSelectBooks(String operation) {
+        selectBooks.setOnAction(null);
         if (operation.equals("Delete")) {
             selectBooks.setOnMouseClicked((MouseEvent event) -> {
                 if (BooksDao.getInstance().delete(b) == 1) {
@@ -63,6 +65,12 @@ public class BookShortInfoController {
                     System.out.println("Deleted!");
                 }
             });
+        } else if (operation.equals("Update")) {
+            selectBooks.setOnMouseClicked((MouseEvent event) -> {
+                BookFormController bookFormController = new BookFormController();
+                bookFormController.CreateUpdateBooksFormStage(b);
+            });
         }
     }
+
 }

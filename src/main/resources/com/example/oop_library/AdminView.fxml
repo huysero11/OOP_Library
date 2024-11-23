@@ -33,7 +33,7 @@
                   <Insets right="5.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="151.0" stylesheets="@Style.css" text="Update book">
+            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="151.0" stylesheets="@Style.css" text="Update book" onMouseClicked="#OpenUpdateStage">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />

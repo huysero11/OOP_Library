@@ -69,4 +69,19 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void switchToBorrowedBooks() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("BorrowedBooks.fxml"));
+            VBox p = fxmlLoader.load();
+            BorrowedBooksController borrowedBooksController = fxmlLoader.getController();
+            borrowedBooksController.showBorrowedBooks();
+            centerArea.getChildren().clear();
+            centerArea.getChildren().add(p);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    }
 }

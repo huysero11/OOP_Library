@@ -8,7 +8,6 @@ public class User {
     private String phoneNumber;
     private String password;
     private boolean admin = false;
-    private ArrayList<Books> borrowedBooks = new ArrayList<>();
 
     public User(int id, String name, String phoneNumber, String password, boolean admin) {
         this.id = id;
@@ -72,13 +71,8 @@ public class User {
     }
 
     public ArrayList<Books> getBorrowedBooks() {
-        return borrowedBooks;
+        return BooksDao.getInstance().getByCondition("user_id = " + this.id);
     }
-
-    public void setBorrowedBooks(ArrayList<Books> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
-    }
-
 
     public String toString() {
         return ("id = " + this.id + ", name = " + this.name

@@ -23,7 +23,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class DeleteBooksController {
+public class UpdateBooksController {
 
     @FXML
     private Label errorLabel;
@@ -67,7 +67,7 @@ public class DeleteBooksController {
     }
 
     public static void setSearchAPI(Stage searchDelete) {
-        DeleteBooksController.searchDelete = searchDelete;
+        UpdateBooksController.searchDelete = searchDelete;
     }
 
     public void CreateSearchBooksStage(String stageName) {
@@ -80,9 +80,9 @@ public class DeleteBooksController {
             Parent root = fxmlLoader.load();
             searchDelete.setScene(new Scene(root, 880, 618));
             searchDelete.show();
-            DeleteBooksController deleteBooksController = fxmlLoader.getController();
-            deleteBooksController.setSearchCriteria();
-            deleteBooksController.getStageName().setText(stageName + " Available Books");
+            UpdateBooksController updateBooksController = fxmlLoader.getController();
+            updateBooksController.setSearchCriteria();
+            updateBooksController.getStageName().setText(stageName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,12 +119,6 @@ public class DeleteBooksController {
             System.out.println(list.get(i).getBookName());
         }
 
-        String input = stageName.getText();
-        String[] words = input.split(" ");
-        String firstWord = words.length > 0 ? words[0] : "";
-
-        System.out.println(firstWord);
-
         foundBooks.getChildren().clear();
         for (Books b : list) {
             try {
@@ -133,7 +127,7 @@ public class DeleteBooksController {
                 HBox p = fxmlLoader.load();
                 BookShortInfoController bookShortInfoController = fxmlLoader.getController();
                 bookShortInfoController.setData(b);
-                bookShortInfoController.setSelectBooks(firstWord);
+                bookShortInfoController.setSelectBooks("Update");
                 foundBooks.getChildren().add(p);
             } catch (Exception e) {
                 // TODO: handle exception

@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -89,11 +90,11 @@
                         <Insets bottom="28.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@Style.css" text="BORROW">
+                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" stylesheets="@Style.css" text="BORROW">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
-                  </Button>
+                  </ToggleButton>
                </children>
             </VBox>
          </children>
