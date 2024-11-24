@@ -55,6 +55,19 @@ public class UserDetailsController {
     @FXML
     public void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idColumn.setCellFactory(column -> new TableCell<BorrowedBook, Integer>() {
+            @Override
+            protected void updateItem(Integer item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toString());
+                    setStyle("-fx-alignment: CENTER;");
+                }
+            }
+        });
+
         book.setCellValueFactory(new PropertyValueFactory<>("book"));
         book.setCellFactory(column -> new TableCell<BorrowedBook, ImageView>() {
             @Override
@@ -64,13 +77,55 @@ public class UserDetailsController {
                     setGraphic(null);
                 } else {
                     setGraphic(item);
+                    setStyle("-fx-alignment: CENTER;"); // Căn giữa
                 }
             }
         });
+
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        name.setCellFactory(column -> new TableCell<BorrowedBook, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item);
+                    setStyle("-fx-alignment: CENTER;");
+                }
+            }
+        });
+
+        // Cột Ngày mượn (căn giữa)
         borrowDate.setCellValueFactory(new PropertyValueFactory<>("borrowDate"));
+        borrowDate.setCellFactory(column -> new TableCell<BorrowedBook, LocalDate>() {
+            @Override
+            protected void updateItem(LocalDate item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toString());
+                    setStyle("-fx-alignment: CENTER;");
+                }
+            }
+        });
+
         returnDate.setCellValueFactory(new PropertyValueFactory<>("returnDate"));
+        returnDate.setCellFactory(column -> new TableCell<BorrowedBook, LocalDate>() {
+            @Override
+            protected void updateItem(LocalDate item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.toString());
+                    setStyle("-fx-alignment: CENTER;");
+                }
+            }
+        });
     }
+
 
 
     public void setData(User user, UserController userController) {
@@ -80,14 +135,29 @@ public class UserDetailsController {
     }
 
     public void loadBookData(User user) {
-        String link = "http://books.google.com/books/content?id=1YwtPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api";
-        Image image = new Image(link);
-        ImageView imageView = new ImageView(image);
-        imageView.setFitHeight(100);
-        imageView.setFitWidth(70);
+        try {
+            Connection connection = MySQLConnection.getConnection();
+            String query = "SELECT thumbnail, book_name, borrowed_date, return_date FROM books WHERE user_id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, user.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            int id = 0;
+            while (resultSet.next()) {
+                id++;
+                String thumbnail = resultSet.getString("thumbnail");
+                Image image = new Image(thumbnail);
+                ImageView imageView = new ImageView(image);
+                imageView.setFitHeight(100);
+                imageView.setFitWidth(70);
+                String bookName = resultSet.getString("book_name");
+                LocalDate borrowedDate = resultSet.getDate("borrowed_date").toLocalDate();
+                LocalDate returnDate = resultSet.getDate("return_date").toLocalDate();
+                bookList.add(new BorrowedBook(id, imageView, bookName, borrowedDate, returnDate));
+            }
 
-        String name = "Harry Potter and the Half-Blood Prince";
-        bookList.add(new BorrowedBook(1, imageView, name, LocalDate.now(), LocalDate.now().plusDays(7)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         tableView.setItems(bookList);
     }
 

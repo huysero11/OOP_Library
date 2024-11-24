@@ -30,24 +30,52 @@
     -fx-border-color: #000000;
     -fx-border-radius:30;
     -fx-background-color: #ffffff;
-    -fx-background-radius: 30;
 }
 
-.transparent{
-    -fx-background-color: rgba(0, 0, 0, 0);
+.right-side-border {
+    -fx-border-color: #ddd;
+    -fx-border-width: 0 1px 0 0; /* Viền bên phải */
 }
 
-.primary-color{
-    -fx-background-color: #d5ffd7;
-    -fx-border-radius: 30;
-}
-
-.card1 {
-    -fx-background-color: #fff;
-    -fx-background-radius: 10;
-}
-
+/* Menu (Hộp ngang chứa các mục) */
 .menu {
+    -fx-background-color: transparent; /* Nền trong suốt mặc định */
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand; /* Hiển thị con trỏ tay khi di chuột vào */
+}
+
+/* Hiệu ứng khi di chuột vào mục menu */
+.menu:hover {
+    -fx-background-color: #f1f1f1; /* Đổi nền sáng khi hover */
+    -fx-border-color: #a2ddff; /* Viền màu đỏ */
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+/* Hình ảnh trong menu */
+.menu ImageView {
+    -fx-opacity: 0.8; /* Hình ảnh nhạt hơn chút */
+}
+
+.menu:hover ImageView {
+    -fx-opacity: 1.0; /* Hình ảnh rõ nét khi hover */
+}
+
+/* Label trong menu */
+.menu Label {
+    -fx-text-fill: #333333; /* Màu chữ mặc định (xám đậm) */
+}
+
+.menu:hover Label {
+    -fx-text-fill: #e60000; /* Đổi màu chữ thành đỏ khi hover */
+}
+
+/* Logo (HUET Logo) */
+.ImageView {
+    -fx-border-color: #ddd; /* Viền nhạt xung quanh logo */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
     -fx-background-color: rgba(0, 0, 0, 0);
 }
 
@@ -130,12 +158,14 @@
     -fx-border-color: rgb(129, 218, 248);    /* Màu border khi focus */
     -fx-border-width: 2 2 2 2;
     -fx-background-color: #fff;                    /* Nền sáng khi focus */
+    -fx-box-shadow: 0 0 15px 15px rgba(129, 140, 248, 0.5); /* Box shadow khi focus */
 }
 
 /* Hiệu ứng khi hover */
 .form:hover {
     -fx-border-color: rgb(129, 195, 248);    /* Màu border khi hover */
     -fx-background-color: #fff;                    /* Nền sáng khi hover */
+    -fx-box-shadow: 0 0 15px 15px rgba(113, 171, 248, 0.5); /* Box shadow khi hover */
 }
 
 .Borrowed-Books-Info {
