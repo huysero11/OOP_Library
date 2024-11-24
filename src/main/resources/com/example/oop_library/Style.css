@@ -54,6 +54,8 @@
 .menu:hover {
     -fx-background-color: #ecfbff;
     -fx-background-radius: 30;
+    -fx-border-color: red;
+    -fx-border-radius: 30;
 }
 
 /* .books-button */
@@ -90,8 +92,8 @@
 }
 
 .progress-indicator {
-    /*visibility: visible; */ 
-    opacity: 1;      
+    /*visibility: visible; */
+    opacity: 1;
 }
 
 .APISearchView {
