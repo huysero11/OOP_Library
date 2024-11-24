@@ -54,9 +54,16 @@ public class HomeController {
         featuredBooks.setPrefHeight(Region.USE_COMPUTED_SIZE);
         featuredBooks.setMaxHeight(Region.USE_PREF_SIZE);
 
-        // Set ScrollPane properties
+        // Configure ScrollPane to allow vertical scrolling only
         scrollPane.setFitToWidth(true);
-        scrollPane.setPannable(true); // Enables dragging to scroll
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  // Disable horizontal scroll
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);  // Enable vertical scroll
+
+        // Force layout update after the first load
+        Platform.runLater(() -> {
+            featuredBooks.requestLayout(); // Recalculate the GridPane layout
+            scrollPane.requestLayout();    // Recalculate the ScrollPane layout
+        });
 
         // Use a thread pool for parallel loading
         ExecutorService executor = Executors.newFixedThreadPool(4); // Adjust thread pool size as needed
@@ -90,7 +97,7 @@ public class HomeController {
                                     column.set(0);
                                     row.incrementAndGet();
 
-                                    // Ensure dynamic height adjustment
+                                    // Adjust the GridPane height dynamically
                                     featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
                                 }
                             });
@@ -167,7 +174,7 @@ public class HomeController {
                         column.set(0);
                         row.incrementAndGet();
 
-                        // Ensure dynamic height adjustment
+                        // Adjust the GridPane height dynamically
                         featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
                     }
                 });
