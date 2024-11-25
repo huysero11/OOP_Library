@@ -10,10 +10,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.*;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -199,6 +197,17 @@ public class HomeController {
 
             centerArea.getChildren().clear();
             centerArea.getChildren().add(supportView);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void switchToSignout(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/SignUpView.fxml"));
+            VBox signOutView = fxmlLoader.load();
+
+            centerArea.getChildren().clear();
+            centerArea.getChildren().add(signOutView);
         } catch (Exception e) {
             e.printStackTrace();
         }
