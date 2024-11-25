@@ -44,7 +44,15 @@ public class SignUpController {
 
         String phoneNumberRegex = "^\\d+$";
         String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
-
+        /*
+            ^ : asserts the start of the string.
+            (?=.*[a-z]) :  ensures at least one lowercase letter.
+            (?=.*[A-Z]) :  ensures at least one uppercase letter.
+            (?=.*\\d) :  ensures at least one digit.
+            (?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]) :  ensures at least one special character (you can modify the set of special characters as needed).
+            .{8,} :  ensures that the password is at least 8 characters long.
+            $ :  asserts the end of the string.
+         */
         User user = UserDAO.getInstance().getByPhoneNumber(phoneNumber);
         if (user != null) {
             signUpCheckingAccountLabel.setText("This phone number has been used!");
@@ -84,7 +92,7 @@ public class SignUpController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
             Parent root = fxmlLoader.load();
-
+            // get the current stage from the event
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
