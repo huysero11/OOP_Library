@@ -58,9 +58,18 @@ public class DeleteBooksController {
     @FXML
     private Label stageName;
 
+    @FXML
+    private VBox deleteBooksVBox;
+
     private static Stage searchDelete = new Stage();
 
     private String searchCriteria = "book_name like ";
+
+    @FXML
+    public void initialize() {
+        deleteBooksVBox.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        deleteBooksVBox.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
+    }
 
     public static Stage getSearchAPI() {
         return searchDelete;

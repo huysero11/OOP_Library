@@ -38,6 +38,9 @@ public class APISearchController {
     @FXML
     private ScrollPane scrollPane;
 
+    @FXML
+    private VBox apiSearchVBox;
+
     private GoogleBooksService gsbService = new GoogleBooksService();
 
     private static Stage searchAPI = new Stage();
@@ -48,6 +51,12 @@ public class APISearchController {
 
     public static void setSearchAPI(Stage searchAPI) {
         APISearchController.searchAPI = searchAPI;
+    }
+
+    @FXML
+    public void initialize() {
+        apiSearchVBox.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        apiSearchVBox.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
     }
 
     public void CreateSearchBooksStage() {

@@ -8,22 +8,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="479.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.SignUpController">
+<StackPane fx:id="signUpStackPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.SignUpController">
    <children>
-      <HBox fx:id="rootHBox" alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="790.0" stylesheets="@SignUpView.css">
+      <HBox fx:id="rootHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="820.0" stylesheets="@SignUpView.css">
          <children>
-            <!-- ImageView to occupy half of the HBox width -->
             <ImageView fx:id="signUpHBoxImageView" fitHeight="400.0" fitWidth="475.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
                <image>
                   <Image url="@young-man-reading-sitting-books_961875-478165.jpg" />
                </image>
             </ImageView>
-
-            <!-- VBox to occupy the other half of the HBox width -->
-            <VBox fx:id="HBoxVBox" prefHeight="400.0" prefWidth="293.0" spacing="5.0" styleClass="HBoxVBox" stylesheets="@SignUpView.css">
+            <VBox fx:id="HBoxVBox" alignment="CENTER" prefHeight="400.0" prefWidth="297.0" spacing="5.0" styleClass="HBoxVBox" stylesheets="@SignUpView.css">
                <children>
                   <Label fx:id="signUpLabel1" alignment="CENTER" prefHeight="49.0" prefWidth="345.0" text="Create your account">
                      <font>
@@ -72,7 +70,8 @@
                         <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" prefHeight="35.0" prefWidth="159.0" text="Sign up">
                            <HBox.margin>
                               <Insets top="10.0" />
-                           </HBox.margin></Button>
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="29.0" prefWidth="345.0">
@@ -84,6 +83,9 @@
                </children>
             </VBox>
          </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
       </HBox>
    </children>
-</VBox>
+</StackPane>

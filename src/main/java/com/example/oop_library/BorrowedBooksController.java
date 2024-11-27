@@ -8,14 +8,30 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
 import java.util.List;
 
 public class BorrowedBooksController {
 
     @FXML
-    private ListView<HBox> borrowedBooksListView;  
+    private ListView<HBox> borrowedBooksListView;
+
+    @FXML
+    private VBox borrowedBooksVBox;
 
     private static ObservableList<HBox> borrowedBooks = FXCollections.observableArrayList();
+
+
+    @FXML
+    public void initialize() {
+        borrowedBooksVBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+        borrowedBooksVBox.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
+
+
+
+        borrowedBooksListView.setItems(borrowedBooks);
+    }
 
     public void showBorrowedBooks() {
         User currentUser = SessionManager.getInstance().getCurrentUser();

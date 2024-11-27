@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox alignment="CENTER" prefHeight="127.0" prefWidth="951.0" spacing="100.0">
+      <HBox alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" spacing="100.0">
          <children>
             <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@Style.css" text="ADD BOOK">
                <font>

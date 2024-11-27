@@ -34,7 +34,13 @@ public class SignUpController {
     private Label signUpCheckingAccountLabel;
 
     @FXML
-    private StackPane centerArea; // StackPane trong FXML
+    private StackPane signUpStackPane;
+
+    @FXML
+    public void initialize() {
+        signUpStackPane.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        signUpStackPane.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
+    }
 
     public void signUp(ActionEvent event) {
         String name = signUpNameTextField.getText();
@@ -96,7 +102,7 @@ public class SignUpController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setMaximized(true);
+//            stage.setMaximized(true);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
