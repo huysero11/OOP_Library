@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;" stylesheets="@stylesSupport.css">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;" stylesheets="@support.css">
 
     <!-- Phần tiêu đề của form -->
     <VBox spacing="10" alignment="CENTER">
@@ -35,7 +35,7 @@
         <!-- Địa chỉ -->
         <HBox spacing="10" alignment="CENTER_LEFT">
             <Label text="📍 Địa chỉ:" style="-fx-font-weight: bold;" />
-            <Label text="Số 2 Hùng Vương, Ngọc Hội, Ba Đình, Hà Nội" />
+            <Label text="Số 2 Hùng Vương, Ngọc Hồi, Ba Đình, Hà Nội" />
         </HBox>
     </VBox>
 
