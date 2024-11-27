@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class BookFormController {
@@ -52,11 +53,20 @@ public class BookFormController {
     @FXML
     private TextField titleField;
 
+    @FXML
+    private VBox bookFormVBox;
+
     private Books b;
 
     private BookFormController bookFormController;
 
     private static Stage updateBookFormStage = new Stage();
+
+    @FXML
+    public void initialize() {
+        bookFormVBox.setPrefWidth(UseForAll.APP_PREF_WIDTH - 30);
+        bookFormVBox.setPrefHeight(UseForAll.APP_PREF_HEIGHT - 30);
+    }
 
     public TextField getAuthorField() {
         return authorField;

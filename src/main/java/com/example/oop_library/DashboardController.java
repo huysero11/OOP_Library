@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
@@ -18,9 +19,15 @@ public class DashboardController implements Initializable {
     @FXML
     private VBox centerArea;
 
+    @FXML
+    private BorderPane dashboardBorderPane;
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         switchToDashBoard();
+
+        dashboardBorderPane.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        dashboardBorderPane.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
     }
 
 

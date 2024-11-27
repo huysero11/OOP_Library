@@ -9,24 +9,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DashboardController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="dashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="225.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="178.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/Logo_HUET.svg.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets bottom="150.0" />
-                     </VBox.margin>
-                  </ImageView>
                   <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
                      <graphic>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToDashBoard" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
@@ -78,7 +69,7 @@
                                     <Image url="@images/discipline.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="39.0" prefWidth="178.0" text="Books borrowed" onMouseClicked="#switchToBorrowedBooks">
+                              <Label onMouseClicked="#switchToBorrowedBooks" prefHeight="39.0" prefWidth="178.0" text="Books borrowed">
                                  <font>
                                     <Font name="System Bold" size="17.0" />
                                  </font>
@@ -111,7 +102,6 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-                  <Pane prefHeight="200.0" prefWidth="200.0" />
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />
@@ -123,7 +113,7 @@
             </VBox>
          </left>
          <center>
-            <VBox fx:id="centerArea" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+            <VBox fx:id="centerArea" prefHeight="600.0" prefWidth="795.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
