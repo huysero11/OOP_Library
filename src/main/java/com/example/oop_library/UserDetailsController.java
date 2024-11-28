@@ -78,7 +78,7 @@ public class UserDetailsController {
         loadingSpinner.setVisible(false);
     }
 
-    public void setData(User user, UserController userController) {
+    public void setData(User user, AdminController adminController) {
         username.setText(user.getName());
         phoneNumber.setText(user.getPhoneNumber());
         loadBookData(user);
@@ -122,16 +122,14 @@ public class UserDetailsController {
         }).start();
     }
 
-    public void handleBackButtonAction() {
+    @FXML
+    private void handleBackButtonAction() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("User.fxml"));
-            VBox p = fxmlLoader.load();
-
-            UserController userController = fxmlLoader.getController();
-
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminView.fxml"));
+            VBox adminView = fxmlLoader.load();
+            AdminController adminController = fxmlLoader.getController();
             centerArea.getChildren().clear();
-            centerArea.getChildren().add(p);
+            centerArea.getChildren().add(adminView);
 
         } catch (Exception e) {
             e.printStackTrace();
