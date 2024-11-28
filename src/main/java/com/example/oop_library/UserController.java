@@ -2,12 +2,10 @@ package com.example.oop_library;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
@@ -15,6 +13,7 @@ import javafx.util.Callback;
 import java.sql.*;
 
 public class UserController {
+
     @FXML
     private TableView<User> userTable;
 
@@ -43,37 +42,51 @@ public class UserController {
 
     @FXML
     public void initialize() {
-        // Thiết lập CellValueFactory cho các cột
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-
         loadUserDataFromDatabase();
         addButtonToTable();
     }
 
     private void loadUserDataFromDatabase() {
-        String query = "SELECT user_id, user_name, user_phone FROM users";
+        Task<ObservableList<User>> loadDataTask = new Task<ObservableList<User>>() {
+            @Override
+            protected ObservableList<User> call() throws Exception {
+                ObservableList<User> tempList = FXCollections.observableArrayList();
+                String query = "SELECT user_id, user_name, user_phone FROM users";
 
-        try (Connection connection = MySQLConnection.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query);
-             ResultSet resultSet = statement.executeQuery()) {
+                try (Connection connection = MySQLConnection.getConnection();
+                     PreparedStatement statement = connection.prepareStatement(query);
+                     ResultSet resultSet = statement.executeQuery()) {
 
-            while (resultSet.next()) {
-                int id = resultSet.getInt("user_id");
-                String name = resultSet.getString("user_name");
-                String phoneNumber = resultSet.getString("user_phone");
-
-                userList.add(new User(id, name, phoneNumber));
+                    while (resultSet.next()) {
+                        int id = resultSet.getInt("user_id");
+                        String name = resultSet.getString("user_name");
+                        String phoneNumber = resultSet.getString("user_phone");
+                        tempList.add(new User(id, name, phoneNumber));
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return tempList;
             }
+        };
 
-            // Đưa dữ liệu từ ObservableList vào TableView
+        loadDataTask.setOnSucceeded(event -> {
+            userList.clear();
+            userList.addAll(loadDataTask.getValue());
             userTable.setItems(userList);
+        });
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Xử lý lỗi kết nối Database
-        }
+        loadDataTask.setOnFailed(event -> {
+            Throwable exception = loadDataTask.getException();
+            showErrorDialog("Error loading users", exception.getMessage());
+        });
+
+        Thread loadThread = new Thread(loadDataTask);
+        loadThread.setDaemon(true);
+        loadThread.start();
     }
 
     private void addButtonToTable() {
@@ -89,7 +102,6 @@ public class UserController {
                             User user = getTableView().getItems().get(getIndex());
                             showDetails(user);
                         });
-                        //btn.setStyle("-fx-background-color: #027b39; -fx-text-fill: white;");
                     }
 
                     @Override
@@ -119,13 +131,18 @@ public class UserController {
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
         } catch (Exception e) {
-            // TODO: handle exception
             e.printStackTrace();
         }
+    }
+
+    private void showErrorDialog(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     public void handleBackButtonAction() {
         dashboardController.switchToDashBoard();
     }
-
 }

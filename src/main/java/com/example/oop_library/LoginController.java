@@ -5,14 +5,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,7 +29,19 @@ public class LoginController {
     private Label loginCheckingAccountLabel;
 
     @FXML
+    private StackPane loginStackPane;
+
+    @FXML
+    private ImageView loginBackgroundImageView;
+
+    @FXML
     public void initialize() {
+        loginStackPane.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        loginStackPane.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
+
+        loginBackgroundImageView.setFitWidth(UseForAll.APP_PREF_WIDTH);
+        loginBackgroundImageView.setFitHeight(UseForAll.APP_PREF_HEIGHT);
+
         // Add key press event to trigger login on "Enter" key
         loginPhoneNumberTextField.setOnKeyPressed(this::handleEnterKey);
         loginPasswordField.setOnKeyPressed(this::handleEnterKey);
@@ -75,7 +88,7 @@ public class LoginController {
 
                 // Navigate to user's dashboard
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/app.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/DashBoard.fxml"));
                     Parent root = fxmlLoader.load();
 
                     // Get the current stage from the event
@@ -110,7 +123,7 @@ public class LoginController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setMaximized(true);
+//            stage.setMaximized(true);
             stage.show();
         } catch (IOException e) {
             System.out.println("Navigation Error: Could not load " + fxmlPath);

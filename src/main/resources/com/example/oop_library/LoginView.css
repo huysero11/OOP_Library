@@ -1,6 +1,7 @@
 .loginRootVBox {
     -fx-background-color: white;
-    -fx-background-radius: 150;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 20, 0.5, 5, 5);
 }
 
 .loginVBox {

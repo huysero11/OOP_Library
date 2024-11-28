@@ -15,11 +15,35 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" prefHeight="810.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
+<VBox fx:id="centerArea" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
    <children>
-      <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="1046.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="44.0" prefWidth="612.0" spacing="15.0" styleClass="search-container" stylesheets="@Style.css">
+            <Label onMouseClicked="#switchToSupport" text="Support">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="55.0" prefWidth="26.0" />
+            <Label onMouseClicked="#switchToSignout" text="Sign out">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="48.0">
+               <children>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/account.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="745.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container" stylesheets="@Style.css">
                <children>
                   <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@Style.css" text="Search By">
                     <items>
@@ -33,28 +57,7 @@
                         <Image url="@images/loupe.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="searchQuery" prefHeight="26.0" prefWidth="415.0" promptText="Search" styleClass="transparent" stylesheets="@Style.css" onKeyPressed="#searchBooks" />
-               </children>
-            </HBox>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Label text="Support">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Pane prefHeight="55.0" prefWidth="26.0" />
-            <Label text="Sign out">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="48.0">
-               <children>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/account.png" />
-                     </image>
-                  </ImageView>
+                  <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="283.0" promptText="Search" styleClass="transparent" stylesheets="@Style.css" />
                </children>
             </HBox>
          </children>

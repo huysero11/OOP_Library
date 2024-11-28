@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +26,15 @@ public class ResetPasswordController {
 
     @FXML
     private Label resetPasswordCheckingAccountLabel;
+
+    @FXML
+    private HBox resetPasswordHBox;
+
+    @FXML
+    public void initialize() {
+        resetPasswordHBox.setPrefWidth(UseForAll.APP_PREF_WIDTH);
+        resetPasswordHBox.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
+    }
 
     public void resetPassword(ActionEvent event) {
         String phoneNumber = resetPasswordPhoneNumberTextField.getText();
@@ -43,7 +53,20 @@ public class ResetPasswordController {
                 resetPasswordCheckingAccountLabel.setText("Reset password successfully!");
                 resetPasswordCheckingAccountLabel.setStyle("-fx-text-fill: green;");
 
-                // go to main view
+                // go to login view
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+                    Parent root = fxmlLoader.load();
+
+                    // get the current stage from the event
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+//            stage.setMaximized(true);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -58,7 +81,7 @@ public class ResetPasswordController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setMaximized(true);
+//            stage.setMaximized(true);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,7 +98,7 @@ public class ResetPasswordController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setMaximized(true);
+//            stage.setMaximized(true);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

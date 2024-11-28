@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class BorrowedBooksInfoController {
@@ -35,7 +36,15 @@ public class BorrowedBooksInfoController {
     @FXML
     private ToggleButton returnBookButton;
 
+    @FXML
+    private HBox borrowedBooksInfoHBox;
+
     private Books b;
+
+    @FXML
+    public void initialize() {
+        borrowedBooksInfoHBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+    }
 
     public void setData(Books b) {
         this.b = b;

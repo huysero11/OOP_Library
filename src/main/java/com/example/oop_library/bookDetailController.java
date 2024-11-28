@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class bookDetailController {
     @FXML
@@ -42,9 +43,18 @@ public class bookDetailController {
     @FXML
     private Label publicationYear;
 
+    @FXML
+    private VBox bookDetailsVBox;
+
     private DashboardController dashboardController;
 
     private Books b;
+
+    @FXML
+    public void initialize() {
+        bookDetailsVBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+        bookDetailsVBox.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
+    }
 
     public void setData(Books b, DashboardController dashboardController) {
         this.b = b;
