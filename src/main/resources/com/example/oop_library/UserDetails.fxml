@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" spacing="28.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
+<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
    <children>
       <Pane prefHeight="256.0" prefWidth="1063.0">
          <children>
@@ -41,12 +41,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="username" layoutX="467.0" layoutY="64.0" prefHeight="30.0" prefWidth="514.0" text="Label">
+            <Label fx:id="username" layoutX="337.0" layoutY="64.0" prefHeight="30.0" prefWidth="422.0" text="Label">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="phoneNumber" layoutX="467.0" layoutY="120.0" prefHeight="30.0" prefWidth="530.0" text="Label">
+            <Label fx:id="phoneNumber" layoutX="337.0" layoutY="120.0" prefHeight="30.0" prefWidth="422.0" text="Label">
                <font>
                   <Font size="20.0" />
                </font>
@@ -54,13 +54,13 @@
          </children>
       </Pane>
       <StackPane>
-         <TableView fx:id="tableView" prefHeight="667.0" prefWidth="1063.0">
+         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="775.0" stylesheets="@table.css">
             <columns>
-               <TableColumn fx:id="idColumn" prefWidth="56.53332823514938" resizable="false" text="No." />
-               <TableColumn fx:id="book" minWidth="0.0" prefWidth="142.13334274291992" resizable="false" text="Book" />
-               <TableColumn fx:id="name" minWidth="0.0" prefWidth="338.6666717529297" resizable="false" text="Name" />
-               <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="262.0" resizable="false" text="Borrow Date" />
-               <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="262.0" resizable="false" text="Return Date" />
+               <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
+               <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />
+               <TableColumn fx:id="name" minWidth="0.0" prefWidth="267.4667205810547" resizable="false" text="Name" />
+               <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="182.66671752929688" resizable="false" text="Borrow Date" />
+               <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="184.53326416015625" resizable="false" text="Return Date" />
             </columns>
          </TableView>
 
