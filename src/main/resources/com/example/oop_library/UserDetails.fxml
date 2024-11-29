@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
+<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
    <children>
       <Pane prefHeight="256.0" prefWidth="1063.0">
          <children>
@@ -54,7 +54,7 @@
          </children>
       </Pane>
       <StackPane>
-         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="456.0" stylesheets="@table.css">
+         <TableView fx:id="tableView" prefHeight="600.0" prefWidth="1000.0" stylesheets="@table.css">
             <columns>
                <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
                <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />

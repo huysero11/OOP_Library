@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
@@ -23,6 +24,9 @@ public class AdminController {
 
     @FXML
     private TableView<User> userTable;
+
+    @FXML
+    private Pane adminViewPane;
 
     @FXML
     private TableColumn<User, Integer> idColumn;
@@ -43,6 +47,12 @@ public class AdminController {
     public void initialize() {
         adminVBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
         adminVBox.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
+
+        adminViewPane.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+
+//        userTable.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+
+
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));

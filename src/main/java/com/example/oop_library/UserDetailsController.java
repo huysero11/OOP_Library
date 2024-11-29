@@ -49,11 +49,16 @@ public class UserDetailsController {
     @FXML
     private ProgressIndicator loadingSpinner;
 
+
     private ObservableList<BorrowedBook> bookList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
         tableView.setPlaceholder(new Label(""));
+
+        centerArea.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+        centerArea.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
+
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         book.setCellValueFactory(new PropertyValueFactory<>("book"));
         book.setCellFactory(new Callback<TableColumn<BorrowedBook, ImageView>, TableCell<BorrowedBook, ImageView>>() {
