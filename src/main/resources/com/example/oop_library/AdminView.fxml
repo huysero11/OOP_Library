@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="adminVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
+<VBox fx:id="adminVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="1000.0" spacing="15.0">
          <children>
@@ -77,12 +77,12 @@
       </HBox>
       <Pane fx:id="adminViewPane" prefHeight="558.0" prefWidth="1000.0">
          <children>
-            <TableView fx:id="userTable" prefHeight="535.0" prefWidth="800.0">
+            <TableView fx:id="userTable" layoutY="25.0" prefHeight="510.0" prefWidth="800.0" stylesheets="@table.css">
                <columns>
-                  <TableColumn fx:id="idColumn" prefWidth="31.199994802474976" text="ID" />
-                  <TableColumn fx:id="nameColumn" prefWidth="308.53328132629395" text="Name" />
-                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="275.7333679199219" text="Phone Number" />
-                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="160.26666259765625" text="Borrowed Book" />
+                  <TableColumn fx:id="idColumn" prefWidth="72.00003355741501" resizable="false" text="ID" />
+                  <TableColumn fx:id="nameColumn" prefWidth="271.20005798339844" resizable="false" text="Name" />
+                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="258.4000244140625" resizable="false" text="Phone Number" />
+                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="175.99993896484375" resizable="false" text="Borrowed Book" />
                </columns>
             </TableView>
          </children>
