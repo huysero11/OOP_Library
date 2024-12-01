@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;" stylesheets="@support.css">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="centerArea" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20; -fx-background-color: #ffffff;" stylesheets="@support.css">
 
-    <!-- Phần tiêu đề của form -->
-    <VBox spacing="10" alignment="CENTER">
-        <Text text="Support" style="-fx-fill: black;">
+    <!-- Tiêu đề -->
+    <VBox spacing="8" alignment="CENTER">
+        <Text text="Support" style="-fx-fill: rgba(0,0,0,0.95);">
             <font>
                 <Font size="24" />
             </font>
         </Text>
     </VBox>
 
-    <!-- Thông tin hỗ trợ -->
-    <VBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+    <!-- Nội dung hỗ trợ -->
+    <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 8;">
         <!-- Tiêu đề -->
-        <Label text="Bạn đang cần hỗ trợ?" style="-fx-font-size: 16;" />
+        <Label text="Bạn đang cần hỗ trợ?" style="-fx-font-size: 16; -fx-font-weight: bold;" />
 
         <!-- Email -->
-        <HBox spacing="10" alignment="CENTER_LEFT">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="📧 Email:" style="-fx-font-weight: bold;" />
             <Label text="devlibraryuet@gmail.com" />
         </HBox>
 
         <!-- Hotline -->
-        <HBox spacing="10" alignment="CENTER_LEFT">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="📞 Hotline:" style="-fx-font-weight: bold;" />
             <Label text="024 3835 5921" />
         </HBox>
 
         <!-- Địa chỉ -->
-        <HBox spacing="10" alignment="CENTER_LEFT">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="📍 Địa chỉ:" style="-fx-font-weight: bold;" />
             <Label text="Số 2 Hùng Vương, Ngọc Hồi, Ba Đình, Hà Nội" />
         </HBox>
     </VBox>
 
     <!-- Ghi chú -->
-    <VBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
-        <Label text="Hãy chọn danh mục. Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn" wrapText="true" style="-fx-font-size: 14; -fx-text-alignment: center;" />
+    <VBox spacing="10" alignment="CENTER" style="-fx-padding: 8;">
+        <Label text="Hãy chọn danh mục. Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn." wrapText="true" style="-fx-font-size: 14; -fx-text-alignment: center;" />
     </VBox>
+
 </VBox>

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 
 public class SupportController {
 
@@ -19,12 +20,11 @@ public class SupportController {
     @FXML
     public void switchToSupport(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Support.fxml")); 
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/Support.fxml"));
             VBox supportView = fxmlLoader.load();
 
-            centerArea.getChildren().clear();
-            centerArea.getChildren().add(supportView);
+            BorderPane mainPane = (BorderPane) centerArea.getParent();
+            mainPane.setCenter(supportView);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,0 +1,39 @@
+/* support.css */
+
+/* Tổng thể của VBox */
+#centerArea {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+}
+
+/* Tiêu đề chính */
+.text {
+    -fx-fill: #232323;
+    -fx-font-size: 14;
+    -fx-font-family: "Arial, Helvetica, sans-serif";
+}
+
+/* Nội dung hỗ trợ */
+.label {
+    -fx-font-family: "Arial, Helvetica, sans-serif";
+}
+
+/* Tiêu đề phụ (Label lớn) */
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+
+/* Icon và tiêu đề hỗ trợ */
+.label-bold-icon {
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-text-fill: #444;
+}
+
+/* Ghi chú */
+.note {
+    -fx-font-size: 12;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
