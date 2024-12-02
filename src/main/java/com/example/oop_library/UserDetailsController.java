@@ -83,7 +83,7 @@ public class UserDetailsController {
         loadingSpinner.setVisible(false);
     }
 
-    public void setData(User user, AdminController adminController) {
+    public void setData(User user) {
         username.setText(user.getName());
         phoneNumber.setText(user.getPhoneNumber());
         loadBookData(user);

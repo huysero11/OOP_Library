@@ -1,0 +1,30 @@
+/* CSS cho Label */
+.label {
+    -fx-background-color: white; /* Màu nền trắng */
+    -fx-border-color: #00a653; /* Màu viền xanh giống bảng */
+    -fx-border-width: 2; /* Độ dày viền */
+    -fx-border-radius: 15; /* Bo góc */
+    -fx-font-size: 20px; /* Kích thước chữ */
+    -fx-font-family: "Arial"; /* Phông chữ */
+    -fx-text-fill: #333333; /* Màu chữ */
+    -fx-padding: 10px; /* Khoảng cách bên trong */
+    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 5, 0.5, 0, 1); /* Đổ bóng nhẹ */
+}
+
+/* CSS cho Label khi hover */
+.label:hover {
+    -fx-background-color: rgba(0, 211, 116, 0.1); /* Màu nền khi di chuột qua */
+    -fx-text-fill: #00d374; /* Màu chữ khi hover */
+}
+
+/* CSS cho Label với ID "username" */
+#username {
+    -fx-font-weight: bold; /* Chữ đậm */
+    -fx-text-fill: #0078d7; /* Màu chữ riêng cho "username" */
+}
+
+/* CSS cho Label với ID "phoneNumber" */
+#phoneNumber {
+    -fx-font-weight: normal; /* Chữ bình thường */
+    -fx-text-fill: #0078d7; /* Màu chữ riêng cho "phoneNumber" */
+}

@@ -1,0 +1,30 @@
+/* CSS cho ProgressIndicator */
+.progress-indicator {
+    -fx-background-color: white; /* Nền trắng */
+    -fx-background-radius: 50%; /* Bo góc tròn */
+    -fx-border-color: #00a653; /* Viền xanh */
+    -fx-border-width: 0; /* Độ rộng viền */
+    -fx-border-radius: 50%; /* Viền tròn */
+    -fx-pref-width: 120px; /* Kích thước chiều rộng */
+    -fx-pref-height: 120px; /* Kích thước chiều cao */
+    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.5), 10, 0.5, 0, 5); /* Đổ bóng nhẹ */
+    -fx-alignment: center; /* Căn giữa */
+}
+
+/* Khi tiến trình đang hoạt động (indeterminate) */
+.progress-indicator:indeterminate {
+    -fx-progress-color: #00d374; /* Màu tiến trình là xanh lá */
+    -fx-background-color: rgba(0, 211, 116, 0.1); /* Nền nhạt khi tiến trình chạy */
+}
+
+/* Thêm hiệu ứng hoạt động cho vòng tròn */
+.progress-indicator:indeterminate .track {
+    -fx-background-color: transparent; /* Đảm bảo nền trong suốt */
+}
+
+.progress-indicator:indeterminate .bar {
+    -fx-background-color: linear-gradient(to right, #00d374, #4caf50); /* Gradient cho tiến trình */
+    -fx-transform: rotate(0deg); /* Đảm bảo vòng tròn xoay từ vị trí ban đầu */
+}
+
+

@@ -22,6 +22,12 @@ public class DashboardController implements Initializable {
     @FXML
     private BorderPane dashboardBorderPane;
 
+    private User loggedInUser;
+
+    public void setLoggedInUser(User user) {
+        this.loggedInUser = user;
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         switchToDashBoard();
@@ -37,6 +43,7 @@ public class DashboardController implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/Home.fxml"));
             VBox p = fxmlLoader.load();
             HomeController homeController = fxmlLoader.getController();
+            homeController.setLoggedInUser(loggedInUser);
             homeController.showFeaturedBooks(this);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
