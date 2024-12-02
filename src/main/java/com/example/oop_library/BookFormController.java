@@ -187,7 +187,7 @@ public class BookFormController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("BookForm.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/BookForm.fxml"));
             Parent root = fxmlLoader.load();
             BookFormController bookFormController = fxmlLoader.getController();
             this.bookFormController = bookFormController;

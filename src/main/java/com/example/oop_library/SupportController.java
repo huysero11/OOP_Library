@@ -20,7 +20,7 @@ public class SupportController {
     public void switchToSupport(MouseEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Support.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/Support.fxml"));
             VBox supportView = fxmlLoader.load();
 
             centerArea.getChildren().clear();

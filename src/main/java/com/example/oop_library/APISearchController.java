@@ -64,7 +64,7 @@ public class APISearchController {
         //searchAPI.initStyle(StageStyle.TRANSPARENT);
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("APISearchView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/oop_library/FXML/APISearchView.fxml"));
             searchAPI.setScene(new Scene(root, 880, 618));
             searchAPI.show();
         } catch (IOException e) {
@@ -110,7 +110,7 @@ public class APISearchController {
         for (GBSBooks b : listBooks) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("bookShortInfo.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/bookShortInfo.fxml"));
                 HBox p = fxmlLoader.load();
                 BookShortInfoController bookShortInfoController = fxmlLoader.getController();
                 bookShortInfoController.setData(b.getVolumeInfo());

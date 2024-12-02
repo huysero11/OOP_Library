@@ -130,7 +130,7 @@ public class UserDetailsController {
     @FXML
     private void handleBackButtonAction() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdminView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/AdminView.fxml"));
             VBox adminView = fxmlLoader.load();
             AdminController adminController = fxmlLoader.getController();
             centerArea.getChildren().clear();

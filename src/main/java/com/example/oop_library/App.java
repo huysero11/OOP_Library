@@ -12,7 +12,7 @@ public class App extends Application {
     @Override
     public void start(@SuppressWarnings("exports") Stage arg0) throws Exception {
         // TODO Auto-generated method stub
-        Parent root = FXMLLoader.load(getClass().getResource("DashBoard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/oop_library/FXML/DashBoard.fxml"));
         arg0.setTitle("Dashboard");
         arg0.setScene(new Scene(root));
         arg0.show();

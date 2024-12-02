@@ -76,7 +76,7 @@ public class UpdateBooksController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("DeleteBooksView.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/DeleteBooksView.fxml"));
             Parent root = fxmlLoader.load();
             searchDelete.setScene(new Scene(root, 880, 618));
             searchDelete.show();
@@ -123,7 +123,7 @@ public class UpdateBooksController {
         for (Books b : list) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("bookShortInfo.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/bookShortInfo.fxml"));
                 HBox p = fxmlLoader.load();
                 BookShortInfoController bookShortInfoController = fxmlLoader.getController();
                 bookShortInfoController.setData(b);

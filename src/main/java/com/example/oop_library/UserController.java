@@ -124,7 +124,7 @@ public class UserController {
     private void showDetails(User user) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("UserDetails.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/UserDetails.fxml"));
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
       //      detailController.setData(user, this);

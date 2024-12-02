@@ -96,7 +96,7 @@ public class HomeController {
                     executor.submit(() -> {
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader();
-                            fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
+                            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/bCard.fxml"));
                             VBox card = fxmlLoader.load();
                             bookCardController cardController = fxmlLoader.getController();
                             cardController.setData(book, dashboardController);
@@ -174,7 +174,7 @@ public class HomeController {
         try {
             for (Books book : list) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("bCard.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/bCard.fxml"));
                 VBox card = fxmlLoader.load();
                 bookCardController cardController = fxmlLoader.getController();
                 cardController.setData(book, dashboardController);

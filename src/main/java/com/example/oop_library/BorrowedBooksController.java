@@ -40,7 +40,7 @@ public class BorrowedBooksController {
         borrowedBooks.clear();
         for (Books b : listBorrowedBooks) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BorrowedBooksInfo.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/BorrowedBooksInfo.fxml"));
                 HBox hBox = fxmlLoader.load();  
                 BorrowedBooksInfoController borrowedBooksInfoController = fxmlLoader.getController();
                 borrowedBooksInfoController.setData(b);  
