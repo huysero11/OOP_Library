@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="adminVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
+<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="795.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
    <children>
-      <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="1000.0" spacing="15.0">
+      <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="775.0" spacing="15.0">
          <children>
             <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="38.0" prefWidth="150.0" stylesheets="@Style.css" text="Delete book">
                <styleClass>
@@ -77,7 +77,7 @@
       </HBox>
       <Pane fx:id="adminViewPane" prefHeight="558.0" prefWidth="1000.0">
          <children>
-            <TableView fx:id="userTable" layoutY="25.0" prefHeight="510.0" prefWidth="800.0" stylesheets="@table.css">
+            <TableView fx:id="userTable" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" stylesheets="@table.css">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="72.00003355741501" resizable="false" text="ID" />
                   <TableColumn fx:id="nameColumn" prefWidth="271.20005798339844" resizable="false" text="Name" />

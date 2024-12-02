@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
@@ -13,8 +15,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.util.Duration;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -49,6 +52,12 @@ public class HomeController {
 
     DashboardController dashboardController;
 
+    @FXML
+    public void initialize() {
+        centerArea.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+        centerArea.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
+    }
+
     public void showFeaturedBooks(DashboardController dashboardController) {
         this.dashboardController = dashboardController;
         setSearchCriteria();
@@ -58,9 +67,16 @@ public class HomeController {
         featuredBooks.setPrefHeight(Region.USE_COMPUTED_SIZE);
         featuredBooks.setMaxHeight(Region.USE_PREF_SIZE);
 
-        // Set ScrollPane properties
+        // Configure ScrollPane to allow vertical scrolling only
         scrollPane.setFitToWidth(true);
-        scrollPane.setPannable(true); // Enables dragging to scroll
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  // Disable horizontal scroll
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);  // Enable vertical scroll
+
+        // Force layout update after the first load
+        Platform.runLater(() -> {
+            featuredBooks.requestLayout(); // Recalculate the GridPane layout
+            scrollPane.requestLayout();    // Recalculate the ScrollPane layout
+        });
 
         // Use a thread pool for parallel loading
         ExecutorService executor = Executors.newFixedThreadPool(4); // Adjust thread pool size as needed
@@ -95,7 +111,7 @@ public class HomeController {
                                     column.set(0);
                                     row.incrementAndGet();
 
-                                    // Ensure dynamic height adjustment
+                                    // Adjust the GridPane height dynamically
                                     featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
                                 }
                             });
@@ -172,7 +188,7 @@ public class HomeController {
                         column.set(0);
                         row.incrementAndGet();
 
-                        // Ensure dynamic height adjustment
+                        // Adjust the GridPane height dynamically
                         featuredBooks.setPrefHeight(row.get() * card.getPrefHeight() + 20);
                     }
                 });
@@ -181,7 +197,6 @@ public class HomeController {
             e.printStackTrace();
         }
     }
-
     public void switchToSupport() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -193,8 +208,22 @@ public class HomeController {
 
             centerArea.getChildren().clear();
             centerArea.getChildren().add(supportView);
-
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void switchToSignout(MouseEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+            Parent root = fxmlLoader.load();
+
+            // Get the current stage from the event
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println("Login Error: Could not go to login view!");
             e.printStackTrace();
         }
     }
