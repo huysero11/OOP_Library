@@ -49,8 +49,23 @@ public class UserDetailsController {
     @FXML
     private ProgressIndicator loadingSpinner;
 
+    private User user;
+
+    private Object previousController;
+
+    public void setPreviousController(Object previousController) {
+        this.previousController = previousController;
+    }
+
+    private DashboardController dashboardController;
+
+    public void setDashboardController(DashboardController dashboardController) {
+        this.dashboardController = dashboardController;
+    }
 
     private ObservableList<BorrowedBook> bookList = FXCollections.observableArrayList();
+
+    private Label placeholderLabel = new Label("This user has not borrowed any book yet.");
 
     @FXML
     public void initialize() {
@@ -86,6 +101,7 @@ public class UserDetailsController {
     public void setData(User user) {
         username.setText(user.getName());
         phoneNumber.setText(user.getPhoneNumber());
+        this.user = user;
         loadBookData(user);
     }
 
@@ -115,7 +131,11 @@ public class UserDetailsController {
 
                 javafx.application.Platform.runLater(() -> {
                     tableView.setItems(bookList);
+                    tableView.setPlaceholder(new Label(""));
                     loadingSpinner.setVisible(false);
+                    if (bookList.isEmpty()) {
+                        tableView.setPlaceholder(placeholderLabel);
+                    }
                 });
 
             } catch (SQLException e) {
@@ -130,12 +150,22 @@ public class UserDetailsController {
     @FXML
     private void handleBackButtonAction() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/AdminView.fxml"));
-            VBox adminView = fxmlLoader.load();
-            AdminController adminController = fxmlLoader.getController();
-            centerArea.getChildren().clear();
-            centerArea.getChildren().add(adminView);
-
+            if (previousController instanceof AdminController) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/AdminView.fxml"));
+                VBox adminView = fxmlLoader.load();
+                AdminController adminController = fxmlLoader.getController();
+                centerArea.getChildren().clear();
+                centerArea.getChildren().add(adminView);
+            }
+            else if (previousController instanceof HomeController) {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/Home.fxml"));
+                VBox homeView = fxmlLoader.load();
+                HomeController homeController = fxmlLoader.getController();
+                homeController.setLoggedInUser(user);
+                homeController.showFeaturedBooks(dashboardController);
+                centerArea.getChildren().clear();
+                centerArea.getChildren().add(homeView);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

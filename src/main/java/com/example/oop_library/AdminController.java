@@ -161,6 +161,7 @@ public class AdminController {
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
             detailController.setData(user);
+            detailController.setPreviousController(this);
             adminVBox.getChildren().clear();
             adminVBox.getChildren().add(p);
         } catch (Exception e) {

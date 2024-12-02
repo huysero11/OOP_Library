@@ -270,6 +270,8 @@ public class HomeController {
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
             detailController.setData(loggedInUser);
+            detailController.setPreviousController(this);
+            detailController.setDashboardController(dashboardController);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
         } catch (Exception e) {

@@ -55,7 +55,7 @@
          </children>
       </Pane>
       <StackPane>
-         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="775.0">
+         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="800.0">
             <columns>
                <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
                <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />
