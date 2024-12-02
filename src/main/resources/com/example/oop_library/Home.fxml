@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
+<VBox fx:id="centerArea" prefHeight="1000.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -68,7 +68,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" prefHeight="694.0" prefWidth="1034.0" styleClass="transparent" stylesheets="@Style.css" VBox.vgrow="ALWAYS">
+      <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="870.0" styleClass="transparent" stylesheets="@Style.css" VBox.vgrow="ALWAYS">
          <content>
             <GridPane fx:id="featuredBooks" prefHeight="0.0" prefWidth="0.0">
                <rowConstraints>

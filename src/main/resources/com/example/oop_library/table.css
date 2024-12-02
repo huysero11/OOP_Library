@@ -1,0 +1,4 @@
+.table-view .table-cell {
+    -fx-alignment: CENTER; /* Căn giữa cả theo chiều ngang và dọc */
+    -fx-wrap-text: true;   /* Cho phép xuống dòng */
+}

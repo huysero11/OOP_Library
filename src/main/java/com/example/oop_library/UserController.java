@@ -127,7 +127,7 @@ public class UserController {
             fxmlLoader.setLocation(getClass().getResource("UserDetails.fxml"));
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
-            detailController.setData(user, this);
+      //      detailController.setData(user, this);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
         } catch (Exception e) {

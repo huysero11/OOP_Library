@@ -40,6 +40,8 @@ public class DashboardController implements Initializable {
             homeController.showFeaturedBooks(this);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
+
+            TransitionUtils.applyFadeTransition(p);
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -47,20 +49,20 @@ public class DashboardController implements Initializable {
     }
 
     public void switchToAdmin() {
-        if (SessionManager.getInstance().getCurrentUser().isAdmin()) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("AdminView.fxml"));
-                VBox p = fxmlLoader.load();
-                // bookDetailController detailController = fxmlLoader.getController();
-                // detailController.setData(b, this);
-                // AdminController adminController = fxmlLoader.getController();
-                centerArea.getChildren().clear();
-                centerArea.getChildren().add(p);
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-            }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("AdminView.fxml"));
+            VBox p = fxmlLoader.load();
+            // bookDetailController detailController = fxmlLoader.getController();
+            // detailController.setData(b, this);
+            // AdminController adminController = fxmlLoader.getController();
+            centerArea.getChildren().clear();
+            centerArea.getChildren().add(p);
+
+            TransitionUtils.applyFadeTransition(p);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
         }
     }
 
@@ -73,6 +75,8 @@ public class DashboardController implements Initializable {
             detailController.setData(b, this);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
+
+            TransitionUtils.applyFadeTransition(p);
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -88,6 +92,8 @@ public class DashboardController implements Initializable {
             borrowedBooksController.showBorrowedBooks();
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
+
+            TransitionUtils.applyFadeTransition(p);
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
