@@ -14,14 +14,14 @@
 
 <StackPane fx:id="signUpStackPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.SignUpController">
    <children>
-      <HBox fx:id="rootHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="820.0" stylesheets="@SignUpView.css">
+      <HBox fx:id="rootHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="820.0" stylesheets="@../CSS/SignUpView.css">
          <children>
             <ImageView fx:id="signUpHBoxImageView" fitHeight="400.0" fitWidth="475.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
                <image>
-                  <Image url="@young-man-reading-sitting-books_961875-478165.jpg" />
+                  <Image url="@../images/young-man-reading-sitting-books_961875-478165.jpg" />
                </image>
             </ImageView>
-            <VBox fx:id="HBoxVBox" alignment="CENTER" prefHeight="400.0" prefWidth="297.0" spacing="5.0" styleClass="HBoxVBox" stylesheets="@SignUpView.css">
+            <VBox fx:id="HBoxVBox" alignment="CENTER" prefHeight="400.0" prefWidth="297.0" spacing="5.0" styleClass="HBoxVBox" stylesheets="@../CSS/SignUpView.css">
                <children>
                   <Label fx:id="signUpLabel1" alignment="CENTER" prefHeight="49.0" prefWidth="345.0" text="Create your account">
                      <font>

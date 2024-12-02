@@ -88,7 +88,7 @@ public class LoginController {
 
                 // Navigate to user's dashboard
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/DashBoard.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/DashBoard.fxml"));
                     Parent root = fxmlLoader.load();
 
                     // Get the current stage from the event
@@ -106,12 +106,12 @@ public class LoginController {
 
     @FXML
     public void openSignUpView(MouseEvent event) {
-        navigateToView(event, "/com/example/oop_library/SignUpView.fxml");
+        navigateToView(event, "/com/example/oop_library/FXML/SignUpView.fxml");
     }
 
     @FXML
     public void openResetPasswordView(MouseEvent event) {
-        navigateToView(event, "/com/example/oop_library/ResetPasswordView.fxml");
+        navigateToView(event, "/com/example/oop_library/FXML/ResetPasswordView.fxml");
     }
 
     private void navigateToView(MouseEvent event, String fxmlPath) {

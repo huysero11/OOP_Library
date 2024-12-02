@@ -17,13 +17,13 @@
    <children>
       <Pane prefHeight="256.0" prefWidth="1063.0">
          <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@Style.css">
+            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
                <graphic>
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/arrow.png" />
+                              <Image url="@../images/arrow.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="29.0" prefWidth="60.0" text="Home" />
@@ -54,7 +54,7 @@
          </children>
       </Pane>
       <StackPane>
-         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="775.0" stylesheets="@table.css">
+         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="775.0" stylesheets="@../CSS/table.css">
             <columns>
                <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
                <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />

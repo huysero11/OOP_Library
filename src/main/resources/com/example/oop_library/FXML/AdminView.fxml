@@ -16,7 +16,7 @@
    <children>
       <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="775.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="38.0" prefWidth="150.0" stylesheets="@Style.css" text="Delete book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="38.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Delete book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
@@ -24,7 +24,7 @@
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/trash-bin.png" />
+                        <Image url="@../images/trash-bin.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -35,7 +35,7 @@
                   <Insets right="5.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenUpdateStage" prefHeight="38.0" prefWidth="151.0" stylesheets="@Style.css" text="Update book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenUpdateStage" prefHeight="38.0" prefWidth="151.0" stylesheets="@../CSS/Style.css" text="Update book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
@@ -43,7 +43,7 @@
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/loading-arrow.png" />
+                        <Image url="@../images/loading-arrow.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -51,7 +51,7 @@
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenSearchAPIBooksStage" prefHeight="38.0" prefWidth="139.0" stylesheets="@Style.css" text="Add book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenSearchAPIBooksStage" prefHeight="38.0" prefWidth="139.0" stylesheets="@../CSS/Style.css" text="Add book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
@@ -59,7 +59,7 @@
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/add.png" />
+                        <Image url="@../images/add.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -77,7 +77,7 @@
       </HBox>
       <Pane fx:id="adminViewPane" prefHeight="558.0" prefWidth="1000.0">
          <children>
-            <TableView fx:id="userTable" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" stylesheets="@table.css">
+            <TableView fx:id="userTable" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="510.0" prefWidth="800.0" stylesheets="@../CSS/table.css">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="72.00003355741501" resizable="false" text="ID" />
                   <TableColumn fx:id="nameColumn" prefWidth="271.20005798339844" resizable="false" text="Name" />

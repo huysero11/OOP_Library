@@ -9,17 +9,17 @@
    <children>
       <HBox alignment="CENTER" prefHeight="127.0" prefWidth="1000.0" spacing="100.0">
          <children>
-            <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@Style.css" text="ADD BOOK">
+            <Button fx:id="borrowButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@../CSS/Style.css" text="ADD BOOK">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="borrowButton1" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@Style.css" text="UPDATE BOOK">
+            <Button fx:id="borrowButton1" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@../CSS/Style.css" text="UPDATE BOOK">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="borrowButton2" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@Style.css" text="DELETE BOOK">
+            <Button fx:id="borrowButton2" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" styleClass="borrow-button" stylesheets="@../CSS/Style.css" text="DELETE BOOK">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

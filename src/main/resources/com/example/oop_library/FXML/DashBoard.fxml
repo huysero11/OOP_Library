@@ -16,15 +16,15 @@
    <children>
       <BorderPane fx:id="dashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="225.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="225.0" stylesheets="@../CSS/Style.css" BorderPane.alignment="CENTER">
                <children>
-                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@../CSS/Style.css" text="ToggleButton">
                      <graphic>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToDashBoard" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/home.png" />
+                                    <Image url="@../images/home.png" />
                                  </image>
                               </ImageView>
                               <Label prefHeight="39.0" prefWidth="178.0" text="Dashboard">
@@ -39,13 +39,13 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                  <ToggleButton mnemonicParsing="false" styleClass="menu" stylesheets="@../CSS/Style.css" text="ToggleButton">
                      <graphic>
                         <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/category.png" />
+                                    <Image url="@../images/category.png" />
                                  </image>
                               </ImageView>
                               <Label prefHeight="39.0" prefWidth="178.0" text="Catagory">
@@ -60,13 +60,13 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton layoutX="91.0" layoutY="425.0" mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                  <ToggleButton layoutX="91.0" layoutY="425.0" mnemonicParsing="false" styleClass="menu" stylesheets="@../CSS/Style.css" text="ToggleButton">
                      <graphic>
                         <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/discipline.png" />
+                                    <Image url="@../images/discipline.png" />
                                  </image>
                               </ImageView>
                               <Label onMouseClicked="#switchToBorrowedBooks" prefHeight="39.0" prefWidth="178.0" text="Books borrowed">
@@ -81,13 +81,13 @@
                         </HBox>
                      </graphic>
                   </ToggleButton>
-                  <ToggleButton layoutX="91.0" layoutY="775.0" mnemonicParsing="false" styleClass="menu" stylesheets="@Style.css" text="ToggleButton">
+                  <ToggleButton layoutX="91.0" layoutY="775.0" mnemonicParsing="false" styleClass="menu" stylesheets="@../CSS/Style.css" text="ToggleButton">
                      <graphic>
                         <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToAdmin" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/administrator.png" />
+                                    <Image url="@../images/administrator.png" />
                                  </image>
                               </ImageView>
                               <Label prefHeight="39.0" prefWidth="178.0" text="Admin">

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="apiSearchVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="880.0" spacing="8.0" styleClass="APISearchView" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.APISearchController">
+<VBox fx:id="apiSearchVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="880.0" spacing="8.0" styleClass="APISearchView" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.APISearchController">
    <children>
       <Label text="Add Books with Google Books API">
          <font>
@@ -22,8 +22,8 @@
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Label>
-      <TextField fx:id="titleField" prefHeight="50.0" prefWidth="670.0" styleClass="search-container" stylesheets="@Style.css" VBox.vgrow="ALWAYS" />
-      <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearch" prefHeight="43.0" prefWidth="890.0" stylesheets="@Style.css" text="Search" VBox.vgrow="ALWAYS">
+      <TextField fx:id="titleField" prefHeight="50.0" prefWidth="670.0" styleClass="search-container" stylesheets="@../CSS/Style.css" VBox.vgrow="ALWAYS" />
+      <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearch" prefHeight="43.0" prefWidth="890.0" stylesheets="@../CSS/Style.css" text="Search" VBox.vgrow="ALWAYS">
          <styleClass>
             <String fx:value="books-button" />
             <String fx:value="button-span" />
@@ -34,7 +34,7 @@
             <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" visible="false" />
          </children>
       </HBox>
-      <ScrollPane fx:id="scrollPane" prefHeight="368.0" prefWidth="862.0" styleClass="transparent" stylesheets="@Style.css" visible="true">
+      <ScrollPane fx:id="scrollPane" prefHeight="368.0" prefWidth="862.0" styleClass="transparent" stylesheets="@../CSS/Style.css" visible="true">
          <content>
             <VBox fx:id="foundBooks" prefHeight="0.0" prefWidth="845.0" />
          </content>

@@ -200,7 +200,7 @@ public class HomeController {
     public void switchToSupport() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/Support.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/Support.fxml"));
             VBox supportView = fxmlLoader.load();
 
             SupportController supportController = fxmlLoader.getController();
@@ -214,7 +214,7 @@ public class HomeController {
     }
     public void switchToSignout(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
             Parent root = fxmlLoader.load();
 
             // Get the current stage from the event

@@ -34,7 +34,7 @@
                <children>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/account.png" />
+                        <Image url="@../images/account.png" />
                      </image>
                   </ImageView>
                </children>
@@ -43,9 +43,9 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="745.0">
          <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container" stylesheets="@Style.css">
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container" stylesheets="@../CSS/Style.css">
                <children>
-                  <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@Style.css" text="Search By">
+                  <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search By">
                     <items>
                       <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
                       <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
@@ -54,10 +54,10 @@
                   </MenuButton>
                   <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/loupe.png" />
+                        <Image url="@../images/loupe.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="283.0" promptText="Search" styleClass="transparent" stylesheets="@Style.css" />
+                  <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="283.0" promptText="Search" styleClass="transparent" stylesheets="@../CSS/Style.css" />
                </children>
             </HBox>
          </children>
@@ -68,7 +68,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="870.0" styleClass="transparent" stylesheets="@Style.css" VBox.vgrow="ALWAYS">
+      <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="870.0" styleClass="transparent" stylesheets="@../CSS/Style.css" VBox.vgrow="ALWAYS">
          <content>
             <GridPane fx:id="featuredBooks" prefHeight="0.0" prefWidth="0.0">
                <rowConstraints>

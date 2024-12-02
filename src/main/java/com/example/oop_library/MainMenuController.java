@@ -2,7 +2,6 @@ package com.example.oop_library;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
@@ -54,7 +53,7 @@ public class MainMenuController {
 
     private void logOutUser() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
             Parent root = fxmlLoader.load();
 
             Stage stage = (Stage) avatarImageView.getScene().getWindow();

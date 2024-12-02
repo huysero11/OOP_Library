@@ -3,27 +3,26 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="borrowedBooksInfoHBox" alignment="CENTER_LEFT" prefHeight="186.0" prefWidth="734.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BorrowedBooksInfoController">
+<HBox alignment="CENTER" prefHeight="160.0" prefWidth="845.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BookShortInfoController">
    <children>
-      <ImageView fx:id="bookImage" fitHeight="178.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+      <ImageView fx:id="bookImage" fitHeight="141.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
          <image>
-            <Image url="@images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
+            <Image url="@../../../../../../../OneDrive/Desktop/oop_libarary2/demo/src/main/resources/com/example/images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
          </image>
       </ImageView>
-      <VBox prefHeight="174.0" prefWidth="359.0" stylesheets="@Style.css">
+      <VBox prefHeight="146.0" prefWidth="490.0" stylesheets="@../CSS/Style.css">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/book.png" />
+                        <Image url="@../images/book.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="catagory" prefHeight="39.0" prefWidth="358.0" text="Truyện ngắn">
@@ -56,16 +55,11 @@
             </Label>
          </children>
       </VBox>
-      <VBox alignment="CENTER" spacing="20.0">
-         <children>
-            <ToggleButton fx:id="returnBookButton" mnemonicParsing="false" onAction="#setReturnBookButton" prefHeight="43.0" prefWidth="162.0" styleClass="books-button" stylesheets="@Style.css" text="Return book" />
-            <Button fx:id="borrowDetailButton" mnemonicParsing="false" onAction="#setBorrowDetailButton" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" stylesheets="@Style.css" text="Borrow detail">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
+      <Button fx:id="selectBooks" mnemonicParsing="false" onAction="#addBooks" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Select book">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
    </children>
    <padding>
       <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />

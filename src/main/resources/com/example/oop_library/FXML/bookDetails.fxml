@@ -16,13 +16,13 @@
    <children>
       <Pane prefHeight="34.0" prefWidth="1063.0">
          <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@Style.css">
+            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
                <graphic>
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/arrow.png" />
+                              <Image url="@../images/arrow.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="29.0" prefWidth="60.0" text="Home" />
@@ -37,18 +37,18 @@
                <children>
                   <ImageView fx:id="bookImage" fitHeight="302.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
+                        <Image url="@../images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <VBox prefHeight="302.0" prefWidth="872.0" styleClass="right-side-border" stylesheets="@Style.css">
+            <VBox prefHeight="302.0" prefWidth="872.0" styleClass="right-side-border" stylesheets="@../CSS/Style.css">
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/book.png" />
+                              <Image url="@../images/book.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="catagory" prefHeight="39.0" prefWidth="810.0" text="Truyện ngắn">
@@ -90,7 +90,7 @@
                         <Insets bottom="28.0" />
                      </VBox.margin>
                   </Label>
-                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" stylesheets="@Style.css" text="BORROW">
+                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" stylesheets="@../CSS/Style.css" text="BORROW">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -104,7 +104,7 @@
       </HBox>
       <VBox prefHeight="336.0" prefWidth="477.0" spacing="20.0">
          <children>
-            <Label styleClass="bottom-side-border" stylesheets="@Style.css" text="Description">
+            <Label styleClass="bottom-side-border" stylesheets="@../CSS/Style.css" text="Description">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

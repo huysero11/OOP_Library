@@ -55,7 +55,7 @@ public class ResetPasswordController {
 
                 // go to login view
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
                     Parent root = fxmlLoader.load();
 
                     // get the current stage from the event
@@ -74,7 +74,7 @@ public class ResetPasswordController {
 
     public void openLoginView(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
             Parent root = fxmlLoader.load();
 
             // get the current stage from the event
@@ -91,7 +91,7 @@ public class ResetPasswordController {
 
     public void openSignUpView(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/SignUpView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/SignUpView.fxml"));
             Parent root = fxmlLoader.load();
 
             // get the current stage from the event

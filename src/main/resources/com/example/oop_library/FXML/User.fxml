@@ -22,13 +22,13 @@
                   <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="233.333251953125" text="Borrowed Book" />
               </columns>
             </TableView>
-            <Button fx:id="backButton" layoutX="33.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@Style.css">
+            <Button fx:id="backButton" layoutX="33.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
                <graphic>
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/arrow.png" />
+                              <Image url="@../images/arrow.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="29.0" prefWidth="60.0" text="Home" />

@@ -17,28 +17,28 @@
       <!-- Background Image -->
       <ImageView fx:id="loginBackgroundImageView" fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false" StackPane.alignment="CENTER">
          <image>
-            <Image url="@loginViewBackground.jpg" />
+            <Image url="@../images/loginViewBackground.jpg" />
          </image>
          <StackPane.margin>
             <Insets />
          </StackPane.margin>
       </ImageView>
       <!-- Main VBox containing HBox -->
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="395.0" prefWidth="775.0" styleClass="loginRootVBox" stylesheets="@LoginView.css">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="395.0" prefWidth="775.0" styleClass="loginRootVBox" stylesheets="@../CSS/LoginView.css">
          <children>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="358.0" prefWidth="776.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 10;" styleClass="loginRootHBox">
                <children>
                   <!-- Placeholder for the animated image on the left side of login form -->
                   <ImageView fitHeight="358.0" fitWidth="511.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@loginViewBackgroundLeft.jpg" />
+                        <Image url="@../images/loginViewBackgroundLeft.jpg" />
                      </image>
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </ImageView>
                   <!-- Login Form Section -->
-                  <VBox fx:id="loginVBoxRight" prefHeight="358.0" prefWidth="281.0" styleClass="loginVBox" stylesheets="@LoginView.css" HBox.hgrow="NEVER">
+                  <VBox fx:id="loginVBoxRight" prefHeight="358.0" prefWidth="281.0" styleClass="loginVBox" stylesheets="@../CSS/LoginView.css" HBox.hgrow="NEVER">
                      <children>
                         <Label fx:id="loginLabel1" alignment="CENTER" prefHeight="35.0" prefWidth="283.0" text="Welcome!">
                            <font>

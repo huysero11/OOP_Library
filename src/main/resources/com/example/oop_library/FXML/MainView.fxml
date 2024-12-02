@@ -8,7 +8,7 @@
     <children>
         <ImageView fx:id="avatarImageView" fitHeight="141.0" fitWidth="81.0" layoutX="737.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/Logo_HUET.svg.png" />
+                <Image url="@../images/Logo_HUET.svg.png" />
             </image>
         </ImageView>
     </children>

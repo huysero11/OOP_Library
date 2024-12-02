@@ -3,7 +3,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:id="centerArea" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20; -fx-background-color: #ffffff;" stylesheets="@support.css">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="centerArea" fx:controller="com.example.oop_library.SupportController" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20; -fx-background-color: #ffffff;" stylesheets="@../CSS/support.css">
 
     <!-- Tiêu đề -->
     <VBox spacing="8" alignment="CENTER">

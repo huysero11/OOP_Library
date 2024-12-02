@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -79,7 +78,7 @@ public class SignUpController {
 
                     // open main view
                     try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/MainView.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/MainView.fxml"));
                         Parent root = fxmlLoader.load();
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         Scene scene = new Scene(root);
@@ -96,7 +95,7 @@ public class SignUpController {
 
     public void openLoginView(MouseEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/LoginView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
             Parent root = fxmlLoader.load();
             // get the current stage from the event
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
