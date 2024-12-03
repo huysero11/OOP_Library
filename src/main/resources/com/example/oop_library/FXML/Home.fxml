@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" prefHeight="1000.0" prefWidth="600.0" stylesheets="@../CSS/HomeView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
+<VBox fx:id="centerArea" prefHeight="1000.0" prefWidth="600.0" stylesheets="@../CSS/ContextMenu.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
    <children>
-      <HBox fx:id="HBox1" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label onMouseClicked="#switchToSupport" text="Support">
                <font>
@@ -41,7 +41,7 @@
             </HBox>
          </children>
       </HBox>
-      <HBox fx:id="HBox2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="775.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="745.0" stylesheets="@../CSS/ContextMenu.css">
          <children>
             <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container" stylesheets="@../CSS/Style.css">
                <children>
@@ -62,13 +62,11 @@
             </HBox>
          </children>
       </HBox>
+      <Pane prefHeight="19.0" prefWidth="1034.0" />
       <Label fx:id="showText" text="    Featured Books   ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
-         <VBox.margin>
-            <Insets left="15.0" />
-         </VBox.margin>
       </Label>
       <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="870.0" styleClass="transparent" stylesheets="@../CSS/Style.css" VBox.vgrow="ALWAYS">
          <content>
@@ -78,9 +76,9 @@
                </rowConstraints>
             </GridPane>
          </content>
-         <VBox.margin>
-            <Insets left="15.0" right="15.0" />
-         </VBox.margin>
       </ScrollPane>
    </children>
+   <padding>
+      <Insets left="15.0" right="15.0" />
+   </padding>
 </VBox>

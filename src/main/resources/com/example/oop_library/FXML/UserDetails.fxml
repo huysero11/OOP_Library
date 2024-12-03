@@ -16,7 +16,7 @@
 
 <VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
    <children>
-      <Pane prefHeight="256.0" prefWidth="1063.0">
+      <Pane prefHeight="154.0" prefWidth="775.0">
          <children>
             <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
                <graphic>
@@ -27,7 +27,7 @@
                               <Image url="@../images/arrow.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="29.0" prefWidth="60.0" text="Home" />
+                        <Label prefHeight="29.0" prefWidth="60.0" text="Back" />
                      </children>
                   </HBox>
                </graphic>
@@ -54,23 +54,23 @@
             </Label>
          </children>
       </Pane>
-      <StackPane>
-         <TableView fx:id="tableView" prefHeight="508.0" prefWidth="800.0">
-            <columns>
-               <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
-               <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />
-               <TableColumn fx:id="name" minWidth="0.0" prefWidth="267.4667205810547" resizable="false" text="Name" />
-               <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="182.66671752929688" resizable="false" text="Borrow Date" />
-               <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="156.7999267578125" resizable="false" text="Return Date" />
-            </columns>
-            <stylesheets>
-               <URL value="@../CSS/table.css" />
-               <URL value="@../CSS/table.css" />
-            </stylesheets>
-         </TableView>
-
-         <!-- Đặt ProgressIndicator lên trên TableView -->
-         <ProgressIndicator fx:id="loadingSpinner" prefHeight="201.0" prefWidth="274.0" stylesheets="@../CSS/progressIndicator.css" visible="false" />
+      <StackPane prefHeight="407.0" prefWidth="775.0">
+         <children>
+            <TableView fx:id="tableView" maxWidth="750.0" prefHeight="407.0" prefWidth="690.0">
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
+                  <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />
+                  <TableColumn fx:id="name" minWidth="0.0" prefWidth="265.60003662109375" resizable="false" text="Name" />
+                  <TableColumn fx:id="borrowDate" minWidth="0.0" prefWidth="161.5999755859375" resizable="false" text="Borrow Date" />
+                  <TableColumn fx:id="returnDate" minWidth="0.0" prefWidth="148.0" resizable="false" text="Return Date" />
+               </columns>
+               <stylesheets>
+                  <URL value="@../CSS/table.css" />
+                  <URL value="@../CSS/table.css" />
+               </stylesheets>
+            </TableView>
+            <ProgressIndicator fx:id="loadingSpinner" prefHeight="201.0" prefWidth="274.0" stylesheets="@../CSS/progressIndicator.css" visible="false" />
+         </children>
       </StackPane>
    </children>
 </VBox>
