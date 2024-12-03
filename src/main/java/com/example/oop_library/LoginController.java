@@ -94,6 +94,8 @@ public class LoginController {
                     // Get the current stage from the event
                     DashboardController dashboardController = fxmlLoader.getController();
                     dashboardController.setLoggedInUser(user);
+                    dashboardController.switchToDashBoard();
+
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
