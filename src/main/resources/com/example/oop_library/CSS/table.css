@@ -1,47 +1,37 @@
 /* CSS cho toàn bộ TableView */
 .table-view {
-    -fx-background-color: white; /* Nền bảng */
-    -fx-background-radius: 15; /* Bo góc */
-    -fx-border-color: #00a653; /* Viền xanh */
-    -fx-border-width: 2; /* Độ rộng viền */
-    -fx-border-radius: 15; /* Bo góc viền */
-    -fx-padding: 10; /* Khoảng cách bên trong */
-    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 20, 0.5, 5, 5); /* Đổ bóng */
+    -fx-border-color: #028e50;
+    /*-fx-border-width: 5;*/
+    -fx-border-radius: 5;
 }
 
-/* CSS cho tiêu đề các cột (header) */
+
+/* Apply the green border to the right side of the column header */
 .table-view .column-header {
-    -fx-background-color: #00d374; /* Màu nền tiêu đề */
-    -fx-text-fill: white; /* Màu chữ tiêu đề */
-    -fx-font-weight: bold; /* Chữ đậm */
-    -fx-font-size: 14px; /* Kích thước chữ */
-    -fx-alignment: center; /* Căn giữa */
-    -fx-background-radius: 15; /* Bo góc hoàn toàn */
-    -fx-padding: 5; /* Khoảng cách bên trong */
-    -fx-border-radius: 15; /* Bo góc viền */
-    -fx-wrap-text: true;
+    -fx-border-color: green;
+    -fx-border-width: 2px;
+    -fx-background-color: #06dc7c;
 }
 
-/* Thanh chia cột trong tiêu đề */
-.table-view .column-header-background {
-    -fx-border-color: transparent; /* Ẩn đường viền giữa tiêu đề và nội dung */
-    -fx-background-color: transparent; /* Tránh màu lấn sang các ô */
-}
+
+
+
+
+
 
 /* CSS cho các hàng và ô (cell) */
 .table-row-cell {
-    -fx-background-color: white; /* Màu nền của hàng */
-    -fx-border-color: transparent; /* Không viền giữa các hàng */
+    /*-fx-border-color: green;*/
 }
 
 .table-cell {
     -fx-wrap-text: true;
     -fx-text-fill: black; /* Màu chữ */
-    -fx-font-size: 14px; /* Kích thước chữ */
+    -fx-font-size: 10px; /* Kích thước chữ */
     -fx-font-family: "System"; /* Font chữ */
     -fx-alignment: center; /* Căn giữa */
     -fx-valignment: center;
-    -fx-padding: 5; /* Khoảng cách nội dung trong ô */
+    /*-fx-padding: 5; !* Khoảng cách nội dung trong ô *!*/
 }
 
 /* Hàng được chọn (selected row) */
@@ -58,21 +48,14 @@
 
 /* Đường viền khi bảng được focus */
 .table-view:focused {
-    -fx-border-color: #06dc7c; /* Viền nổi bật */
-    -fx-border-width: 3;
-    -fx-border-radius: 15;
+    -fx-border-color: #028e50; /* Viền nổi bật */
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
 }
 
 /* Nút trong bảng */
 .table-cell .button {
-    -fx-background-color: #00d374; /* Màu nền đồng bộ với tiêu đề bảng */
-    -fx-text-fill: white; /* Màu chữ */
-    -fx-font-weight: bold; /* Chữ đậm */
-    -fx-padding: 5px 10px; /* Khoảng cách bên trong */
-    -fx-border-radius: 15px; /* Bo góc */
-    -fx-background-radius: 15px; /* Bo góc nền */
-    -fx-cursor: hand; /* Con trỏ tay khi hover */
-    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 5, 0.5, 0, 1); /* Đổ bóng */
+
 }
 
 /* Hiệu ứng hover (di chuột qua nút) */
