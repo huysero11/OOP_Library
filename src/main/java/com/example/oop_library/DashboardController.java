@@ -42,6 +42,7 @@ public class DashboardController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/Home.fxml"));
             VBox p = fxmlLoader.load();
+            p.getStylesheets().add(getClass().getResource("/com/example/oop_library/CSS/ContextMenu.css").toExternalForm());
             HomeController homeController = fxmlLoader.getController();
             homeController.setLoggedInUser(loggedInUser);
             homeController.showFeaturedBooks(this);

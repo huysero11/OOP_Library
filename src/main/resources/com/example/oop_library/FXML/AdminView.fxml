@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="795.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
+<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
    <children>
-      <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="775.0" spacing="15.0">
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="775.0" spacing="15.0">
          <children>
             <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="38.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Delete book">
                <styleClass>
@@ -77,12 +77,12 @@
       </HBox>
       <Pane fx:id="adminViewPane" prefHeight="558.0" prefWidth="1000.0">
          <children>
-            <TableView fx:id="userTable" layoutX="20.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="484.0" prefWidth="754.0" stylesheets="@../CSS/table.css">
+            <TableView fx:id="userTable" layoutX="14.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="484.0" prefWidth="746.0" stylesheets="@../CSS/table.css">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="72.00003355741501" resizable="false" text="ID" />
                   <TableColumn fx:id="nameColumn" prefWidth="271.20005798339844" resizable="false" text="Name" />
-                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="258.3999938964844" resizable="false" text="Phone Number" />
-                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="126.39996337890625" resizable="false" text="Borrowed Book" />
+                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="239.99996948242188" resizable="false" text="Phone Number" />
+                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="129.60003662109375" resizable="false" text="Borrowed Book" />
                </columns>
             </TableView>
          </children>

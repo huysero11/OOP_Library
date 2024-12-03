@@ -89,6 +89,11 @@ public class HomeController {
 
         profile.setOnAction(e -> switchToProfile());
         deleteAccount.setOnAction(e -> deleteUserAccount());
+
+        Scene scene = avatarImageView.getScene();
+        if (scene != null) {
+            scene.getStylesheets().add(getClass().getResource("/com/example/oop_library/CSS/ContextMenu.css").toExternalForm());
+        }
     }
 
     public void showFeaturedBooks(DashboardController dashboardController) {
