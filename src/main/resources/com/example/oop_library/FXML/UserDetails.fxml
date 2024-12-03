@@ -16,7 +16,7 @@
 
 <VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
    <children>
-      <Pane prefHeight="154.0" prefWidth="775.0">
+      <Pane prefHeight="150.0" prefWidth="775.0">
          <children>
             <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
                <graphic>
@@ -32,31 +32,32 @@
                   </HBox>
                </graphic>
             </Button>
-            <Label layoutX="80.0" layoutY="64.0" prefHeight="35.0" prefWidth="131.0" text="Name">
+            <Label layoutX="68.0" layoutY="52.0" prefHeight="47.0" prefWidth="159.0" text="Name">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="80.0" layoutY="120.0" text="Phone Number">
+            <Label layoutX="68.0" layoutY="120.0" text="Phone Number">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="username" layoutX="337.0" layoutY="64.0" prefHeight="30.0" prefWidth="422.0" text="Label">
+            <Label fx:id="username" layoutX="236.0" layoutY="60.0" prefHeight="30.0" prefWidth="364.0" text="Label">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="phoneNumber" layoutX="337.0" layoutY="120.0" prefHeight="30.0" prefWidth="422.0" text="Label">
+            <Label fx:id="phoneNumber" layoutX="236.0" layoutY="120.0" prefHeight="30.0" prefWidth="364.0" text="Label">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="updateButton" alignment="CENTER" layoutX="626.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleUpdateButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Update Info" textAlignment="CENTER" visible="false" wrapText="true" />
          </children>
       </Pane>
       <StackPane prefHeight="407.0" prefWidth="775.0">
          <children>
-            <TableView fx:id="tableView" maxWidth="750.0" prefHeight="407.0" prefWidth="690.0">
+            <TableView fx:id="tableView" maxWidth="750.0" prefHeight="409.0" prefWidth="750.0">
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="42.933309674263" resizable="false" text="No." />
                   <TableColumn fx:id="book" minWidth="0.0" prefWidth="97.06666564941406" resizable="false" text="Book" />

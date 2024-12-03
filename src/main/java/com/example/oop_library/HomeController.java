@@ -53,9 +53,6 @@ public class HomeController {
     @FXML
     private ImageView avatarImageView;
 
-    @FXML
-    private ContextMenu contextMenu;
-
     private String searchCriteria = "book_name like ";
 
     private User loggedInUser;
@@ -70,25 +67,6 @@ public class HomeController {
     public void initialize() {
         centerArea.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
         centerArea.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
-
-        contextMenu = new ContextMenu();
-        contextMenu.getStyleClass().add("context-menu");
-
-        MenuItem profile = new MenuItem("Profile");
-        MenuItem deleteAccount = new MenuItem("Delete Account");
-
-        contextMenu.getItems().addAll(profile, deleteAccount);
-
-        avatarImageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            if (event.getButton() == MouseButton.SECONDARY) {
-                contextMenu.show(avatarImageView, event.getScreenX(), event.getScreenY());
-            } else {
-                contextMenu.hide();
-            }
-        });
-
-        profile.setOnAction(e -> switchToProfile());
-        deleteAccount.setOnAction(e -> deleteUserAccount());
 
         Scene scene = avatarImageView.getScene();
         if (scene != null) {
@@ -274,6 +252,7 @@ public class HomeController {
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/UserDetails.fxml"));
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
+            detailController.setUpdateButtonVisible(true);
             detailController.setData(loggedInUser);
             detailController.setPreviousController(this);
             detailController.setDashboardController(dashboardController);
@@ -281,32 +260,6 @@ public class HomeController {
             centerArea.getChildren().add(p);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    private void deleteUserAccount() {
-        try {
-            Connection connection = MySQLConnection.getConnection();
-            String query = "DELETE FROM users WHERE user_phone = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, loggedInUser.getPhoneNumber());
-            preparedStatement.executeUpdate();
-
-            preparedStatement.close();
-            connection.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                    .getResource("/com/example/oop_library/FXML/LoginView.fxml"));
-            Parent root = fxmlLoader.load();
-
-            Stage stage = (Stage) avatarImageView.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 }

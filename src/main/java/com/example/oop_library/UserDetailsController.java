@@ -4,16 +4,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -47,7 +48,13 @@ public class UserDetailsController {
     private TableColumn<BorrowedBook, LocalDate> returnDate;
 
     @FXML
+    private Button updateButton;
+
+    @FXML
     private ProgressIndicator loadingSpinner;
+
+    @FXML
+    private static Stage updateUser = new Stage();
 
     private User user;
 
@@ -61,6 +68,10 @@ public class UserDetailsController {
 
     public void setDashboardController(DashboardController dashboardController) {
         this.dashboardController = dashboardController;
+    }
+
+    public void setUpdateButtonVisible(boolean visible) {
+        updateButton.setVisible(visible);
     }
 
     private ObservableList<BorrowedBook> bookList = FXCollections.observableArrayList();
@@ -156,8 +167,7 @@ public class UserDetailsController {
                 AdminController adminController = fxmlLoader.getController();
                 centerArea.getChildren().clear();
                 centerArea.getChildren().add(adminView);
-            }
-            else if (previousController instanceof HomeController) {
+            } else if (previousController instanceof HomeController) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/Home.fxml"));
                 VBox homeView = fxmlLoader.load();
                 HomeController homeController = fxmlLoader.getController();
@@ -170,4 +180,25 @@ public class UserDetailsController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void handleUpdateButtonAction() {
+        try {
+            tableView.getItems().clear();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/UpdateUser.fxml"));
+            Parent root = loader.load();
+            UpdateUserController updateUserController = loader.getController();
+
+            updateUserController.setUser(user);
+            updateUserController.setUserDetailsController(this);
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Cập nhật thông tin người dùng");
+            stage.setScene(new Scene(root, 600, 400));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
