@@ -52,7 +52,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button fx:id="updateButton" alignment="CENTER" layoutX="626.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleUpdateButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Update Info" textAlignment="CENTER" visible="false" wrapText="true" />
+            <StackPane layoutX="575.0" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="updateButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleUpdateButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Update Info" textAlignment="CENTER" visible="false" wrapText="true" />
+                  <Button fx:id="deleteAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleDeleteAccountButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Delete Account" textAlignment="CENTER" visible="false" wrapText="true" />
+               </children>
+            </StackPane>
          </children>
       </Pane>
       <StackPane prefHeight="407.0" prefWidth="775.0">

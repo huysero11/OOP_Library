@@ -51,6 +51,9 @@ public class UserDetailsController {
     private Button updateButton;
 
     @FXML
+    private Button deleteAccountButton;
+
+    @FXML
     private ProgressIndicator loadingSpinner;
 
     @FXML
@@ -81,7 +84,6 @@ public class UserDetailsController {
     @FXML
     public void initialize() {
         tableView.setPlaceholder(new Label(""));
-
         centerArea.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
         centerArea.setPrefHeight(UseForAll.BORDERPANE_CENTER_PREF_HEIGHT);
 
@@ -193,7 +195,7 @@ public class UserDetailsController {
             updateUserController.setUserDetailsController(this);
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Cập nhật thông tin người dùng");
+            stage.setTitle("Update User");
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
         } catch (IOException e) {
@@ -201,4 +203,12 @@ public class UserDetailsController {
         }
     }
 
+    public void handleDeleteAccountButtonAction() {
+        UserDAO.getInstance().delete(user);
+        handleBackButtonAction();
+    }
+
+    public void setDeleteAccountButtonVisible(boolean visible) {
+        deleteAccountButton.setVisible(visible);
+    }
 }
