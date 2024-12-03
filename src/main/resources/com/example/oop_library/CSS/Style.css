@@ -54,7 +54,7 @@
 .menu:hover {
     -fx-background-color: #ecfbff;
     -fx-background-radius: 30;
-    -fx-border-color: red;
+    -fx-border-color: #00f7ff;
     -fx-border-radius: 30;
 }
 
