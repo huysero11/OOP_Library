@@ -118,7 +118,6 @@
     -fx-background-radius: 30;
 }
 
-/* Lớp CSS cho TextField */
 .form {
     -fx-border-color: #838383;
     -fx-border-width: 0.5 0.5 0.5 0.5;
@@ -127,17 +126,16 @@
     -fx-background-radius: 5;
 }
 
-/* Hiệu ứng khi TextField được focus */
 .form:focused {
-    -fx-border-color: rgb(129, 218, 248);    /* Màu border khi focus */
+    -fx-border-color: rgb(129, 218, 248);
     -fx-border-width: 2 2 2 2;
-    -fx-background-color: #fff;                    /* Nền sáng khi focus */
+    -fx-background-color: #fff;
 }
 
 /* Hiệu ứng khi hover */
 .form:hover {
-    -fx-border-color: rgb(129, 195, 248);    /* Màu border khi hover */
-    -fx-background-color: #fff;                    /* Nền sáng khi hover */
+    -fx-border-color: rgb(129, 195, 248);
+    -fx-background-color: #fff;
 }
 
 .Borrowed-Books-Info {
