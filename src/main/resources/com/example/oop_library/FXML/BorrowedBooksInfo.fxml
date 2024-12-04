@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="borrowedBooksInfoHBox" alignment="CENTER_LEFT" prefHeight="186.0" prefWidth="734.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/BorrowedBooksInfo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BorrowedBooksInfoController">
+<HBox fx:id="borrowedBooksInfoHBox" alignment="CENTER_LEFT" prefHeight="186.0" prefWidth="700.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/BorrowedBooksInfo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BorrowedBooksInfoController">
    <children>
       <ImageView fx:id="bookImage" fitHeight="178.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
          <image>

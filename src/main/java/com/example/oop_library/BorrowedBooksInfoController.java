@@ -43,7 +43,7 @@ public class BorrowedBooksInfoController {
 
     @FXML
     public void initialize() {
-        borrowedBooksInfoHBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
+        borrowedBooksInfoHBox.setPrefWidth(700);
     }
 
     public void setData(Books b) {
