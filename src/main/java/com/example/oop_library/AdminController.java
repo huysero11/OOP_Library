@@ -86,7 +86,7 @@ public class AdminController {
             @Override
             protected ObservableList<User> call() throws Exception {
                 ObservableList<User> tempList = FXCollections.observableArrayList();
-                String query = "SELECT user_id, user_name, user_phone FROM users";
+                String query = "SELECT user_id, user_name, user_phone, user_admin FROM users";
 
                 try (Connection connection = MySQLConnection.getConnection();
                      PreparedStatement statement = connection.prepareStatement(query);
@@ -96,7 +96,8 @@ public class AdminController {
                         int id = resultSet.getInt("user_id");
                         String name = resultSet.getString("user_name");
                         String phoneNumber = resultSet.getString("user_phone");
-                        tempList.add(new User(id, name, phoneNumber));
+                        boolean isAdmin = resultSet.getBoolean("user_admin");
+                        tempList.add(new User(id, name, phoneNumber, isAdmin));
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -166,10 +167,11 @@ public class AdminController {
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/UserDetails.fxml"));
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
-            if (this.user != user) {
+            if (!user.isAdmin()) {
                 detailController.setDeleteAccountButtonVisible(true);
             }
             detailController.setData(user);
+            System.out.println(user.getName() + " " + user.isAdmin());
             detailController.setPreviousController(this);
             adminVBox.getChildren().clear();
             adminVBox.getChildren().add(p);
