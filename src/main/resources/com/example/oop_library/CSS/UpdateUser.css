@@ -20,7 +20,8 @@
 /* Hiệu ứng hover (di chuột) trên TextField và PasswordField */
 .text-field:hover, .password-field:hover {
     -fx-border-color: #00d374; /* Màu viền khi hover */
-    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 5, 0.5, 0, 1); /* Đổ bóng nhẹ */
+    /*-fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 5, 0.5, 0, 1); !* Đổ bóng nhẹ *!*/
+    -fx-opacity: 0.7;
 }
 
 /* Hiệu ứng khi nhấn (pressed) vào TextField hoặc PasswordField */

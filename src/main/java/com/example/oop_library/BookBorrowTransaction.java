@@ -34,7 +34,7 @@ public class BookBorrowTransaction {
             return "You can only borrow up to 5 books!\n Return a book before borrowing more.";
         } else if (b.isBorrowed()) {
             return "This book is already borrowed by another user!";
-        } else {     
+        } else {
             if (b.isBorrowed() == false) {
                 // Cập nhật trạng thái sách
                 BookFormController bookFormController = new BookFormController();
@@ -50,7 +50,7 @@ public class BookBorrowTransaction {
         }
         if (user.getBorrowedBooks().indexOf(b) >= 0 && b.isBorrowed() == true) {
             System.out.println("Completed!");
-        } 
+        }
         return String.format("Success! Please remember to return this book by %s", b.getReturnDate());
     }
 

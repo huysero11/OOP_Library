@@ -57,13 +57,13 @@ public class AddBookGoogleApiModalController {
     private void showFoundBooks(List<GBSBooks> foundBooks) {
         Platform.runLater(() -> {
             foundBooksContainer.getChildren().clear();
-    
+
             if (foundBooks == null || foundBooks.isEmpty()) {
                 errorLabel.setText("No books found.");
                 errorLabel.setVisible(true);
                 return;
             }
-    
+
             // for (GBSBooks book : foundBooks) {
             //     Button bookButton = new Button(book.getVolumeInfo().getBookName());
             //     bookButton.setOnAction(event -> showBookDetails(book));

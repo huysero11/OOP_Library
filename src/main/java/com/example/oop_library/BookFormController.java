@@ -225,14 +225,16 @@ public class BookFormController {
             user = UserDAO.getInstance().getById(Integer.parseInt(borrowerIDField.getText()));
             status = true;
             System.out.println(user.getId());
-        } else { user = null; status = false;}
+        } else {
+            user = null;
+            status = false;
+        }
         b.setBorrowerInfo(user);
         b.setThumbNail(imageURLField.getText());
         b.setBookPublicationYear(publicationDateField.getText());
         if (!borrowDateField.getText().isEmpty()) {
             b.setBorrowedDate(LocalDate.parse(borrowDateField.getText()));
-        }
-        else {
+        } else {
             b.setBorrowedDate(null);
         }
         if (!returnDateField.getText().isEmpty()) {
@@ -243,7 +245,7 @@ public class BookFormController {
         } else {
             b.setReturnDate(null);
         }
-        
+
         b.setBorrowed(status);
         if (BooksDao.getInstance().update(b) == 1) {
             try {
@@ -295,7 +297,7 @@ public class BookFormController {
         imageURLField.setOpacity(0.5);
     }
 
-    
+
     public void Edit1() {
         titleField.setEditable(false);
         authorField.setEditable(false);

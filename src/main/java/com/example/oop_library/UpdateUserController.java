@@ -60,8 +60,16 @@ public class UpdateUserController {
                 phoneNumberCheckingLabel.setVisible(true); // Hiển thị cảnh báo
                 hasError = true;
             } else {
-                phoneNumberCheckingLabel.setVisible(false); // Ẩn cảnh báo nếu hợp lệ
-                newPhoneNumber = newUserPhoneNumber.getText();
+                User user = UserDAO.getInstance().getByPhoneNumber(newUserPhoneNumber.getText());
+                if (user != null) {
+                    phoneNumberCheckingLabel.setText("This phone number has been used!");
+                    hasError = true;
+                }
+                else
+                {
+                    phoneNumberCheckingLabel.setVisible(false); // Ẩn cảnh báo nếu hợp lệ
+                    newPhoneNumber = newUserPhoneNumber.getText();
+                }
             }
         }
 

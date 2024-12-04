@@ -11,7 +11,7 @@ public class APItest extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Layout.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 300);
-        primaryStage.setTitle("Google Books Search");  
+        primaryStage.setTitle("Google Books Search");
         primaryStage.getIcons().add(new Image("file:icon.png")); // Optional: Add an icon
         primaryStage.setScene(scene);
         primaryStage.show();

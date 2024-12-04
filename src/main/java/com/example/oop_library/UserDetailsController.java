@@ -186,7 +186,6 @@ public class UserDetailsController {
     @FXML
     public void handleUpdateButtonAction() {
         try {
-            tableView.getItems().clear();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/UpdateUser.fxml"));
             Parent root = loader.load();
             UpdateUserController updateUserController = loader.getController();
@@ -198,6 +197,7 @@ public class UserDetailsController {
             stage.setTitle("Update User");
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
+            tableView.getItems().clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
