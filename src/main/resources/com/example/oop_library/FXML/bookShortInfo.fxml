@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="160.0" prefWidth="845.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BookShortInfoController">
+<HBox alignment="CENTER" prefHeight="160.0" prefWidth="845.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/BookShortInfo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BookShortInfoController">
    <children>
       <ImageView fx:id="bookImage" fitHeight="141.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
          <image>
-            <Image url="@../../../../../../../OneDrive/Desktop/oop_libarary2/demo/src/main/resources/com/example/images/truyen-ngan-chi-pheo-nam-cao_17a42d45c5e84fdcb8a2365d91d4e2c6.jpg" />
+            <Image url="@../images/account.png" />
          </image>
       </ImageView>
       <VBox prefHeight="146.0" prefWidth="490.0" stylesheets="@../CSS/Style.css">
@@ -22,17 +22,17 @@
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/book.png" />
+                        <Image url="@../images/open-book.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="catagory" prefHeight="39.0" prefWidth="358.0" text="Truyện ngắn">
                      <font>
-                        <Font name="System Bold" size="17.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <Label fx:id="bookName" prefHeight="38.0" prefWidth="474.0" text="CHÍ PHÈO">
+            <Label fx:id="bookName" prefHeight="106.0" prefWidth="474.0" text="CHÍ PHÈO">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -55,9 +55,9 @@
             </Label>
          </children>
       </VBox>
-      <Button fx:id="selectBooks" mnemonicParsing="false" onAction="#addBooks" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Select book">
+      <Button fx:id="selectBooks" mnemonicParsing="false" onAction="#addBooks" prefHeight="33.0" prefWidth="161.0" styleClass="books-button" text="Select">
          <font>
-            <Font size="25.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Button>
    </children>

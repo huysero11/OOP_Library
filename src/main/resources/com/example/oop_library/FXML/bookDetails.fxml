@@ -8,29 +8,32 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="bookDetailsVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" spacing="28.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.bookDetailController">
+<VBox fx:id="bookDetailsVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" stylesheets="@../CSS/BookDetails.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.bookDetailController">
    <children>
-      <Pane prefHeight="34.0" prefWidth="1063.0">
-         <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
-                     <children>
-                        <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/arrow.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="29.0" prefWidth="60.0" text="Home" />
-                     </children>
-                  </HBox>
-               </graphic></Button>
-         </children>
-      </Pane>
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
+         <graphic>
+            <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/back.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="47.0" prefWidth="50.0" text="Back">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </graphic>
+         <VBox.margin>
+            <Insets left="20.0" top="20.0" />
+         </VBox.margin>
+      </Button>
       <HBox prefHeight="324.0" prefWidth="1063.0" spacing="25.0">
          <children>
             <AnchorPane prefHeight="310.0" prefWidth="202.0">
@@ -44,30 +47,27 @@
             </AnchorPane>
             <VBox prefHeight="302.0" prefWidth="872.0" styleClass="right-side-border" stylesheets="@../CSS/Style.css">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/book.png" />
+                              <Image url="@../images/open-book.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="catagory" prefHeight="39.0" prefWidth="810.0" text="Truyện ngắn">
                            <font>
-                              <Font name="System Bold" size="17.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <Label fx:id="bookName" prefHeight="75.0" prefWidth="954.0" text="CHÍ PHÈO">
+                  <Label fx:id="bookName" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="79.0" prefWidth="797.0" text="CHÍ PHÈO">
                      <font>
-                        <Font name="System Bold" size="38.0" />
+                        <Font name="System Bold" size="25.0" />
                      </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
                   </Label>
                   <Label fx:id="bookAuthor" text="Nam Cao" textFill="#7b7878">
                      <font>
@@ -90,7 +90,7 @@
                         <Insets bottom="28.0" />
                      </VBox.margin>
                   </Label>
-                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" stylesheets="@../CSS/Style.css" text="BORROW">
+                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" text="BORROW">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -102,14 +102,14 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </HBox>
-      <VBox prefHeight="336.0" prefWidth="477.0" spacing="20.0">
+      <VBox prefHeight="356.0" prefWidth="1063.0">
          <children>
-            <Label styleClass="bottom-side-border" stylesheets="@../CSS/Style.css" text="Description">
+            <Label fx:id="bookDescriptionLabel" styleClass="bottom-side-border" stylesheets="@../CSS/Style.css" text="Description">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="description" alignment="TOP_LEFT" prefHeight="264.0" prefWidth="1058.0" text="Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Chí Phèo cũng là tên nhân vật chính của truyện." wrapText="true">
+            <Label fx:id="description" alignment="TOP_LEFT" prefHeight="269.0" prefWidth="1023.0" text="Chí Phèo là một truyện ngắn nổi tiếng của nhà văn Nam Cao viết vào tháng 2 năm 1941. Chí Phèo là một tác phẩm xuất sắc, thể hiện nghệ thuật viết truyện độc đáo của Nam Cao, đồng thời là một tấn bi kịch của một người nông dân nghèo bị tha hóa trong xã hội. Chí Phèo cũng là tên nhân vật chính của truyện." wrapText="true">
                <font>
                   <Font size="13.0" />
                </font>

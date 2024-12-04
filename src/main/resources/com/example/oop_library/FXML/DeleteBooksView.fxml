@@ -13,33 +13,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="deleteBooksVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" spacing="8.0" styleClass="APISearchView" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DeleteBooksController">
+<VBox fx:id="deleteBooksVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="APISearchView" stylesheets="@../CSS/DeleteBooks.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DeleteBooksController">
    <children>
       <Label fx:id="stageName" text="Delete Available Books">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
-      </Label>
-      <Label text="Search">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
       </Label>
       <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="44.0" prefWidth="612.0" spacing="15.0" styleClass="search-container" stylesheets="@../CSS/Style.css">
          <children>
-            <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search By">
+            <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search by" textFill="#005e35">
                <items>
                   <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
                   <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
                   <MenuItem fx:id="searchByCategory" mnemonicParsing="false" text="Category" />
                </items>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </MenuButton>
             <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/loupe.png" />
                </image>
             </ImageView>
-            <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="674.0" promptText="Search" styleClass="transparent" stylesheets="@../CSS/Style.css" />
+            <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="793.0" promptText="Search..." styleClass="transparent" stylesheets="@../CSS/Style.css" />
          </children>
       </HBox>
       <Label fx:id="errorLabel" prefHeight="0.0" prefWidth="1.0" textFill="RED" />
@@ -58,6 +59,6 @@
       </ScrollPane>
    </children>
    <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
 </VBox>

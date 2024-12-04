@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserController">
+<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1063.0" stylesheets="@../CSS/User.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserController">
    <children>
       <Pane prefHeight="853.0" prefWidth="1063.0">
          <children>
@@ -28,10 +29,13 @@
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/arrow.png" />
+                              <Image url="@../images/back.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="29.0" prefWidth="60.0" text="Home" />
+                        <Label prefHeight="29.0" prefWidth="60.0" text="Back">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                </graphic>

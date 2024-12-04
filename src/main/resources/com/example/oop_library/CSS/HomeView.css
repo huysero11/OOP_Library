@@ -19,3 +19,16 @@
     -fx-text-fill: #005e35;
 }
 
+.search-container{
+    -fx-border-color: #000000;
+    -fx-border-radius:30;
+    -fx-border-width: 2;
+
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 30;
+}
+
+.transparent{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+

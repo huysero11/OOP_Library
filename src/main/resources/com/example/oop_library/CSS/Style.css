@@ -1,27 +1,7 @@
-.borrow-button{
-    -fx-border-color: #000000;
-    -fx-border-radius:30;
-    -fx-background-color: #00dc80;
-    -fx-background-radius: 30;
-}
 
-.borrowed-button{
-    -fx-border-color: #000000;
-    -fx-border-radius:30;
-    -fx-background-color: #bebebe;
-    -fx-background-radius: 30;
-}
 
-.search-container{
-    -fx-border-color: #000000;
-    -fx-border-radius:30;
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 30;
-}
 
-.transparent{
-    -fx-background-color: rgba(0, 0, 0, 0);
-}
+
 
 .primary-color{
     -fx-background-color: #d5ffd7;
