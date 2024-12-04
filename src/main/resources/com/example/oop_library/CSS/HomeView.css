@@ -1,0 +1,21 @@
+/* phan top cua homeview */
+#HBox1, #HBox2 {
+    -fx-background-color: #43eca5;
+}
+
+#homeViewSignOutLabel, #homeViewSupportLabel, #avatarImageView {
+    -fx-alignment: center;
+    -fx-text-fill: #024328;
+}
+
+
+
+#homeViewSignOutLabel:hover, #homeViewSupportLabel:hover,
+#avatarImageView:hover {
+    -fx-opacity: 0.7;
+}
+
+#showText {
+    -fx-text-fill: #005e35;
+}
+

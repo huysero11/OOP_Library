@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
@@ -10,22 +11,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" prefHeight="1000.0" prefWidth="600.0" stylesheets="@../CSS/ContextMenu.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
+<VBox fx:id="centerArea" prefHeight="1000.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.HomeController">
    <children>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+      <HBox fx:id="HBox1" alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="775.0" VBox.vgrow="ALWAYS">
          <children>
-            <Label onMouseClicked="#switchToSupport" text="Support">
+            <Label fx:id="homeViewSupportLabel" onMouseClicked="#switchToSupport" prefHeight="36.0" prefWidth="64.0" text="Support">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Pane prefHeight="55.0" prefWidth="26.0" />
-            <Label onMouseClicked="#switchToSignout" text="Sign out">
+            <Label fx:id="homeViewSignOutLabel" onMouseClicked="#switchToSignout" prefHeight="36.0" prefWidth="65.0" text="Sign out">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -36,39 +35,60 @@
                      <image>
                         <Image url="@../images/account.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
                   </ImageView>
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </HBox>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="69.0" prefWidth="745.0" stylesheets="@../CSS/ContextMenu.css">
+      <HBox fx:id="HBox2" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="85.0" prefWidth="775.0" stylesheets="@../CSS/ContextMenu.css" VBox.vgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container" stylesheets="@../CSS/Style.css">
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="525.0" spacing="15.0" styleClass="search-container">
                <children>
-                  <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search By">
+                  <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search By" textFill="#005e35">
                     <items>
                       <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
                       <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
                       <MenuItem fx:id="searchByCategory" mnemonicParsing="false" text="Category" />
                     </items>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </MenuButton>
                   <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/loupe.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="283.0" promptText="Search" styleClass="transparent" stylesheets="@../CSS/Style.css" />
+                  <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="328.0" promptText="Search..." styleClass="transparent" stylesheets="@../CSS/Style.css" />
                </children>
+               <stylesheets>
+                  <URL value="@../CSS/Style.css" />
+                  <URL value="@../CSS/HomeView.css" />
+               </stylesheets>
             </HBox>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </HBox>
-      <Pane prefHeight="19.0" prefWidth="1034.0" />
       <Label fx:id="showText" text="    Featured Books   ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <VBox.margin>
+            <Insets left="15.0" top="15.0" />
+         </VBox.margin>
       </Label>
-      <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="870.0" styleClass="transparent" stylesheets="@../CSS/Style.css" VBox.vgrow="ALWAYS">
+      <ScrollPane fx:id="scrollPane" prefHeight="1100.0" prefWidth="745.0" styleClass="transparent" stylesheets="@../CSS/Style.css" VBox.vgrow="ALWAYS">
          <content>
             <GridPane fx:id="featuredBooks" prefHeight="0.0" prefWidth="0.0">
                <rowConstraints>
@@ -76,9 +96,13 @@
                </rowConstraints>
             </GridPane>
          </content>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" />
+         </VBox.margin>
       </ScrollPane>
    </children>
-   <padding>
-      <Insets left="15.0" right="15.0" />
-   </padding>
+   <stylesheets>
+      <URL value="@../CSS/HomeView.css" />
+      <URL value="@../CSS/ContextMenu.css" />
+   </stylesheets>
 </VBox>

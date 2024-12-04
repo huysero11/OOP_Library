@@ -3,19 +3,19 @@
 }
 
 .right-side-border{
-    -fx-border-color: #6f6f6f;
-    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #019e59;
+    -fx-border-width: 0 2 0 0;
 }
 
 .bottom-side-border{
     -fx-border-color: #6f6f6f;
-    -fx-border-width: 0 0 1 0;
+    -fx-border-width: 0 0 2 0;
 }
 
 .borrow-button{
     -fx-border-color: #000000;
     -fx-border-radius:30;
-    -fx-background-color: #1f8387;
+    -fx-background-color: #00dc80;
     -fx-background-radius: 30;
 }
 
