@@ -63,10 +63,10 @@ public class DashboardController implements Initializable {
             VBox p = fxmlLoader.load();
             // bookDetailController detailController = fxmlLoader.getController();
             // detailController.setData(b, this);
-            // AdminController adminController = fxmlLoader.getController();
+            AdminController adminController = fxmlLoader.getController();
+            adminController.setUser(loggedInUser);
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
-
             TransitionUtils.applyFadeTransition(p);
         } catch (Exception e) {
             // TODO: handle exception

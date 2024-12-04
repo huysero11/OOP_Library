@@ -1,6 +1,12 @@
 package com.example.oop_library;
 
 import javax.swing.text.html.ImageView;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.time.LocalDate;
 
 public class BookBorrowTransaction {
@@ -12,6 +18,19 @@ public class BookBorrowTransaction {
         //     System.out.println("You are banned.");
         //     System.out.println("Please settle the fine to continue using the service!");
         if (user.getBorrowedBooks().size() == 5) {
+            try {
+                Stage notifStage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                Parent root = fxmlLoader.load();
+                NotificationController notificationController = fxmlLoader.getController();
+                notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                notificationController.setTextNotif("You can only borrow up to 5 books!\n Return a book before borrowing more.");
+                notifStage.setScene(new Scene(root));
+                notifStage.show();
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
             return "You can only borrow up to 5 books!\n Return a book before borrowing more.";
         } else if (b.isBorrowed()) {
             return "This book is already borrowed by another user!";

@@ -43,6 +43,12 @@ public class AdminController {
     @FXML
     private ObservableList<User> userList = FXCollections.observableArrayList();
 
+    private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @FXML
     public void initialize() {
         adminVBox.setPrefWidth(UseForAll.BORDERPANE_CENTER_PREF_WIDTH);
@@ -160,6 +166,9 @@ public class AdminController {
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/UserDetails.fxml"));
             VBox p = fxmlLoader.load();
             UserDetailsController detailController = fxmlLoader.getController();
+            if (this.user != user) {
+                detailController.setDeleteAccountButtonVisible(true);
+            }
             detailController.setData(user);
             detailController.setPreviousController(this);
             adminVBox.getChildren().clear();
