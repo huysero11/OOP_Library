@@ -1,0 +1,22 @@
+#catagory, #bookName, #bookID, #publicationYear {
+    -fx-text-fill: #00603b;
+    -fx-wrap-text: true;
+}
+
+#bookAuthor {
+    -fx-text-fill: #00dc80;
+}
+
+#returnBookButton, #borrowDetailButton {
+    -fx-background-color:#00dc80;
+    -fx-background-radius: 20;
+
+    -fx-border-color: #004e2f;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+#returnBookButton:hover, #borrowDetailButton:hover {
+    -fx-opacity: 0.7;
+}
+

@@ -1,0 +1,42 @@
+#backButton {
+    -fx-background-color: #00dc80;
+    -fx-background-radius: 10;
+
+    -fx-border-radius: 10;
+    -fx-border-color: #004e2f;
+    -fx-border-width: 2;
+}
+
+
+#catagory, #bookName, #bookID, #publicationYear,
+#bookDescriptionLabel, #description {
+    -fx-text-fill: #00603b;
+    -fx-wrap-text: true;
+}
+
+#bookAuthor {
+    -fx-text-fill: #00dc80;
+}
+
+#borrowButton {
+    -fx-background-color:#00dc80;
+    -fx-background-radius: 20;
+
+    -fx-border-color: #004e2f;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+}
+
+#borrowButton:hover, #backButton:hover {
+    -fx-opacity: 0.7;
+}
+
+
+
+.borrowed-button{
+    -fx-border-color: #004e2f;
+    -fx-border-radius:20;
+
+    -fx-background-color: #bebebe;
+    -fx-background-radius: 20;
+}

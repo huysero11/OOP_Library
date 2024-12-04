@@ -1,0 +1,34 @@
+.white-background{
+    -fx-background-color: #ffffff;
+}
+
+.right-side-border{
+    -fx-border-color: #019e59;
+    -fx-border-width: 0 2 0 0;
+}
+
+.bottom-side-border{
+    -fx-border-color: #6f6f6f;
+    -fx-border-width: 0 0 2 0;
+}
+
+
+
+
+#toggleButtonDashboard, #toggleButtonBooksBorrowed,
+#toggleButtonCategory, #toggleButtonAdmin {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+#toggleButtonDashboard:hover, #toggleButtonBooksBorrowed:hover,
+#toggleButtonCategory:hover, #toggleButtonAdmin:hover {
+    -fx-background-color: #c1ffe9;
+}
+
+#toggleButtonDashboard:selected, #toggleButtonBooksBorrowed:selected,
+#toggleButtonCategory:selected, #toggleButtonAdmin:selected {
+    -fx-background-color: #60ffb8;
+}
+
+

@@ -1,0 +1,21 @@
+#bookFormVBox {
+    -fx-background-color: #ebfff4;;
+}
+
+.label {
+    -fx-font-weight: 700;
+    -fx-text-fill: #00603b;
+}
+
+#submitButton {
+    -fx-font-weight: 700;
+    -fx-font-size: 20;
+    -fx-text-fill: #00603b;
+
+    -fx-border-color: #00603b;
+    -fx-border-width: 3;
+    -fx-border-radius: 10;
+
+    -fx-background-color: #00dc80;
+    -fx-background-radius: 10;
+}
