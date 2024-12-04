@@ -59,7 +59,6 @@ public class DashboardController implements Initializable {
 
         // Set each ToggleButton to the same ToggleGroup
         toggleButtonDashboard.setToggleGroup(toggleGroup);
-        toggleButtonCategory.setToggleGroup(toggleGroup);
         toggleButtonBooksBorrowed.setToggleGroup(toggleGroup);
         toggleButtonAdmin.setToggleGroup(toggleGroup);
 

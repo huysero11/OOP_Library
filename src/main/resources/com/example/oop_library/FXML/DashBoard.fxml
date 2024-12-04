@@ -44,32 +44,6 @@
                      </graphic>
                   </ToggleButton>
 
-                  <!-- ToggleButton Category -->
-                  <ToggleButton fx:id="toggleButtonCategory" mnemonicParsing="false" prefHeight="53.0" prefWidth="223.0" styleClass="menu" text="Category">
-                     <graphic>
-                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/category.png" />
-                                 </image>
-                              </ImageView>
-                              <Label prefHeight="39.0" prefWidth="178.0" text="Category">
-                                 <font>
-                                    <Font name="System Bold" size="17.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets top="3.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
-                        </HBox>
-                     </graphic>
-                  </ToggleButton>
-
                   <!-- ToggleButton Books Borrowed -->
                   <ToggleButton fx:id="toggleButtonBooksBorrowed" layoutX="91.0" layoutY="425.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="246.0" styleClass="menu" text="Books Borrowed">
                      <graphic>
