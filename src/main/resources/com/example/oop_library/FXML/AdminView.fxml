@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
+<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
    <children>
       <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="99.0" prefWidth="775.0" spacing="15.0" stylesheets="@../CSS/AdminView.css">
          <children>
@@ -81,8 +81,8 @@
                <columns>
                   <TableColumn fx:id="idColumn" prefWidth="72.00003355741501" resizable="false" text="ID" />
                   <TableColumn fx:id="nameColumn" prefWidth="271.20005798339844" resizable="false" text="Name" />
-                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="239.99996948242188" resizable="false" text="Phone Number" />
-                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="129.60003662109375" resizable="false" text="Borrowed Book" />
+                  <TableColumn fx:id="phoneNumberColumn" minWidth="0.0" prefWidth="250.39999389648438" resizable="false" text="Phone Number" />
+                  <TableColumn fx:id="detailsColumn" minWidth="0.0" prefWidth="127.199951171875" resizable="false" text="Borrowed Book" />
                </columns>
             </TableView>
          </children>

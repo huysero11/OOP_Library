@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" stylesheets="@../CSS/UserDetails.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
+<VBox fx:id="centerArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" spacing="28.0" stylesheets="@../CSS/UserDetails.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.UserDetailsController">
    <children>
       <Pane prefHeight="150.0" prefWidth="775.0">
          <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="transparent" stylesheets="@../CSS/Style.css">
+            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" stylesheets="@../CSS/Style.css">
                <graphic>
                   <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
                      <children>
@@ -54,8 +54,8 @@
             </Label>
             <StackPane layoutX="575.0" prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="updateButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleUpdateButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Update Info" textAlignment="CENTER" visible="false" wrapText="true" />
-                  <Button fx:id="deleteAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleDeleteAccountButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/Style.css" text="Delete Account" textAlignment="CENTER" visible="false" wrapText="true" />
+                  <Button fx:id="updateButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleUpdateButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/AdminView.css" text="Update Info" textAlignment="CENTER" visible="false" wrapText="true" />
+                  <Button fx:id="deleteAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleDeleteAccountButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/AdminView.css" text="Delete Account" textAlignment="CENTER" visible="false" wrapText="true" />
                </children>
             </StackPane>
          </children>

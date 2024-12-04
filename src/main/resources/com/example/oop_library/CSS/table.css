@@ -2,8 +2,8 @@
 .table-view {
     -fx-background-color: white; /* Nền bảng */
     -fx-background-radius: 15; /* Bo góc */
-    -fx-border-color: #00a653; /* Viền xanh */
-    -fx-border-width: 2; /* Độ rộng viền */
+    -fx-border-color: transparent; /* Xóa viền ngoài */
+    -fx-border-width: 0; /* Xóa viền ngoài */
     -fx-border-radius: 15; /* Bo góc viền */
     -fx-padding: 10; /* Khoảng cách bên trong */
     -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 20, 0.5, 5, 5); /* Đổ bóng */
@@ -11,12 +11,12 @@
 
 /* CSS cho tiêu đề các cột (header) */
 .table-view .column-header {
-    /*-fx-background-color: #00d374; !* Màu nền tiêu đề *!*/
+    -fx-background-color: #00d374; /* Màu nền tiêu đề */
     -fx-text-fill: white; /* Màu chữ tiêu đề */
     -fx-font-weight: bold; /* Chữ đậm */
     -fx-font-size: 14px; /* Kích thước chữ */
     -fx-alignment: center; /* Căn giữa */
-    /*-fx-background-radius: 15; !* Bo góc hoàn toàn *!*/
+    -fx-background-radius: 15; /* Bo góc hoàn toàn */
     -fx-padding: 5; /* Khoảng cách bên trong */
     -fx-border-radius: 15; /* Bo góc viền */
     -fx-wrap-text: true;
@@ -30,10 +30,10 @@
 
 /* CSS cho các hàng và ô (cell) */
 .table-row-cell {
-    -fx-background-color: white; /* Màu nền của hàng */
     -fx-border-color: transparent; /* Không viền giữa các hàng */
 }
 
+/* Xóa viền ngang và dọc trong các ô */
 .table-cell {
     -fx-wrap-text: true;
     -fx-text-fill: black; /* Màu chữ */
@@ -42,6 +42,7 @@
     -fx-alignment: center; /* Căn giữa */
     -fx-valignment: center;
     -fx-padding: 5; /* Khoảng cách nội dung trong ô */
+    -fx-border-color: transparent; /* Xóa viền ô */
 }
 
 /* Hàng được chọn (selected row) */
@@ -58,15 +59,15 @@
 
 /* Đường viền khi bảng được focus */
 .table-view:focused {
-    -fx-border-color: #06dc7c; /* Viền nổi bật */
-    -fx-border-width: 3;
+    -fx-border-color: transparent; /* Viền nổi bật khi focus, nhưng giờ đã xóa */
+    -fx-border-width: 0; /* Xóa viền khi focus */
     -fx-border-radius: 15;
 }
 
 /* Nút trong bảng */
 .table-cell .button {
     -fx-background-color: #00d374; /* Màu nền đồng bộ với tiêu đề bảng */
-    -fx-text-fill: white; /* Màu chữ */
+    -fx-text-fill: black; /* Màu chữ */
     -fx-font-weight: bold; /* Chữ đậm */
     -fx-padding: 5px 10px; /* Khoảng cách bên trong */
     -fx-border-radius: 15px; /* Bo góc */
