@@ -56,6 +56,7 @@ public class BooksDao implements DAOInterface<Books> {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return -1;
         }
 
         return res;

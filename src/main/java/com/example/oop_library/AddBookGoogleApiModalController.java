@@ -64,16 +64,15 @@ public class AddBookGoogleApiModalController {
                 return;
             }
     
-            for (GBSBooks book : foundBooks) {
-                Button bookButton = new Button(book.getVolumeInfo().getBookName());
-                bookButton.setOnAction(event -> showBookDetails(book));
-                foundBooksContainer.getChildren().add(bookButton);
-            }
+            // for (GBSBooks book : foundBooks) {
+            //     Button bookButton = new Button(book.getVolumeInfo().getBookName());
+            //     bookButton.setOnAction(event -> showBookDetails(book));
+            //     foundBooksContainer.getChildren().add(bookButton);
+            // }
         });
     }
 
     private void showBookDetails(GBSBooks book) {
-        // You can display book details in a modal or another layout.
         Books volumeInfo = book.getVolumeInfo();
         System.out.println("Selected book: " + volumeInfo.getBookName());
         System.out.println("ID: " + volumeInfo.getBookID());

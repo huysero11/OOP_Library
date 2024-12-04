@@ -2,7 +2,9 @@ package com.example.oop_library;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -48,12 +50,39 @@ public class BookShortInfoController {
     }
 
     public void addBooks() {
-        if( BooksDao.getInstance().add(b) == 1) {
-            Platform.runLater(() -> {
-                APISearchController.getSearchAPI().close();
-            });
-        }
-
+            int row = BooksDao.getInstance().add(b);
+            if(row == 1) {
+                Platform.runLater(() -> {
+                    APISearchController.getSearchAPI().close();
+                });
+                try {
+                    Stage notifStage = new Stage();
+                    FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                    Parent root = fxmlLoader.load();
+                    NotificationController notificationController = fxmlLoader.getController();
+                    //notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                    notificationController.setTextNotif("Add Book Succesfully");
+                    notifStage.setScene(new Scene(root));
+                    notifStage.show();
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    Stage notifStage = new Stage();
+                    FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                    Parent root = fxmlLoader.load();
+                    NotificationController notificationController = fxmlLoader.getController();
+                    notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                    notificationController.setTextNotif("Fail to add new book\n Duplicated entry!");
+                    notifStage.setScene(new Scene(root));
+                    notifStage.show();
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    e.printStackTrace();
+                }
+            }
     }
 
     public void setSelectBooks(String operation) {
@@ -62,7 +91,34 @@ public class BookShortInfoController {
             selectBooks.setOnMouseClicked((MouseEvent event) -> {
                 if (BooksDao.getInstance().delete(b) == 1) {
                     DeleteBooksController.getSearchAPI().close();
+                    try {
+                        Stage notifStage = new Stage();
+                        FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                        Parent root = fxmlLoader.load();
+                        NotificationController notificationController = fxmlLoader.getController();
+                        //notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                        notificationController.setTextNotif("Delete Succesfully");
+                        notifStage.setScene(new Scene(root));
+                        notifStage.show();
+                    } catch (Exception e) {
+                        // TODO: handle exception
+                        e.printStackTrace();
+                    }
                     System.out.println("Deleted!");
+                } else {
+                    try {
+                        Stage notifStage = new Stage();
+                        FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                        Parent root = fxmlLoader.load();
+                        NotificationController notificationController = fxmlLoader.getController();
+                        notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                        notificationController.setTextNotif("Cannot delete this book!");
+                        notifStage.setScene(new Scene(root));
+                        notifStage.show();
+                    } catch (Exception e) {
+                        // TODO: handle exception
+                        e.printStackTrace();
+                    }
                 }
             });
         } else if (operation.equals("Update")) {

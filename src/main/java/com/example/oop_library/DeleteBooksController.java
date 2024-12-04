@@ -137,8 +137,8 @@ public class DeleteBooksController {
         foundBooks.getChildren().clear();
         for (Books b : list) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("bookShortInfo.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/bookShortInfo.fxml"));
+                // fxmlLoader.setLocation(getClass().getResource("com/example/oop_library/FXML/bookShortInfo.fxml"));
                 HBox p = fxmlLoader.load();
                 BookShortInfoController bookShortInfoController = fxmlLoader.getController();
                 bookShortInfoController.setData(b);

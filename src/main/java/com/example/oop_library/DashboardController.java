@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -21,6 +23,21 @@ public class DashboardController implements Initializable {
 
     @FXML
     private BorderPane dashboardBorderPane;
+
+    @FXML
+    private ToggleButton toggleButtonDashboard;
+
+    @FXML
+    private ToggleButton toggleButtonCategory;
+
+    @FXML
+    private ToggleButton toggleButtonBooksBorrowed;
+
+    @FXML
+    private ToggleButton toggleButtonAdmin;
+
+    @FXML
+    private ToggleGroup toggleGroup;
 
     private User loggedInUser;
 
@@ -34,6 +51,16 @@ public class DashboardController implements Initializable {
 
         dashboardBorderPane.setPrefWidth(UseForAll.APP_PREF_WIDTH);
         dashboardBorderPane.setPrefHeight(UseForAll.APP_PREF_HEIGHT);
+
+        toggleGroup = new ToggleGroup();
+
+        // Set each ToggleButton to the same ToggleGroup
+        toggleButtonDashboard.setToggleGroup(toggleGroup);
+        toggleButtonCategory.setToggleGroup(toggleGroup);
+        toggleButtonBooksBorrowed.setToggleGroup(toggleGroup);
+        toggleButtonAdmin.setToggleGroup(toggleGroup);
+
+        toggleButtonDashboard.setSelected(true);
     }
 
 
