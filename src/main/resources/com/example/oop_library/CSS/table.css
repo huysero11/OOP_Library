@@ -11,12 +11,12 @@
 
 /* CSS cho tiêu đề các cột (header) */
 .table-view .column-header {
-    -fx-background-color: #00d374; /* Màu nền tiêu đề */
+    /*-fx-background-color: #00d374; !* Màu nền tiêu đề *!*/
     -fx-text-fill: white; /* Màu chữ tiêu đề */
     -fx-font-weight: bold; /* Chữ đậm */
     -fx-font-size: 14px; /* Kích thước chữ */
     -fx-alignment: center; /* Căn giữa */
-    -fx-background-radius: 15; /* Bo góc hoàn toàn */
+    /*-fx-background-radius: 15; !* Bo góc hoàn toàn *!*/
     -fx-padding: 5; /* Khoảng cách bên trong */
     -fx-border-radius: 15; /* Bo góc viền */
     -fx-wrap-text: true;

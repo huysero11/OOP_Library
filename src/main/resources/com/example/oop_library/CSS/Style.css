@@ -1,17 +1,3 @@
-.white-background{
-    -fx-background-color: #ffffff;
-}
-
-.right-side-border{
-    -fx-border-color: #019e59;
-    -fx-border-width: 0 2 0 0;
-}
-
-.bottom-side-border{
-    -fx-border-color: #6f6f6f;
-    -fx-border-width: 0 0 2 0;
-}
-
 .borrow-button{
     -fx-border-color: #000000;
     -fx-border-radius:30;

@@ -12,19 +12,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
+<VBox fx:id="adminVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.AdminController">
    <children>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="775.0" spacing="15.0">
+      <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="99.0" prefWidth="775.0" spacing="15.0" stylesheets="@../CSS/AdminView.css">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="38.0" prefWidth="150.0" stylesheets="@../CSS/Style.css" text="Delete book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenDeleteStage" prefHeight="45.0" prefWidth="130.0" text="Delete book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
                </styleClass>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/trash-bin.png" />
+                        <Image url="@../images/Delete_Book_Icon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -35,15 +35,15 @@
                   <Insets right="5.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenUpdateStage" prefHeight="38.0" prefWidth="151.0" stylesheets="@../CSS/Style.css" text="Update book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenUpdateStage" prefHeight="45.0" prefWidth="130.0" text="Update book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
                </styleClass>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/loading-arrow.png" />
+                        <Image url="@../images/Update_Book_Icon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -51,15 +51,15 @@
                   <Font size="11.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onMouseClicked="#OpenSearchAPIBooksStage" prefHeight="38.0" prefWidth="139.0" stylesheets="@../CSS/Style.css" text="Add book">
+            <Button mnemonicParsing="false" onMouseClicked="#OpenSearchAPIBooksStage" prefHeight="45.0" prefWidth="130.0" text="Add book">
                <styleClass>
                   <String fx:value="books-button" />
                   <String fx:value="button-span" />
                </styleClass>
                <graphic>
-                  <ImageView fitHeight="37.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/add.png" />
+                        <Image url="@../images/Add_Book_Icon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -72,7 +72,7 @@
             <Insets />
          </opaqueInsets>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
+            <Insets right="15.0" top="15.0" />
          </padding>
       </HBox>
       <Pane fx:id="adminViewPane" prefHeight="558.0" prefWidth="1000.0">
