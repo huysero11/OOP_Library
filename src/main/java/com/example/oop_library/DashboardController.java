@@ -9,10 +9,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class DashboardController implements Initializable {
 
@@ -57,20 +60,36 @@ public class DashboardController implements Initializable {
     }
 
     public void switchToAdmin() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/AdminView.fxml"));
-            VBox p = fxmlLoader.load();
-            // bookDetailController detailController = fxmlLoader.getController();
-            // detailController.setData(b, this);
-            AdminController adminController = fxmlLoader.getController();
-            adminController.setUser(loggedInUser);
-            centerArea.getChildren().clear();
-            centerArea.getChildren().add(p);
-            TransitionUtils.applyFadeTransition(p);
-        } catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
+        if (!SessionManager.getInstance().getCurrentUser().isAdmin()) {
+            try {
+                    Stage notifStage = new Stage();
+                    FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                    Parent root = fxmlLoader.load();
+                    NotificationController notificationController = fxmlLoader.getController();
+                    notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                    notificationController.setTextNotif("This session is only available to Admin accounts!");
+                    notifStage.setScene(new Scene(root));
+                    notifStage.show();
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    e.printStackTrace();
+                }
+        } else {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/AdminView.fxml"));
+                VBox p = fxmlLoader.load();
+                // bookDetailController detailController = fxmlLoader.getController();
+                // detailController.setData(b, this);
+                AdminController adminController = fxmlLoader.getController();
+                adminController.setUser(loggedInUser);
+                centerArea.getChildren().clear();
+                centerArea.getChildren().add(p);
+                TransitionUtils.applyFadeTransition(p);
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
         }
     }
 
