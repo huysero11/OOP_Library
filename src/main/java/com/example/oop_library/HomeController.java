@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
@@ -231,19 +232,29 @@ public class HomeController {
     }
 
     public void switchToSignout(MouseEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
-            Parent root = fxmlLoader.load();
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Sign Out Confirmation");
+        alert.setHeaderText("Are you sure you want to sign out?");
+        alert.setContentText("Click 'Yes' to sign out or 'No' to stay logged in.");
 
-            // Get the current stage from the event
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            System.out.println("Login Error: Could not go to login view!");
-            e.printStackTrace();
-        }
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/oop_library/FXML/LoginView.fxml"));
+                    Parent root = fxmlLoader.load();
+
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    System.out.println("Login Error: Could not go to login view!");
+                    e.printStackTrace();
+                }
+            } else {
+                alert.close();
+            }
+        });
     }
 
     public void switchToProfile() {
