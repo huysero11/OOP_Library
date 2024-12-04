@@ -1,0 +1,30 @@
+/* CSS cho TextField và PasswordField */
+.text-field, .password-field {
+    -fx-background-color: transparent; /* Nền trong suốt, để nền của Pane lộ ra */
+    -fx-border-color: #00a653; /* Viền xanh */
+    -fx-border-width: 2; /* Độ rộng viền */
+    -fx-border-radius: 15; /* Bo góc */
+    -fx-padding: 5px 10px; /* Khoảng cách bên trong */
+    -fx-font-size: 14px; /* Kích thước chữ */
+    -fx-font-family: "System"; /* Font chữ */
+    -fx-text-fill: black; /* Màu chữ */
+}
+
+/* Hiệu ứng khi TextField hoặc PasswordField có focus */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #06dc7c; /* Viền nổi bật khi focus */
+    -fx-border-width: 3; /* Độ rộng viền khi focus */
+    -fx-background-color: #f0fff0; /* Màu nền nhạt khi focus */
+}
+
+/* Hiệu ứng hover (di chuột) trên TextField và PasswordField */
+.text-field:hover, .password-field:hover {
+    -fx-border-color: #00d374; /* Màu viền khi hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 211, 116, 0.3), 5, 0.5, 0, 1); /* Đổ bóng nhẹ */
+}
+
+/* Hiệu ứng khi nhấn (pressed) vào TextField hoặc PasswordField */
+.text-field:pressed, .password-field:pressed {
+    -fx-border-color: #00a653; /* Viền xanh khi nhấn */
+    -fx-background-color: #e6f9e6; /* Nền xanh nhạt khi nhấn */
+}

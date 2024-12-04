@@ -18,21 +18,7 @@
    <children>
       <Pane prefHeight="150.0" prefWidth="775.0">
          <children>
-            <Button fx:id="backButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" stylesheets="@../CSS/Style.css">
-               <graphic>
-                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
-                     <children>
-                        <ImageView fitHeight="21.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/arrow.png" />
-                           </image>
-                        </ImageView>
-                        <Label prefHeight="29.0" prefWidth="60.0" text="Back" />
-                     </children>
-                  </HBox>
-               </graphic>
-            </Button>
-            <Label layoutX="68.0" layoutY="52.0" prefHeight="47.0" prefWidth="159.0" text="Name">
+            <Label layoutX="68.0" layoutY="67.0" prefHeight="47.0" prefWidth="159.0" text="Name">
                <font>
                   <Font size="20.0" />
                </font>
@@ -42,7 +28,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="username" layoutX="236.0" layoutY="60.0" prefHeight="30.0" prefWidth="364.0" text="Label">
+            <Label fx:id="username" layoutX="236.0" layoutY="76.0" prefHeight="30.0" prefWidth="364.0" text="Label">
                <font>
                   <Font size="20.0" />
                </font>
@@ -58,6 +44,24 @@
                   <Button fx:id="deleteAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleDeleteAccountButtonAction" prefHeight="72.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/AdminView.css" text="Delete Account" textAlignment="CENTER" visible="false" wrapText="true" />
                </children>
             </StackPane>
+            <Button fx:id="backButton1" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="46.0" prefWidth="98.0" styleClass="books-button" stylesheets="@../CSS/AdminView.css">
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="62.0" spacing="8.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/back.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="47.0" prefWidth="50.0" text="Back">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <StackPane prefHeight="407.0" prefWidth="775.0">
