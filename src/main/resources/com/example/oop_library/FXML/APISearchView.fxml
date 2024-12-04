@@ -43,7 +43,7 @@
       </HBox>
       <ScrollPane fx:id="scrollPane" prefHeight="368.0" prefWidth="879.0" styleClass="transparent" visible="true">
          <content>
-            <VBox fx:id="foundBooks" prefHeight="0.0" prefWidth="845.0" />
+            <VBox fx:id="foundBooks" prefHeight="5.0" prefWidth="818.0" />
          </content>
          <VBox.margin>
             <Insets right="5.0" />

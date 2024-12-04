@@ -87,7 +87,7 @@ public class DeleteBooksController {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/DeleteBooksView.fxml"));
             Parent root = fxmlLoader.load();
-            searchDelete.setScene(new Scene(root, 880, 618));
+            searchDelete.setScene(new Scene(root, 800, 618));
             searchDelete.show();
             DeleteBooksController deleteBooksController = fxmlLoader.getController();
             deleteBooksController.setSearchCriteria();

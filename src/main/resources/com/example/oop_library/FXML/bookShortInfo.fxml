@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="160.0" prefWidth="845.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/BookShortInfo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BookShortInfoController">
+<HBox alignment="CENTER" prefHeight="160.0" prefWidth="768.0" spacing="25.0" styleClass="bookShortInfo" stylesheets="@../CSS/BookShortInfo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.BookShortInfoController">
    <children>
-      <ImageView fx:id="bookImage" fitHeight="141.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+      <ImageView fx:id="bookImage" fitHeight="141.0" fitWidth="106.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
          <image>
             <Image url="@../images/account.png" />
          </image>

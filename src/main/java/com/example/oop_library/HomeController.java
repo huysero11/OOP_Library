@@ -175,7 +175,7 @@ public class HomeController {
         });
         searchByCategory.setOnAction(event -> {
             searchBy.setText("By Category");
-            searchCriteria = "category like ";
+            searchCriteria = "catagory like ";
         });
     }
 

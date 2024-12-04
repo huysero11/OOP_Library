@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="deleteBooksVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="APISearchView" stylesheets="@../CSS/DeleteBooks.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DeleteBooksController">
+<VBox fx:id="deleteBooksVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="APISearchView" stylesheets="@../CSS/DeleteBooks.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DeleteBooksController">
    <children>
       <Label fx:id="stageName" text="Delete Available Books">
          <font>
@@ -25,7 +25,7 @@
       </Label>
       <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="44.0" prefWidth="612.0" spacing="15.0" styleClass="search-container" stylesheets="@../CSS/Style.css">
          <children>
-            <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="118.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search by" textFill="#005e35">
+            <MenuButton fx:id="searchBy" alignment="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="search-choice" stylesheets="@../CSS/Style.css" text="Search by" textFill="#005e35">
                <items>
                   <MenuItem fx:id="searchByTiTle" mnemonicParsing="false" text="Title" />
                   <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="Author" />
@@ -40,7 +40,7 @@
                   <Image url="@../images/loupe.png" />
                </image>
             </ImageView>
-            <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="793.0" promptText="Search..." styleClass="transparent" stylesheets="@../CSS/Style.css" />
+            <TextField fx:id="searchQuery" onKeyPressed="#searchBooks" prefHeight="26.0" prefWidth="565.0" promptText="Search..." styleClass="transparent" stylesheets="@../CSS/Style.css" />
          </children>
       </HBox>
       <Label fx:id="errorLabel" prefHeight="0.0" prefWidth="1.0" textFill="RED" />
@@ -49,9 +49,9 @@
             <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" visible="false" />
          </children>
       </HBox>
-      <ScrollPane fx:id="scrollPane" prefHeight="428.0" prefWidth="862.0" styleClass="transparent" stylesheets="@../CSS/Style.css" visible="true">
+      <ScrollPane fx:id="scrollPane" prefHeight="426.0" prefWidth="717.0" styleClass="transparent" stylesheets="@../CSS/Style.css" visible="true">
          <content>
-            <VBox fx:id="foundBooks" prefHeight="0.0" prefWidth="845.0" />
+            <VBox fx:id="foundBooks" prefHeight="0.0" prefWidth="736.0" />
          </content>
          <VBox.margin>
             <Insets right="5.0" />
