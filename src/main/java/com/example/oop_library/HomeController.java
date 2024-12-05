@@ -96,7 +96,7 @@ public class HomeController {
         // });
 
         // Use a thread pool for parallel loading
-        ExecutorService executor = Executors.newFixedThreadPool(3); // Adjust thread pool size as needed
+        ExecutorService executor = Executors.newFixedThreadPool(2); // Adjust thread pool size as needed
 
         Task<Void> loadBooksTask = new Task<>() {
             @Override

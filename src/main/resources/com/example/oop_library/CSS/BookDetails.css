@@ -18,7 +18,7 @@
     -fx-text-fill: #00dc80;
 }
 
-#borrowButton {
+.borrowButton {
     -fx-background-color:#00dc80;
     -fx-background-radius: 20;
 

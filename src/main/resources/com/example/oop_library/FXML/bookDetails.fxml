@@ -90,7 +90,7 @@
                         <Insets bottom="28.0" />
                      </VBox.margin>
                   </Label>
-                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrow-button" text="BORROW">
+                  <ToggleButton fx:id="borrowButton" mnemonicParsing="false" onAction="#setBorrowButton" prefHeight="46.0" prefWidth="164.0" styleClass="borrowButton" stylesheets="@../CSS/BookDetails.css" text="BORROW">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
