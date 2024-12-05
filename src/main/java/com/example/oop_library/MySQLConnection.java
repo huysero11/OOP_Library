@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class MySQLConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/OOP_Library";
     private static final String USER = "root"; // Thay bằng user của bạn
-    private static final String PASSWORD = "27042005QuocHuy@@"; // Thay bằng password của bạn
+    private static final String PASSWORD = ""; // Thay bằng password của bạn
 
     public static Connection getConnection() {
         Connection connection = null;

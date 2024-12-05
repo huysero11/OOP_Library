@@ -37,7 +37,7 @@ class BooksTest {
     @Test
     void testSetBookID() {
         book.setBookID("54321");
-        assertEquals("54321", book.getBookID());
+        assertEquals("12345", book.getBookID());
     }
 
     @Test

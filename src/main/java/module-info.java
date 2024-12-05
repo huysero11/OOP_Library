@@ -14,6 +14,8 @@ module com.example.oop_library {
     requires java.sql;
     requires javafx.graphics;
     requires com.google.gson;
+//    requires org.junit.jupiter.api;
+//    requires org.mockito;
 
 
     opens com.example.oop_library to javafx.fxml,  com.google.gson;

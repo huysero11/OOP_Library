@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 public class GoogleBooksService {
     private static final String API_URL = "https://www.googleapis.com/books/v1/volumes?q=";
-    private static final String API_KEY = "AIzaSyAu5ui7iB9i5xJay_7RAvIzeCnnL2UYFwg"; 
+    private static final String API_KEY = "AIzaSyAu5ui7iB9i5xJay_7RAvIzeCnnL2UYFwg";
 
     public GBSDto searchGBS(String query) {
         try {

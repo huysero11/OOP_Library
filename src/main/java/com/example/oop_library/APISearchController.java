@@ -87,7 +87,7 @@ public class APISearchController {
 
         new Thread(() -> {
             try {
-                GBSDto results = gsbService.searchGBS(title);
+                GBSDto results = (GBSDto) gsbService.searchGBS(title);
                 List<GBSBooks> listBooks = results.getItems();
                 if (results.getTotalItems() == 0) {
                     errorLabel.setText("Please enter a book title");
@@ -122,5 +122,4 @@ public class APISearchController {
         }
     }
 }
-
 

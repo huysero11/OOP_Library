@@ -42,7 +42,7 @@ public class AddBookGoogleApiModalController {
         errorLabel.setVisible(false);
 
         new Thread(() -> {
-            GBSDto results = gbsService.searchGBS(title);
+            GBSDto results = (GBSDto) gbsService.searchGBS(title);
             System.out.println(results);
             List<GBSBooks> l1 = results.getItems();
             System.out.println(l1.size());
