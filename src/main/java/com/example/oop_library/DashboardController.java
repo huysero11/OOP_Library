@@ -65,7 +65,6 @@ public class DashboardController implements Initializable {
         toggleButtonDashboard.setSelected(true);
     }
 
-
     public void switchToDashBoard() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
