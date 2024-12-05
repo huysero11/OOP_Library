@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="apiSearchVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="880.0" styleClass="APISearchView" stylesheets="@../CSS/APISearchView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.APISearchController">
+<VBox fx:id="apiSearchVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="880.0" styleClass="APISearchView" stylesheets="@../CSS/APISearchView.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.APISearchController">
    <children>
       <Label fx:id="APISearchViewLabel" text="Add Books with Google Books API">
          <font>
@@ -38,7 +38,7 @@
       <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="324.0" textFill="RED" />
       <HBox alignment="CENTER">
          <children>
-            <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" visible="false" />
+            <ProgressIndicator fx:id="loadingIndicator" prefHeight="35.0" prefWidth="49.0" stylesheets="@../CSS/progressIndicator.css" visible="false" />
          </children>
       </HBox>
       <ScrollPane fx:id="scrollPane" prefHeight="368.0" prefWidth="879.0" styleClass="transparent" visible="true">
