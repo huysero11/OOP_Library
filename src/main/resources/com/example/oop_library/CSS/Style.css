@@ -78,8 +78,8 @@
 }
 
 .search-choice{
-    -fx-border-color: #6f6f6f;
-    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #000000;
+    -fx-border-width: 0 2 0 0;
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-background-radius: 30;
 }
