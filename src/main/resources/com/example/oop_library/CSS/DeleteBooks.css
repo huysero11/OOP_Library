@@ -12,6 +12,14 @@
     -fx-background-radius: 10;
 }
 
+.search-choice{
+    -fx-border-color: #000000;
+    -fx-border-width: 0 2 0 0;
+    -fx-background-color: #00ff8f;
+    -fx-background-radius: 7px 0 0 7px;
+}
+
 .transparent{
     -fx-background-color: rgba(0, 0, 0, 0);
 }
+

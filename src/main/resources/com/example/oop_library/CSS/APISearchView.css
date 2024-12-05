@@ -14,3 +14,7 @@
 #searchButton {
     -fx-background-color: #00dc80;
 }
+
+#searchButton:hover {
+    -fx-opacity: 0.7;
+}
