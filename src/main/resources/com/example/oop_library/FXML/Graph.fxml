@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.ChartController">
+   <children>
+      <Pane prefHeight="229.0" prefWidth="775.0">
+         <children>
+            <LineChart fx:id="lineChart" layoutY="-2.0" prefHeight="207.0" prefWidth="775.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Label alignment="CENTER" layoutX="193.0" layoutY="207.0" prefHeight="17.0" prefWidth="389.0" text="Number of books borrowed per day" />
+         </children>
+      </Pane>
+      <HBox prefHeight="371.0" prefWidth="775.0">
+         <children>
+            <VBox prefHeight="371.0" prefWidth="381.0">
+               <children>
+                  <PieChart prefHeight="330.0" prefWidth="381.0" />
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="381.0" text="Chart showing the ratio of books borrowed and not borrowed" />
+               </children>
+            </VBox>
+            <VBox prefHeight="371.0" prefWidth="396.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
