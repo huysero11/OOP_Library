@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_library.DashboardController">
    <children>
       <BorderPane fx:id="dashboardBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -81,6 +81,30 @@
                                  </image>
                               </ImageView>
                               <Label prefHeight="39.0" prefWidth="178.0" text="Admin">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="3.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonStatistics" mnemonicParsing="false" styleClass="menu" text="Statistics">
+                     <graphic>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#switchToStatistics" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/ChartLogo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="39.0" prefWidth="178.0" text="Statistics">
                                  <font>
                                     <Font name="System Bold" size="17.0" />
                                  </font>

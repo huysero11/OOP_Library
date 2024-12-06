@@ -40,6 +40,9 @@ public class DashboardController implements Initializable {
     private ToggleButton toggleButtonAdmin;
 
     @FXML
+    private ToggleButton toggleButtonStatistics;
+
+    @FXML
     private ToggleGroup toggleGroup;
 
     private User loggedInUser;
@@ -61,7 +64,7 @@ public class DashboardController implements Initializable {
         toggleButtonDashboard.setToggleGroup(toggleGroup);
         toggleButtonBooksBorrowed.setToggleGroup(toggleGroup);
         toggleButtonAdmin.setToggleGroup(toggleGroup);
-
+        toggleButtonStatistics.setToggleGroup(toggleGroup);
         toggleButtonDashboard.setSelected(true);
     }
 
@@ -142,6 +145,20 @@ public class DashboardController implements Initializable {
             VBox p = fxmlLoader.load();
             BorrowedBooksController borrowedBooksController = fxmlLoader.getController();
             borrowedBooksController.showBorrowedBooks();
+            centerArea.getChildren().clear();
+            centerArea.getChildren().add(p);
+
+            TransitionUtils.applyFadeTransition(p);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    }
+    public void switchToStatistics() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/com/example/oop_library/FXML/Chart.fxml"));
+            VBox p = fxmlLoader.load();
             centerArea.getChildren().clear();
             centerArea.getChildren().add(p);
 

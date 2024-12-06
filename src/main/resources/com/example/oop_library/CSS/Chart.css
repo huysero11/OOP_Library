@@ -1,0 +1,50 @@
+/* In đậm tiêu đề biểu đồ */
+.chart-title {
+    -fx-font-weight: bold;       /* Chữ in đậm */
+    -fx-font-size: 16px;         /* Cỡ chữ */
+    -fx-text-fill: black;      /* Màu xanh lá */
+}
+
+/* LineChart: sử dụng màu xanh lá */
+.line-chart .chart-series-line {
+    -fx-stroke: #00ff8f;         /* Màu xanh lá cho đường */
+    -fx-stroke-width: 3px;       /* Độ dày của đường */
+}
+
+.line-chart .chart-line-symbol {
+    -fx-background-color: #00ff8f, white; /* Màu điểm */
+    -fx-background-radius: 5px;           /* Điểm tròn */
+}
+
+/* PieChart: sử dụng màu xanh lá */
+.pie-chart .default-color0.chart-pie {
+    -fx-pie-color: #00ff8f;      /* Màu xanh lá cho phần đầu */
+}
+
+.pie-chart .default-color1.chart-pie {
+    -fx-pie-color: #00b369;      /* Màu xanh lá đậm hơn cho phần sau */
+}
+
+/* BarChart: sử dụng màu xanh lá */
+.bar-chart .default-color0.chart-bar {
+    -fx-bar-fill: #00ff8f;       /* Màu xanh lá */
+}
+
+.bar-chart .default-color1.chart-bar {
+    -fx-bar-fill: #00b369;       /* Màu xanh lá đậm hơn */
+}
+
+/* Chú thích */
+.chart-legend-item-symbol {
+    -fx-background-radius: 5px; /* Biểu tượng chú thích dạng tròn */
+}
+
+/* Tooltip */
+.tooltip {
+    -fx-background-color: #00b369; /* Nền màu xanh lá */
+    -fx-text-fill: white;          /* Chữ màu trắng */
+    -fx-font-weight: bold;         /* Chữ in đậm */
+    -fx-padding: 10px;
+    -fx-border-color: #00ff8f;     /* Viền xanh nhạt */
+    -fx-border-width: 2px;
+}
