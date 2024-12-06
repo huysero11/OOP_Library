@@ -18,7 +18,7 @@
     -fx-text-fill: #00dc80;
 }
 
-#borrowButton {
+.borrowButton {
     -fx-background-color:#00dc80;
     -fx-background-radius: 20;
 
@@ -34,9 +34,16 @@
 
 
 .borrowed-button{
-    -fx-border-color: #004e2f;
-    -fx-border-radius:20;
-
-    -fx-background-color: #bebebe;
+    -fx-background-color: #8e8e8e;
     -fx-background-radius: 20;
+
+    -fx-border-color: #004e2f;
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
 }
+
+.borrowed-button:disabled {
+    -fx-opacity: 0.4;
+    cusor: not-allowed;
+}
+

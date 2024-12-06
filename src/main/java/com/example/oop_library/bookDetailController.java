@@ -69,6 +69,7 @@ public class bookDetailController {
         if (b.isBorrowed()) {
             borrowButton.setText("BORROWED");
             borrowButton.getStyleClass().clear();
+            borrowButton.setDisable(true);
             borrowButton.getStyleClass().add("borrowed-button");
         }
     }
@@ -102,6 +103,7 @@ public class bookDetailController {
                         Platform.runLater(() -> {
                             borrowButton.setText("BORROWED");
                             borrowButton.getStyleClass().clear();
+                            borrowButton.setDisable(true);
                             borrowButton.getStyleClass().add("borrowed-button");
                         });
                         break;

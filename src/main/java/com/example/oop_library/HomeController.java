@@ -96,7 +96,7 @@ public class HomeController {
         // });
 
         // Use a thread pool for parallel loading
-        ExecutorService executor = Executors.newFixedThreadPool(3); // Adjust thread pool size as needed
+        ExecutorService executor = Executors.newFixedThreadPool(2); // Adjust thread pool size as needed
 
         Task<Void> loadBooksTask = new Task<>() {
             @Override
@@ -266,7 +266,7 @@ public class HomeController {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Sign Out Confirmation");
         alert.setHeaderText("Are you sure you want to sign out?");
-        alert.setContentText("Click 'Yes' to sign out or 'No' to stay logged in.");
+        alert.setContentText("Click 'Ok' to sign out or 'Cancel' to stay logged in.");
 
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
