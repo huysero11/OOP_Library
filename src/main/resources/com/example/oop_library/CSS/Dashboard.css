@@ -16,18 +16,18 @@
 
 
 #toggleButtonDashboard, #toggleButtonBooksBorrowed,
-#toggleButtonCategory, #toggleButtonAdmin {
+#toggleButtonStatistics, #toggleButtonAdmin {
     -fx-background-color: white;
     -fx-background-radius: 10;
 }
 
 #toggleButtonDashboard:hover, #toggleButtonBooksBorrowed:hover,
-#toggleButtonCategory:hover, #toggleButtonAdmin:hover {
+#toggleButtonStatistics:hover, #toggleButtonAdmin:hover {
     -fx-background-color: #c1ffe9;
 }
 
 #toggleButtonDashboard:selected, #toggleButtonBooksBorrowed:selected,
-#toggleButtonCategory:selected, #toggleButtonAdmin:selected {
+#toggleButtonStatistics:selected, #toggleButtonAdmin:selected {
     -fx-background-color: #60ffb8;
 }
 
