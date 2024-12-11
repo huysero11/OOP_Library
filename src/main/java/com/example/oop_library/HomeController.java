@@ -89,14 +89,13 @@ public class HomeController {
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  // Disable horizontal scroll
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);  // Enable vertical scroll
 
-        // Force layout update after the first load
-        // Platform.runLater(() -> {
-        //     featuredBooks.requestLayout(); // Recalculate the GridPane layout
-        //     scrollPane.requestLayout();    // Recalculate the ScrollPane layout
-        // });
 
-        // Use a thread pool for parallel loading
-        ExecutorService executor = Executors.newFixedThreadPool(2); // Adjust thread pool size as needed
+        /* ExecutorService: Là một giao diện trong Java
+        cung cấp một cách để quản lý và điều phối các luồng (threads) làm việc.
+            newFixedThreadPool(2): Tạo một pool luồng cố định với 2 luồng.
+
+        */
+        ExecutorService executor = Executors.newFixedThreadPool(2);
 
         Task<Void> loadBooksTask = new Task<>() {
             @Override
@@ -105,12 +104,17 @@ public class HomeController {
                 double scrollPaneWidth = scrollPane.getPrefWidth();
                 System.out.println("Initial height: " + scrollPane.getHeight() + " " + featuredBooks.getHeight());
 
+
+                /* use AtomicInteger to ensure the thread-safe
+                *   when using the column and row variables
+                */
                 AtomicInteger column = new AtomicInteger(0);
                 AtomicInteger row = new AtomicInteger(1);
 
                 for (Books book : featuredBooksList) {
                     if (isCancelled()) break;
 
+                    // sumbit gui tac vu vao Task
                     executor.submit(() -> {
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -119,6 +123,10 @@ public class HomeController {
                             bookCardController cardController = fxmlLoader.getController();
                             cardController.setData(book, dashboardController);
 
+                            /* Day tac vu vao trong hang doi, khi
+                            * mot trong hai luong thuc hien xong thi
+                            * se thuc hien tiep
+                            * */
                             Platform.runLater(() -> {
                                 featuredBooks.add(card, column.get(), row.get());
                                 GridPane.setMargin(card, new Insets(1));
