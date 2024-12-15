@@ -52,9 +52,9 @@ public class BookShortInfoController {
     public void addBooks() {
             int row = BooksDao.getInstance().add(b);
             if(row == 1) {
-                Platform.runLater(() -> {
-                    APISearchController.getSearchAPI().close();
-                });
+                // Platform.runLater(() -> {
+                //     APISearchController.getSearchAPI().close();
+                // });
                 try {
                     Stage notifStage = new Stage();
                     FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));

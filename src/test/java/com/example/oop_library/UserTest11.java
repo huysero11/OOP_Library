@@ -3,7 +3,7 @@ package com.example.oop_library;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserTest {
+class UserTest11 {
 
     @Test
     void testUserConstructorWithAllFields() {

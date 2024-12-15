@@ -73,8 +73,34 @@ public class BorrowedBooksInfoController {
 
         if (BooksDao.getInstance().update(b) == 1) {
             System.out.println("Success");
+            BorrowedBooksController.removeBookFromObservableList(this);
+            try {
+                Stage notifStage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                Parent root = fxmlLoader.load();
+                NotificationController notificationController = fxmlLoader.getController();
+                //notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                notificationController.setTextNotif("Successfully return!");
+                notifStage.setScene(new Scene(root));
+                notifStage.show();
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                Stage notifStage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("/com/example/oop_library/FXML/Notification.fxml")));
+                Parent root = fxmlLoader.load();
+                NotificationController notificationController = fxmlLoader.getController();
+                notificationController.setImageNotif("/com/example/oop_library/images/remove.png");
+                notificationController.setTextNotif("Failed to return!");
+                notifStage.setScene(new Scene(root));
+                notifStage.show();
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
         }
-
-        BorrowedBooksController.removeBookFromObservableList(this);
     }
 } 
